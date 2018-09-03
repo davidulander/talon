@@ -189,7 +189,7 @@ keymap.update({
 
     '(enter | return)': Key('enter'),
     'escape': Key('esc'),
-    'question [mark]': '?',
+    'questionmark': '?',
     'tilde': '~',
     '(bang | exclamation point)': '!',
     'dollar [sign]': '$',

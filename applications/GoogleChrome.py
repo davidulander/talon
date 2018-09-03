@@ -1,6 +1,7 @@
 from talon.voice import Context, Key, press, Str
 from talon import applescript
 from user.utils import parse_words_as_integer
+from user.utils import parse_words_as_integer, repeat_function, threeDigitNumber
 
 # It is recommended to use this script in tandem with Vimium, a Google Chrome plugin for controlling the browser via keyboard
 # https://vimium.github.io/
@@ -101,7 +102,7 @@ context.keymap({
     'next tab': Key('cmd-alt-right'),
     'stiffy': Key('cmd-alt-left'),
     'last tab': Key('cmd-alt-left'),
-    'crack': Key('cmd-w'),
+    'crack' + threeDigitNumber: repeat_function(1,'cmd-w', 0.2),
     
    'tab (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)': jump_tab,
     '(end | rightmost) tab': Key('cmd-9'),

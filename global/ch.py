@@ -52,7 +52,7 @@ ctx = Context('chInput')
 keymap = {}
 
 keymap.update({
-    # navigation
+    # navigation_
     'scroll [down]': [Key('down')] * 50,
     '[scroll] (bottom | doomway)': Key('cmd-down'),
     'scroll up': [Key('up')] * 50,
@@ -94,7 +94,7 @@ keymap.update({
 
     'slappy': [Key('end enter')],
     'slipper': [Key('home enter up')],
-    'slack': [Key('enter enter up')],
+    '(stacy | spacey)': [Key('enter enter up')],
 
     # mouse
     'mouse (left | up | right | down)' + threeDigitNumber: move_mouse_relative,
@@ -108,7 +108,6 @@ keymap.update({
     'deselect': Key('alt-right alt-shift-left'),
     'find': Key('cmd-f'),   
 
-    'select line': Key('end cmd-shift-left'),
     'select instances': Key('cmd-shift-l'),
     'shreepway': Key('cmd-shift-up'),
     'shroomway': Key('cmd-shift-down'),
@@ -122,11 +121,12 @@ keymap.update({
     # various
     'save': Key('cmd-s'),
     'maximize': Key('cmd-m'),
-    'crack': Key('cmd-w'),
+    'crack' + threeDigitNumber: repeat_function(1,'cmd-w'),
+    'close application': Key('cmd-q'),
     '(close tab) | (tab close)': Key('cmd-w'),
 
     'worm': 'python',
-    '(short cat | shortcat)': Key('shift-cmd-space'),
+    '(short cat)': Key('shift-cmd-space'),
     'select (a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z)+': shortcat_function,
     'split right': Key('cmd-right'),
     'split left': Key('cmd-left'),

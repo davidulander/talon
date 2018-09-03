@@ -13,6 +13,17 @@ keymap = {
     'install node': ['npm i\n'],
     'install (bower | power | bauer)': ['npm run bower\n'],
     'install (all | or | old)': ['npm i && npm run bower\n'],
+    
+    # Git
+    '(get | git) add': ['git add'],
+    '(get | git) add all': ['git add .'],
+    '(get | git) commit': ["git commit -m ''", Key('left')],
+    '(get | git) push': ['git status'],
+    '(get | git) status': ['git status'],
+    '(get | git) (difference | did | dave)': ['git diff'],
+    '(get | git) pull': ['git pull'],
+    '(get | git) pull origin master': ['git pull'],
+
 }
 
 ctx.keymap(keymap)

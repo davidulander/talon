@@ -36,7 +36,7 @@ keymap = {
     'page down': Key('pagedown'),
     '(open | collapse) right pane': Key('cmd-.'),
     'direct messages': Key('cmd-shift-k'),
-    'threads': Key('cmd-shift-t'),
+    'threads': Key('cmd-.'),
     '(history [next] | back | backward)': Key('cmd-['),
     '(back to the future | ford | forward)': Key('cmd-]'),
     'next element': Key('tab'),
@@ -44,12 +44,10 @@ keymap = {
     '(my stuff | activity)': Key('cmd-shift-m'),
     'directory': Key('cmd-shift-e'),
     '(starred [items] | stars)': Key('cmd-shift-s'),
-    'unread [messages]': Key('cmd-j'),
+    'unread [messages]': Key('cmd-shift-t'),
     '(go | undo | toggle) full': Key('ctrl-cmd-f'),
 
     # Messaging
-    'grab left': Key('shift-up'),
-    'grab right': Key('shift-down'),
     'add line': Key('shift-enter'),
     '(slaw | slapper)': [Key('cmd-right'), Key('shift-enter')],
     '(react | reaction)': Key('cmd-shift-\\'),

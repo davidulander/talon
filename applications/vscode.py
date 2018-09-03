@@ -14,17 +14,8 @@ def jump_to_line(m):
     if line_number == 0:
         line_number = 1
 
-    # TODO: Directly interface with VSCode to accomplish the following
-
-    # Open the jump to line input
     press('cmd-g')
-
-    # TODO: If requesting line that is beyond the end of the focused document, jump to last line instead
-
-    # Enter whole line number data as if from keyboard
     Str(str(line_number))(None)
-
-    # Confirm the navigation
     press('enter')
 
 def jump_tabs(m):
@@ -47,6 +38,7 @@ context.keymap({
     'line' + threeDigitNumber: jump_to_line,
 
     # Selecting text
+    # 'select line' + threeDigitNumber + 'until' + threeDigitNumber: select_lines_function,
 
     # Finding text
     'find': Key('cmd-f'),
@@ -57,8 +49,8 @@ context.keymap({
     
     # Navigation
     'Go to line': Key('cmd-g'),
-    'line up': Key('alt-up'), 
-    'line down': Key('alt-down'),
+    'line up' + threeDigitNumber: repeat_function(2, 'alt-up'),
+    'line down' + threeDigitNumber: repeat_function(2, 'alt-down'),
 
     # tabbing
     'stiffy': Key('cmd-alt-right'),
