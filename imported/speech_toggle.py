@@ -58,7 +58,7 @@ sleep_group = ContextGroup('sleepy')
 sleepy = Context('sleepy', group=sleep_group)
 
 sleepy.keymap({
-    'sleep': lambda m: set_enabled(False),
+    'talon sleep': lambda m: set_enabled(False),
     'wake': lambda m: set_enabled(True),
 
     'dragon mode': dragon_mode,

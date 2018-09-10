@@ -1,3 +1,4 @@
+from talon import macos
 from talon.voice import Word, Context, Key, Rep, RepPhrase, Str, press
 from talon import ctrl, clip
 from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
@@ -121,7 +122,7 @@ keymap.update({
     # various
     'save': Key('cmd-s'),
     'maximize': Key('cmd-m'),
-    'crack' + threeDigitNumber: repeat_function(1,'cmd-w'),
+    'crack' + threeDigitNumber: repeat_function(1,'cmd-w',0.1),
     '(close | quit) application': Key('cmd-q'),
     '(close tab) | (tab close)': Key('cmd-w'),
 
@@ -132,6 +133,10 @@ keymap.update({
     'split left': Key('cmd-alt-shift-left'),
     'mouse notification': move_mouse_absolute(1380, 57),
 
+    'mission control': lambda m: macos.dock_notify('com.apple.expose.awake'),
+    'show desktop': lambda m: macos.dock_notify('com.apple.showdesktop.awake'),
+    'show app windows': lambda m: macos.dock_notify('com.apple.expose.front.awake'),
+
 })
 
 ctx.keymap(keymap)
@@ -139,3 +144,4 @@ ctx.keymap(keymap)
     # WORDS
     # gibby, shibby, swick, totch, baxley, peach, carmex, kite, wonkrim, wonkrish, scrhim, shrish, fame, fish, crimp, chris, jeep, dune, doom
     # shockey, shockoon, sprinkle, spring, dear, smear, trundle, jolt, snipline, sprinkoon
+    # rizzle, dizzle, dazzle, razzle

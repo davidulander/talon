@@ -15,8 +15,8 @@ ctx = Context('slack', bundle='com.tinyspeck.slackmacgap')
 
 keymap = {
     'channel': Key('cmd-k'),
-    'channel up' + threeDigitNumber: repeat_function(2, 'alt-up', 0.1),
-    'channel down' + threeDigitNumber: repeat_function(2, 'alt-down', 0.1),
+    'channel up' + threeDigitNumber: repeat_function(2, 'alt-up', 0.2),
+    'channel down' + threeDigitNumber: repeat_function(2, 'alt-down', 0.2),
     '(highlight command | insert command)': ['``', Key('left')],
     '(highlight code | insert code)': ['``````', Key('left left left')],
     'read all': Key('shift-esc'),
