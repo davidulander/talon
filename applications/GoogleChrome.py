@@ -63,6 +63,7 @@ websites = {
     'reddit': 'https://reddit.com',
     'talon docs': 'https://github.com/dwighthouse/unofficial-talonvoice-docs',
     'talon official docs': 'https://talonvoice.com/docs/index.html',
+    'hobo': 'https://se.hbonordic.com/',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')

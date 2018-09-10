@@ -33,12 +33,28 @@ def jump_to_next_word_instance(m):
     Str(' '.join([str(s) for s in m.dgndictation[0]._words]))(None)
     press('escape')
 
+def select_lines_function(m):
+    divider = 0
+    for word in m._words:
+        if str(word) == 'until':
+            break
+        divider += 1
+    line_number_from = int(str(parse_words_as_integer(m._words[2:divider])))
+    line_number_until = int(str(parse_words_as_integer(m._words[divider+1:])))
+    number_of_lines = line_number_until - line_number_from
+
+    press('cmd-g')
+    Str(str(line_number_from))(None)
+    press('enter')
+    for i in range(0, number_of_lines+1):
+        press('shift-down')
+
 context.keymap({
     # Navigating text
     'line' + threeDigitNumber: jump_to_line,
 
     # Selecting text
-    # 'select line' + threeDigitNumber + 'until' + threeDigitNumber: select_lines_function,
+    'select line' + threeDigitNumber + 'until' + threeDigitNumber: select_lines_function,
 
     # Finding text
     'find': Key('cmd-f'),
@@ -53,9 +69,9 @@ context.keymap({
     'line down' + threeDigitNumber: repeat_function(2, 'alt-down'),
 
     # tabbing
-    'stiffy': Key('cmd-alt-right'),
+    'stiffy': Key('cmd-alt-left'),
     'next tab': Key('cmd-alt-right'),
-    'stippy': Key('cmd-alt-left'),
+    'stippy': Key('cmd-alt-right'),
     'last tab': Key('cmd-alt-left'),
     'new tab': Key('cmd-n'),
     'jump' + threeDigitNumber: jump_tabs,

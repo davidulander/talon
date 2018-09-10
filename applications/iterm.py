@@ -9,6 +9,8 @@ keymap = {
     'clear': [Key('ctrl-c'), 'clear\n'],
     'split horizontal': Key('cmd-shift-d'),
     'split vertical': Key('cmd-d'),
+    
+    # package managers
     'run': ['nmp run dev\n'],
     'install node': ['npm i\n'],
     'install (bower | power | bauer)': ['npm run bower\n'],
@@ -18,7 +20,7 @@ keymap = {
     '(get | git) add': ['git add'],
     '(get | git) add all': ['git add .'],
     '(get | git) commit': ["git commit -m ''", Key('left')],
-    '(get | git) push': ['git status'],
+    '(get | git) push': ['git push'],
     '(get | git) status': ['git status'],
     '(get | git) (difference | did | dave)': ['git diff'],
     '(get | git) pull': ['git pull'],

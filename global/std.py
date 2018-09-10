@@ -4,11 +4,11 @@ from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
 from user.utils import parse_words_as_integer
 import string
 
-alpha_alt = 'Alfa, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, x-ray, Yankee, Zulu'.split()
-alpha_substitute = 'party bat cap die each fail gone harm sit jury crash look mad near odd pit quest red sun trap urge vest whale box yes zip'.split()
-
+alpha_alt = 'party bat cap die each fail gone harm sit jury crash look mad near odd pit quest red sun trap urge vest whale box yes zip'.split()
 alnum = list(zip(alpha_alt, string.ascii_lowercase)) + [(str(i), str(i)) for i in range(0, 10)]
-alnum_substitute = list(zip(alpha_substitute, string.ascii_lowercase))
+
+# alpha_substitute = 'Alfa, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, x-ray, Yankee, Zulu'.split()
+# alnum_substitute = list(zip(alpha_substitute, string.ascii_lowercase))
 
 numerals = {
     'ten': '10',
@@ -33,7 +33,7 @@ numerals = {
 
 alpha = {}
 alpha.update(dict(alnum)),
-alpha.update(dict(alnum_substitute)),
+# alpha.update(dict(alnum_substitute)),
 alpha.update(numerals),
 alpha.update({'ship %s' % word: letter for word, letter in zip(alpha_alt, string.ascii_uppercase)})
 
@@ -43,7 +43,8 @@ keys = [
     'left', 'right', 'up', 'down', 'shift', 'tab', 'escape', 'enter', 'space',
     'backspace', 'delete', 'home', 'pageup', 'pagedown', 'end',
 ] + [f'f{i}' for i in range(1, 13)]
-keys = alnum + alnum_substitute + [(k, k) for k in keys]
+keys = alnum + [(k, k) for k in keys]
+# keys = alnum + alnum_substitute + [(k, k) for k in keys]
 keys += [
     ('tilde', '`'),
     ('comma', ','),

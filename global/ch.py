@@ -53,12 +53,12 @@ keymap = {}
 
 keymap.update({
     # navigation_
-    'scroll [down]': [Key('down')] * 50,
+    'scroll [down]': [Key('down')] * 60,
     '[scroll] (bottom | doomway)': Key('cmd-down'),
-    'scroll up': [Key('up')] * 50,
+    'scroll up': [Key('up')] * 60,
     '[(scroll | go)] [to] (top | jeepway)': Key('cmd-up'),
-    'page down': [Key('pagedown')],
-    'page up': [Key('pageup')],
+    'page down' + threeDigitNumber: repeat_function(2, 'pagedown'),
+    'page up' + threeDigitNumber: repeat_function(2, 'pageup'),
 
     'home': Key('home'),
     'end': Key('end'),
@@ -122,14 +122,14 @@ keymap.update({
     'save': Key('cmd-s'),
     'maximize': Key('cmd-m'),
     'crack' + threeDigitNumber: repeat_function(1,'cmd-w'),
-    'close application': Key('cmd-q'),
+    '(close | quit) application': Key('cmd-q'),
     '(close tab) | (tab close)': Key('cmd-w'),
 
     'worm': 'python',
     '(short cat)': Key('shift-cmd-space'),
     'select (a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z)+': shortcat_function,
-    'split right': Key('cmd-right'),
-    'split left': Key('cmd-left'),
+    'split right': Key('cmd-alt--right'),
+    'split left': Key('cmd-alt-shift-left'),
     'mouse notification': move_mouse_absolute(1380, 57),
 
 })
