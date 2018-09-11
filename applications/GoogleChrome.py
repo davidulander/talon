@@ -88,7 +88,7 @@ def open_website(m):
 context.keymap({
     'address bar': focus_address_bar,
 
-    'link': Key('f'),
+    'link': [Key('escape'), Key('escape'), Key('f')],
 
     'back[ward]': back,
     'forward': forward,

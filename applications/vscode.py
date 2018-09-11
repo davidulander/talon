@@ -31,7 +31,7 @@ def jump_to_next_word_instance(m):
     press('escape')
     press('cmd-f')
     Str(' '.join([str(s) for s in m.dgndictation[0]._words]))(None)
-    press('escape')
+    press('return')
 
 def select_lines_function(m):
     divider = 0

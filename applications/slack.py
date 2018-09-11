@@ -78,6 +78,7 @@ keymap = {
     'thumbs up': ':+1:',
     'smiley': ':slightly_smiling_face:',
     'laugh out loud': ':joy:',
+    'thinking face': ':thinking_face:',
 
     # Miscellaneous
     'shortcuts': Key('cmd-/'),
