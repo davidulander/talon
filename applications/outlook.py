@@ -10,6 +10,7 @@ ctx.keymap({
     'next pain': Key('shift-ctrl-['),
     'pree.lv pain': Key('shift-ctrl-]'),
     'mark as read': Key('cmd-t'),
+    'mark unread': Key('cmd-shift-t'),
     'dismiss outlook': [
         lambda m: switch_app(name='outlook'),
         Key('cmd-w'),

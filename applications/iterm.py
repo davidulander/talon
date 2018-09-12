@@ -18,6 +18,7 @@ keymap = {
     'install (all | or | old)': ['npm i && npm run bower\n'],
     
     # Git
+    '(get | git)': ['git'],
     '(get | git) add': ['git add '],
     '(get | git) add all': ['git add .'],
     '(get | git) commit': ["git commit -m ''", Key('left')],
@@ -28,6 +29,12 @@ keymap = {
     '(get | git) (difference | did | dave)': ['git diff', Key('return')],
     '(get | git) pull': ['git pull'],
     '(get | git) pull origin master': ['git pull origin master'],
+    '(get | git) [remote] add upstream': ['git remote add upstream'],
+    '(get | git) fetch upstream': ['git fetch upstream'],
+    '(get | git) fetch': ['git fetch'],
+    '(get | git) remote': ['git remote -v'],
+    '(get | git) check out': ['git checkout '],
+    '(get | git) merge': ['git merge '],
 
 }
 

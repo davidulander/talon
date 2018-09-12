@@ -64,6 +64,7 @@ websites = {
     'talon docs': 'https://github.com/dwighthouse/unofficial-talonvoice-docs',
     'talon official docs': 'https://talonvoice.com/docs/index.html',
     'hobo': 'https://se.hbonordic.com/',
+    'messenger': 'https://www.messenger.com/',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
@@ -94,7 +95,8 @@ context.keymap({
     'forward': forward,
     'reload': Key('cmd-r'),
     'hard reload': Key('cmd-shift-r'),
-    
+    'bookmark': Key('cmd-d'),
+
     'new tab': Key('cmd-t'),
     'close tab': Key('cmd-w'),
     '(reopen | unclose) tab': Key('cmd-shift-t'),
@@ -126,6 +128,11 @@ context.keymap({
     '[show] security [panel]': lambda m: show_panel('Security'),
     '[show] source[s] [panel]': lambda m: show_panel('Sources'),
     
+    'inspect': Key('cmd-shift-c'),
+    'device': Key('cmd-shift-m'),
+    'developer': Key('cmd-alt-i'),
+    'console': Key('cmd-alt-j'),
+
     'refocus page': refocus_page,
     '[refocus] dev tools': open_focus_devtools,
     

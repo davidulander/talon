@@ -67,3 +67,8 @@ def repeat_function(numberOfWords, keyDescription, delay=0):
     return repeater
 
 threeDigitNumber = '(0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)*'
+
+def parse_word(word):
+    word = str(word).lstrip('\\').split('\\', 1)[0]
+    word = mapping.get(word, word)
+    return word

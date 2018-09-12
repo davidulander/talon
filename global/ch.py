@@ -61,8 +61,8 @@ keymap.update({
     'page down' + threeDigitNumber: repeat_function(2, 'pagedown'),
     'page up' + threeDigitNumber: repeat_function(2, 'pageup'),
 
-    'home': Key('home'),
-    'end': Key('end'),
+    'home': Key('cmd-left'),
+    'end': Key('cmd-right'),
 
     '(lefty | leah | leah | lee)' + threeDigitNumber: repeat_function(1, 'left'),
     '(ricky | law | la)' + threeDigitNumber: repeat_function(1, 'right'),
@@ -125,11 +125,13 @@ keymap.update({
     'crack' + threeDigitNumber: repeat_function(1,'cmd-w',0.1),
     '(close | quit) application': Key('cmd-q'),
     '(close tab) | (tab close)': Key('cmd-w'),
+    'tab window': Key('alt-tab'),
+    'tabbing menu': Key('cmd-alt-ctrl-shift-t'),
 
     'worm': 'python',
     '(short cat)': Key('shift-cmd-space'),
     'select (a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z)+': shortcat_function,
-    'split right': Key('cmd-alt--right'),
+    'split right': Key('cmd-alt-shift-right'),
     'split left': Key('cmd-alt-shift-left'),
     'mouse notification': move_mouse_absolute(1380, 57),
 
@@ -137,6 +139,7 @@ keymap.update({
     'show desktop': lambda m: macos.dock_notify('com.apple.showdesktop.awake'),
     'show app windows': lambda m: macos.dock_notify('com.apple.expose.front.awake'),
 
+    'elipsis': ['...'],
 })
 
 ctx.keymap(keymap)

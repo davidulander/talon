@@ -35,7 +35,6 @@ def talon_mode(m):
         press('cmd-shift-alt-d')
         sleep(1)
         engine.mimic('go to sleep'.split())
-        press('cmd-z')
     else:
         engine.mimic('go to sleep'.split())
 
@@ -47,7 +46,6 @@ def dragon_mode(m):
         press('cmd-shift-alt-d')
         sleep(1)
         engine.mimic('wake up'.split())
-        press('cmd-z')
     else:
         engine.mimic('wake up'.split())
 
