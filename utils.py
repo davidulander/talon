@@ -69,6 +69,12 @@ def repeat_function(numberOfWords, keyDescription, delay=0):
 threeDigitNumber = '(0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)*'
 
 def parse_word(word):
-    word = str(word).lstrip('\\').split('\\', 1)[0]
+    word = str(word)
+    # print('"', word, '"')
+    if word in token_replace:
+        word = token_replace.get(word)
+    else:
+        word = word.lower()
+    word = word.lstrip('\\').split('\\', 1)[0]
     word = mapping.get(word, word)
     return word

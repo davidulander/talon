@@ -54,7 +54,6 @@ def jump_tab(m):
         press(command)
 
 websites = {
-    'calendar': 'https://calendar.google.com',
     'facebook': 'https://facebook.com',
     'twitter': 'https://twitter.com',
     'trello': 'https://trello.com',
