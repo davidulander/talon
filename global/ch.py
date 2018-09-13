@@ -134,6 +134,7 @@ keymap.update({
     'split right': Key('cmd-alt-shift-right'),
     'split left': Key('cmd-alt-shift-left'),
     'mouse notification': move_mouse_absolute(1380, 57),
+    'mouse outlook': move_mouse_absolute(1376, 881),
 
     'mission control': lambda m: macos.dock_notify('com.apple.expose.awake'),
     'show desktop': lambda m: macos.dock_notify('com.apple.showdesktop.awake'),

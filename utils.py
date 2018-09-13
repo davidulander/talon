@@ -55,7 +55,8 @@ def parse_words_as_integer(words):
     return int(''.join(normalized_number_values))
 
 def repeat_function(numberOfWords, keyDescription, delay=0):
-    def repeater(m): 
+    def repeater(m):
+        keysToBePressed = keyDescription.split()
         line_number = parse_words_as_integer(m._words[numberOfWords:])
 
         if line_number == None:
@@ -63,7 +64,8 @@ def repeat_function(numberOfWords, keyDescription, delay=0):
  
         for i in range(0, line_number):
             sleep(delay)
-            press(keyDescription)
+            for key in keysToBePressed:
+                press(key)
     return repeater
 
 threeDigitNumber = '(0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)*'

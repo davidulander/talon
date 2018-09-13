@@ -62,6 +62,5 @@ sleepy.keymap({
     'dragon mode': dragon_mode,
     'talon mode': talon_mode,
     'swedish mode': swedish_mode,
-    'hello': Key('cmd-shift-alt-d'),
 })
 sleep_group.load()
