@@ -62,7 +62,7 @@ keymap.update({
     'page up' + threeDigitNumber: repeat_function(2, 'pageup'),
 
     'home': Key('cmd-left'),
-    'end': Key('cmd-right'),
+    '(end | and)': Key('cmd-right'),
 
     '(lefty | leah | leah | lee)' + threeDigitNumber: repeat_function(1, 'left'),
     '(ricky | law | la)' + threeDigitNumber: repeat_function(1, 'right'),

@@ -98,7 +98,7 @@ context.keymap({
 
     'new tab': Key('cmd-t'),
     'close tab': Key('cmd-w'),
-    '(reopen | unclose) tab': Key('cmd-shift-t'),
+    '(reopen tab | undo crack)': Key('cmd-shift-t'),
     
     'stippy': Key('cmd-alt-right'),
     'next tab': Key('cmd-alt-right'),

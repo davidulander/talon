@@ -87,5 +87,7 @@ context.keymap({
     'version control': Key('ctrl-shift-g'),
     'extensions': Key('cmd-shift-x'),
     '(drop-down | drop)': Key('ctrl-space'),
-
+    'go to definition': Key('f12'),
+    'go bracket': [Key('cmd-alt-shift-b')] * 2,
+    'select bracket': Key('cmd-alt-shift-ctrl-b'),
 })
