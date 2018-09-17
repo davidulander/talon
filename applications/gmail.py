@@ -32,7 +32,7 @@ delay = 0.1
 
 ctx.keymap({
     'mark': Key('x'),
-    'mark (0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)' + threeDigitNumber: repeat_function(1, 'x down', 0.2),
+    'mark (0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)' + threeDigitNumber: repeat_function(1, 'x down', 0.15),
     'mark all': Key('q'),
     'unmark [all]': Key('w'),
     'top message': [Key('up')] * 100,

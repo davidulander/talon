@@ -65,7 +65,7 @@ keymap.update({
     '(end | and)': Key('cmd-right'),
 
     '(lefty | leah | leah | lee)' + threeDigitNumber: repeat_function(1, 'left'),
-    '(ricky | law | la)' + threeDigitNumber: repeat_function(1, 'right'),
+    '(righty | law | la)' + threeDigitNumber: repeat_function(1, 'right'),
     'big up': [Key('up')] * 10,
     'large up': [Key('up')] * 20,
     'big down':  [Key('down')] * 10,

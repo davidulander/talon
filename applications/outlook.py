@@ -4,13 +4,14 @@ from ..imported.switcher import switch_app
 ctx = Context('outlook', bundle='com.microsoft.Outlook')
 
 ctx.keymap({
-    'reply to e-mail': Key('cmd-r'),
+    'reply': Key('cmd-r'),
+    'reply all': Key('cmd-shift-r'),
     'send e-mail': Key('cmd-enter'),
     'clear flag': None,
     'next pain': Key('shift-ctrl-['),
     'pree.lv pain': Key('shift-ctrl-]'),
-    'mark as read': Key('cmd-t'),
-    'mark unread': Key('cmd-shift-t'),
+    'mark': Key('cmd-t'),
+    'unread': Key('cmd-shift-t'),
     'dismiss outlook': [
         lambda m: switch_app(name='outlook'),
         Key('cmd-w'),
