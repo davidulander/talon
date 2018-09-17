@@ -27,7 +27,7 @@
 #                 return
 #                 # this variant hides the cursor on every eye jump until it settles (can tweak radius up to 200)
 #                 p, origin, radius = mouse.zone1
-#                 self.cursor(radius > 20)
+#                 self.cursor(radius > 100)
 #             except Exception:
 #                 self.cursor(True)
 

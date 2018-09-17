@@ -84,7 +84,7 @@ context.keymap({
     'master': Key('cmd-p'),
     'search all': Key('cmd-shift-f'),
     'explorer': Key('cmd-shift-e'),
-    'version control': Key('ctrl-shift-g'),
+    '(version | source) control': Key('ctrl-shift-g'),
     'extensions': Key('cmd-shift-x'),
     '(drop-down | drop)': Key('ctrl-space'),
     'go to definition': Key('f12'),
