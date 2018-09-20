@@ -2,6 +2,7 @@ from talon.voice import Context, Key, press, Str
 from talon import applescript
 from user.utils import parse_words_as_integer
 from user.utils import parse_words_as_integer, repeat_function, threeDigitNumber
+from time import sleep
 
 # It is recommended to use this script in tandem with Vimium, a Google Chrome plugin for controlling the browser via keyboard
 # https://vimium.github.io/
@@ -39,13 +40,21 @@ def refocus_page(m):
     # This leaves the focus on the page at previous tab focused point, not the beginning of the page
     press('escape')
 
+def focus(m):
+    press('u')
+    press('return')
+
 def back(m):
     refocus_page(None)
     press('cmd-[')
+    sleep(0.5)
+    focus(None)
 
 def forward(m):
     refocus_page(None)
     press('cmd-]')
+    sleep(0.5)
+    focus(None)
 
 def jump_tab(m):
     tab_number = parse_words_as_integer(m._words[1:])
@@ -88,10 +97,11 @@ def open_website(m):
 context.keymap({
     'address bar': focus_address_bar,
 
-    'link': [Key('escape'), Key('escape'), Key('f')],
+    'link': [Key('u'), Key('return'), Key('f')],
 
     'back[ward]': back,
     'forward': forward,
+    'page': focus,
     'reload': Key('cmd-r'),
     'hard reload': Key('cmd-shift-r'),
     'bookmark': Key('cmd-d'),

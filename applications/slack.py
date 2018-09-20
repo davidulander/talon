@@ -82,6 +82,7 @@ keymap = {
 
     # Miscellaneous
     'shortcuts': Key('cmd-/'),
+    'search': Key('cmd-f'),
 
 }
 

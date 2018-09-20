@@ -1,5 +1,13 @@
 from talon.voice import Key, Context
 
+def text(m):
+    try:
+        tmp = [str(s).lower() for s in m.dgndictation[0]._words]
+        words = [parse_word(word) for word in tmp]
+        Str(' '.join(words))(None)
+    except AttributeError:
+        return
+
 ctx = Context('iterm', bundle='com.googlecode.iterm2')
 
 keymap = {
@@ -10,6 +18,7 @@ keymap = {
     'split horizontal': Key('cmd-shift-d'),
     'split vertical': Key('cmd-d'),
     'next pane': Key('ctrl-tab'),
+    'make (durr | dear) [<dgndictation>]': ['mkdir ', text],
 
     # package managers
     'run': ['nmp run dev\n'],
@@ -35,7 +44,7 @@ keymap = {
     '(get | git) remote': ['git remote -v'],
     '(get | git) check out': ['git checkout '],
     '(get | git) merge': ['git merge '],
-
+    
 }
 
 ctx.keymap(keymap)

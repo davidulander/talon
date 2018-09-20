@@ -5,7 +5,7 @@ from time import sleep
 from talon.engine import engine
 from talon import applescript
 
-titles = ('- Gmail')
+titles = ('- Gmail - Google Chrome')
 ctx = Context('gmail', func=lambda app, win: win.title.endswith(titles))
 
 def command_with_delay(keyDescription, delay):
