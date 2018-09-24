@@ -28,8 +28,8 @@ def parse_words_as_integer(words):
     # TODO: Once implemented, use number input value rather than manually
     # parsing number words with this function
 
-    # Ignore any potential trailing non-number words
-    number_words = list(itertools.takewhile(lambda w: w not in number_conversions, words))
+    # Ignore any potential non-number words
+    number_words = [w for w in words if str(w) in number_conversions]
 
     # Somehow, no numbers were detected
     if len(number_words) == 0:
@@ -54,18 +54,19 @@ def parse_words_as_integer(words):
     # Create merged number string and convert to int
     return int(''.join(normalized_number_values))
 
-def repeat_function(numberOfWords, keyDescription, delay=0):
+def repeat_function(keyDescription, delay=0, actionsPerRepeatCycle=1):
     def repeater(m):
         keysToBePressed = keyDescription.split()
-        line_number = parse_words_as_integer(m._words[numberOfWords:])
+        lineNumber = parse_words_as_integer(m._words)
 
-        if line_number == None:
-            line_number = 1
- 
-        for i in range(0, line_number):
-            for key in keysToBePressed:
-                press(key)
-                sleep(delay)
+        if lineNumber == None:
+            lineNumber = 1
+
+        for j in range(0, actionsPerRepeatCycle):
+            for i in range(0, lineNumber):
+                for key in keysToBePressed:
+                    press(key)
+                    sleep(delay)
     return repeater
 
 threeDigitNumber = '(0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)*'

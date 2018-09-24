@@ -49,6 +49,13 @@ def select_lines_function(m):
     for i in range(0, number_of_lines+1):
         press('shift-down')
 
+def fold_level(m):
+    line_number = parse_words_as_integer(m._words)
+    if line_number > 9:
+        return
+    press('cmd-k')
+    press('cmd-' + str(line_number))
+
 context.keymap({
     # Navigating text
     'line' + threeDigitNumber: jump_to_line,
@@ -65,8 +72,8 @@ context.keymap({
     
     # Navigation
     'Go to line': Key('cmd-g'),
-    'line up' + threeDigitNumber: repeat_function(2, 'alt-up'),
-    'line down' + threeDigitNumber: repeat_function(2, 'alt-down'),
+    'line up' + threeDigitNumber: repeat_function( 'alt-up'),
+    'line down' + threeDigitNumber: repeat_function( 'alt-down'),
 
     # tabbing
     'stiffy': Key('cmd-alt-left'),
@@ -90,4 +97,9 @@ context.keymap({
     'go to definition': Key('f12'),
     'go bracket': [Key('cmd-alt-shift-b')] * 2,
     'select bracket': Key('cmd-alt-shift-ctrl-b'),
+
+    # folding
+    'fold all': Key('cmd-k cmd-0'),
+    'unfold all': Key('cmd-k cmd-j'),
+    'fold level' + threeDigitNumber: fold_level,
 })

@@ -41,7 +41,7 @@ def refocus_page(m):
     press('escape')
 
 def focus(m):
-    press('u')
+    press('e')
     press('return')
 
 def back(m):
@@ -97,7 +97,7 @@ def open_website(m):
 context.keymap({
     'address bar': focus_address_bar,
 
-    'link': [Key('u'), Key('return'), Key('f')],
+    'link': [Key('esc'), Key('esc'), Key('e'), Key('return'), Key('f')],
 
     'back[ward]': back,
     'forward': forward,
@@ -105,6 +105,10 @@ context.keymap({
     'reload': Key('cmd-r'),
     'hard reload': Key('cmd-shift-r'),
     'bookmark': Key('cmd-d'),
+    'bookmark manager': Key('cmd-alt-b'),
+    'history': Key('cmd-y'),
+    'zoom in': Key('cmd-+'),
+    'zoom out': Key('cmd--'),
 
     'new tab': Key('cmd-t'),
     'close tab': Key('cmd-w'),
@@ -115,7 +119,7 @@ context.keymap({
     'stiffy': Key('cmd-alt-left'),
     'last tab': Key('cmd-alt-left'),
     
-   'tab (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)': jump_tab,
+    'jump (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)': jump_tab,
     '(end | rightmost) tab': Key('cmd-9'),
     
     'find': Key('cmd-f'),

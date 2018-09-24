@@ -48,24 +48,34 @@ def shortcat_function(m):
         command += '-' + word.word
     return Key(command)
 
+def scroll_mouse(direction):
+    def scroll(m):
+        ctrl.mouse(730, 420, 0, 0)
+        ctrl.mouse_scroll(direction * 600, 0)
+    return scroll
+
+scrollingDistance = 60
+
 ctx = Context('chInput')
 
 keymap = {}
 
 keymap.update({
     # navigation_
-    'scroll [down]': [Key('down')] * 60,
+    '(skip | skippy | scroll [down])' + threeDigitNumber: repeat_function('down', actionsPerRepeatCycle=scrollingDistance),
+    '(hip | hippie | flick | flicky | scroll up)' + threeDigitNumber: repeat_function('up', actionsPerRepeatCycle=scrollingDistance),
     '[scroll] (bottom | doomway)': Key('cmd-down'),
-    'scroll up': [Key('up')] * 60,
     '[(scroll | go)] [to] (top | jeepway)': Key('cmd-up'),
-    'page down' + threeDigitNumber: repeat_function(2, 'pagedown'),
-    'page up' + threeDigitNumber: repeat_function(2, 'pageup'),
+    'scroll mouse [down]': scroll_mouse(1),
+    'scroll mouse up': scroll_mouse(-1),
+    'page down' + threeDigitNumber: repeat_function('pagedown'),
+    'page up' + threeDigitNumber: repeat_function('pageup'),
 
     'home': Key('cmd-left'),
     '(end | and)': Key('cmd-right'),
 
-    '(lefty | leah | leah | lee)' + threeDigitNumber: repeat_function(1, 'left'),
-    '(righty | law | la)' + threeDigitNumber: repeat_function(1, 'right'),
+    '(lefty | leah | leah | lee)' + threeDigitNumber: repeat_function('left'),
+    '(righty | law | la)' + threeDigitNumber: repeat_function('right'),
     'big up': [Key('up')] * 10,
     'large up': [Key('up')] * 20,
     'big down':  [Key('down')] * 10,
@@ -73,8 +83,8 @@ keymap.update({
     '(left | up | right | down)' + threeDigitNumber : go_direction,
 
     # undo
-    '(regret | undo | do)' + threeDigitNumber: repeat_function(1, 'cmd-z'),
-    '(redo | new)' + threeDigitNumber: repeat_function(1, 'cmd-shift-z'),
+    '(regret | undo | do)' + threeDigitNumber: repeat_function('cmd-z'),
+    '(redo | new)' + threeDigitNumber: repeat_function('cmd-shift-z'),
 
     # editing
     'cut': Key('cmd-x'),
@@ -82,16 +92,16 @@ keymap.update({
     'copy line': Key('end cmd-shift-left cmd-c'),
     'paste': Key('cmd-v'),
 
-    '(delete | slurp)' + threeDigitNumber: repeat_function(1, 'delete'),
-    'slurpy' + threeDigitNumber: repeat_function(1, 'alt-delete'),
+    '(delete | slurp)' + threeDigitNumber: repeat_function('delete'),
+    'slurpy' + threeDigitNumber: repeat_function('alt-delete'),
     '(delete line | snapple | snap)': Key('cmd-shift-k'),
     'delete all': Key('cmd-a backspace'),
 
     'snipple': Key('cmd-shift-left delete'),
     'snipper': Key('cmd-shift-right delete'),
 
-    '(rick | rip)' + threeDigitNumber: repeat_function(1, 'backspace'),
-    '(backspace | rep | rap)' + threeDigitNumber: repeat_function(1, 'alt-backspace'),
+    '(rick | rip)' + threeDigitNumber: repeat_function('backspace'),
+    '(backspace | rep | rap)' + threeDigitNumber: repeat_function('alt-backspace'),
 
     'slappy': [Key('end enter')],
     'slipper': [Key('home enter up')],
@@ -112,17 +122,17 @@ keymap.update({
     'select instances': Key('cmd-shift-l'),
     'shreepway': Key('cmd-shift-up'),
     'shroomway': Key('cmd-shift-down'),
-    'shreep' + threeDigitNumber: repeat_function(1, 'shift-up'),
-    'shroom' + threeDigitNumber: repeat_function(1, 'shift-down'),
+    'shreep' + threeDigitNumber: repeat_function('shift-up'),
+    'shroom' + threeDigitNumber: repeat_function('shift-down'),
     'lecksy': Key('cmd-shift-left'), # select rest of line (left)
     'ricksy': Key('cmd-shift-right'), # select the rest of line (right)
-    'scram' + threeDigitNumber: repeat_function(1, 'alt-shift-left'), # select word to the left
-    'scrish' + threeDigitNumber: repeat_function(1,'alt-shift-right'),  # select word to the right
+    'scram' + threeDigitNumber: repeat_function('alt-shift-left'), # select word to the left
+    'scrish' + threeDigitNumber: repeat_function('alt-shift-right'),  # select word to the right
 
     # various
     'save': Key('cmd-s'),
     'maximize': Key('cmd-m'),
-    'crack' + threeDigitNumber: repeat_function(1,'cmd-w',0.1),
+    'crack' + threeDigitNumber: repeat_function('cmd-w',0.1),
     '(close | quit) application': Key('cmd-q'),
     '(close tab) | (tab close)': Key('cmd-w'),
     'tab window': Key('alt-tab'),

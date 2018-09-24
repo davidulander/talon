@@ -22,8 +22,8 @@ keymap = {
     # Channel
     'channel': Key('cmd-k'),
     'channel last': Key('alt-up'),
-    'channel up' + threeDigitNumber: repeat_function(2, 'alt-up', 0.2),
-    'channel down' + threeDigitNumber: repeat_function(2, 'alt-down', 0.2),
+    'channel up' + threeDigitNumber: repeat_function('alt-up', 0.2),
+    'channel down' + threeDigitNumber: repeat_function('alt-down', 0.2),
     '[channel] unread last': Key('alt-shift-up'),
     '[channel] unread next': Key('alt-shift-down'),
     '[channel] info': Key('cmd-shift-i'),
