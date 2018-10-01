@@ -65,6 +65,7 @@ context.keymap({
 
     # Finding text
     'find': Key('cmd-f'),
+    'find all': Key('cmd-shift-f'),
     'find next <dgndictation>': jump_to_next_word_instance,
 
     # Clipboard
@@ -80,11 +81,13 @@ context.keymap({
     'next tab': Key('cmd-alt-right'),
     'stippy': Key('cmd-alt-right'),
     'last tab': Key('cmd-alt-left'),
-    'new tab': Key('cmd-n'),
+    '(new tab | nippy)': Key('cmd-n'),
     'jump' + threeDigitNumber: jump_tabs,
 
     # editing
     'bracken': [Key('cmd-shift-ctrl-right')],
+    '(delete line | snap)': Key('cmd-shift-k'),
+    'snapple': Key('down cmd-shift-k up cmd-left'),
 
     # various
     'comment': Key('cmd-shift-7'),

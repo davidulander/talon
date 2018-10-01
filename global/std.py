@@ -5,7 +5,7 @@ from user.utils import parse_words_as_integer
 import string
 
 alpha_alt = 'air bat cap drum each fail gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip'.split()
-alnum = list(zip(alpha_alt, string.ascii_lowercase)) + [(str(i), str(i)) for i in range(0, 10)]
+alnum = list(zip(alpha_alt, string.ascii_lowercase)) + [(str(i), str(i)) for i in range(0, 10)] + [('orb', 'å'), ('elf', 'ä'), ('irv', 'ö')]
 
 # alpha_substitute = 'Alfa, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, x-ray, Yankee, Zulu'.split()
 # alnum_substitute = list(zip(alpha_substitute, string.ascii_lowercase))
@@ -354,7 +354,7 @@ keymap.update({
     'op and': ' && ',
     'op or': ' || ',
     '[op] (logical | bitwise) and': ' & ',
-    '[op] [(logical | bitwise)] or': ' | ',
+    '[op] (logical | bitwise) or': ' | ',
     '(op | logical | bitwise) (ex | exclusive) or': ' ^ ',
     '[(op | logical | bitwise)] (left shift | shift left)': ' << ',
     '[(op | logical | bitwise)] (right shift | shift right)': ' >> ',

@@ -15,6 +15,7 @@ ctx.keymap({
 	'expand': Key('cmd-right'),
 	'open': Key('cmd-down'),
 	'trash it': Key('cmd-backspace'),
+	'new folder': Key('cmd-shift-n'),
 	'show package contents': Key('cmd-alt-o'),
 
 	# navigation

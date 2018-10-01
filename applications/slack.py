@@ -54,6 +54,7 @@ keymap = {
     'user': Key('@'),
     'tag channel': Key('#'),
     '([insert] command | commandify)': Key('cmd-shift-c'),
+    'variable': ['``', Key('left')],
     '[insert] code': ['``````', Key('left left left'), Key('shift-enter'), Key('shift-enter'), Key('up')],
     '(bullet | bulleted) list': Key('cmd-shift-8'),
     '(number | numbered) list': Key('cmd-shift-7'),

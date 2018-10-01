@@ -17,8 +17,10 @@ keymap = {
     'clear': [Key('ctrl-c'), 'clear\n'],
     'split horizontal': Key('cmd-shift-d'),
     'split vertical': Key('cmd-d'),
+    '(new tab | nippy)': Key('cmd-t'),
     'next pane': Key('ctrl-tab'),
     'make (durr | dear) [<dgndictation>]': ['mkdir ', text],
+    'list': ['ls -a', Key('return')],
 
     # package managers
     'run': ['nmp run dev\n'],

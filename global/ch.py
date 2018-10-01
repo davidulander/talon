@@ -48,13 +48,38 @@ def shortcat_function(m):
         command += '-' + word.word
     return Key(command)
 
+mouse_scroll_mode = {
+    'LEFT': (220, 420),
+    'MIDDLE': (730, 420),
+    'RIGHT': (1240, 420)
+}
+
+current_mouse_scroll_mode = mouse_scroll_mode['MIDDLE']
+scrollingDistance = 60
+
 def scroll_mouse(direction):
     def scroll(m):
-        ctrl.mouse(730, 420, 0, 0)
+        global current_mouse_scroll_mode
+        (x, y) = current_mouse_scroll_mode
+        ctrl.mouse(x, y, 0, 0)
         ctrl.mouse_scroll(direction * 600, 0)
     return scroll
 
-scrollingDistance = 60
+def change_mouse_scroll_mode(m):
+    global current_mouse_scroll_mode
+    global mouse_scroll_mode
+    mode = m._words[2].word.upper()
+    current_mouse_scroll_mode = mouse_scroll_mode[mode]
+    (x, y) = current_mouse_scroll_mode
+    ctrl.mouse(x, y, 0, 0)
+
+def toggle_mouse_visibility(m):
+    if str(m._words[1]) == 'show':
+        ctrl.cursor_visible(True)
+        return
+    ctrl.cursor_visible(False)
+
+
 
 ctx = Context('chInput')
 
@@ -62,12 +87,13 @@ keymap = {}
 
 keymap.update({
     # navigation_
-    '(skip | skippy | scroll [down])' + threeDigitNumber: repeat_function('down', actionsPerRepeatCycle=scrollingDistance),
-    '(hip | hippie | flick | flicky | scroll up)' + threeDigitNumber: repeat_function('up', actionsPerRepeatCycle=scrollingDistance),
+    'scroll [down]' + threeDigitNumber: repeat_function('down', actionsPerRepeatCycle=scrollingDistance),
+    'scroll up' + threeDigitNumber: repeat_function('up', actionsPerRepeatCycle=scrollingDistance),
     '[scroll] (bottom | doomway)': Key('cmd-down'),
     '[(scroll | go)] [to] (top | jeepway)': Key('cmd-up'),
-    'scroll mouse [down]': scroll_mouse(1),
-    'scroll mouse up': scroll_mouse(-1),
+    '(scroll mouse [down] | skip | skippy)': scroll_mouse(1),
+    '(scroll mouse up | hip | hippie | flick | flicky)': scroll_mouse(-1),
+    'mouse mode (left | middle | right)': change_mouse_scroll_mode,
     'page down' + threeDigitNumber: repeat_function('pagedown'),
     'page up' + threeDigitNumber: repeat_function('pageup'),
 
@@ -94,7 +120,6 @@ keymap.update({
 
     '(delete | slurp)' + threeDigitNumber: repeat_function('delete'),
     'slurpy' + threeDigitNumber: repeat_function('alt-delete'),
-    '(delete line | snapple | snap)': Key('cmd-shift-k'),
     'delete all': Key('cmd-a backspace'),
 
     'snipple': Key('cmd-shift-left delete'),
@@ -109,6 +134,7 @@ keymap.update({
 
     # mouse
     'mouse (left | up | right | down)' + threeDigitNumber: move_mouse_relative,
+    'mouse (hide | show)': toggle_mouse_visibility,
 
     # select
     'select word': Key('alt-right alt-shift-left'),

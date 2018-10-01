@@ -73,6 +73,7 @@ websites = {
     'talon official docs': 'https://talonvoice.com/docs/index.html',
     'hobo': 'https://se.hbonordic.com/',
     'messenger': 'https://www.messenger.com/',
+    'youtube': 'https://www.youtube.com/',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
@@ -97,7 +98,8 @@ def open_website(m):
 context.keymap({
     'address bar': focus_address_bar,
 
-    'link': [Key('esc'), Key('esc'), Key('e'), Key('return'), Key('f')],
+    'link': [Key('esc'), Key('esc'), Key('esc'), 'f'],
+    # 'link': [Key('esc'), Key('esc'), Key('e'), Key('return'), Key('f')],
 
     'back[ward]': back,
     'forward': forward,
@@ -109,8 +111,10 @@ context.keymap({
     'history': Key('cmd-y'),
     'zoom in': Key('cmd-+'),
     'zoom out': Key('cmd--'),
+    'downloads': Key('cmd-shift-j'),
+    'close downloads': Key('cmd-shift-j cmd-w'),
 
-    'new tab': Key('cmd-t'),
+    '(new tab | nippy)': Key('cmd-t'),
     'close tab': Key('cmd-w'),
     '(reopen tab | undo crack)': Key('cmd-shift-t'),
     

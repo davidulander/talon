@@ -15,7 +15,11 @@ ctx.keymap({
     'dismiss outlook': [
         lambda m: switch_app(name='outlook'),
         Key('cmd-w'),
-    ]
+    ],
+
+    # navigation
+    'calendar': Key('cmd-2'),
+    'mail': Key('cmd-1'),
 })
 
 

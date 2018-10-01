@@ -81,3 +81,6 @@ def parse_word(word):
     word = word.lstrip('\\').split('\\', 1)[0]
     word = mapping.get(word, word)
     return word
+
+def alternatives(options):
+    return ' (' + ' | '.join(sorted(options)) + ')+'
