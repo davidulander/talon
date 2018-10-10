@@ -1,5 +1,5 @@
 from talon.voice import Context, Key, press, Str
-from user.utils import parse_words_as_integer, repeat_function, threeDigitNumber
+from user.utils import parse_words_as_integer, repeat_function, optional_numerals
     
 def function_with_numbers(numberOfWords, keyDescription):
     def repeater(m): 
@@ -17,13 +17,13 @@ keymap = {
     '(highlight command | insert command)': ['``', Key('left')],
     '(highlight code | insert code)': ['``````', Key('left left left')],
     'read all': Key('shift-esc'),
-    'space' + threeDigitNumber: function_with_numbers(1, 'cmd-'),
+    'space' + optional_numerals: function_with_numbers(1, 'cmd-'),
 
     # Channel
     'channel': Key('cmd-k'),
     'channel last': Key('alt-up'),
-    'channel up' + threeDigitNumber: repeat_function('alt-up', 0.2),
-    'channel down' + threeDigitNumber: repeat_function('alt-down', 0.2),
+    'channel up' + optional_numerals: repeat_function('alt-up', 0.2),
+    'channel down' + optional_numerals: repeat_function('alt-down', 0.2),
     '[channel] unread last': Key('alt-shift-up'),
     '[channel] unread next': Key('alt-shift-down'),
     '[channel] info': Key('cmd-shift-i'),

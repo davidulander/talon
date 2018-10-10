@@ -1,6 +1,6 @@
 from talon.voice import Context, Key, press, Str
 from user.utils import parse_words_as_integer
-from user.utils import parse_words_as_integer, repeat_function, threeDigitNumber
+from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 
 context = Context('VSCode', bundle='com.microsoft.VSCode')
 
@@ -58,10 +58,10 @@ def fold_level(m):
 
 context.keymap({
     # Navigating text
-    'line' + threeDigitNumber: jump_to_line,
+    'line' + optional_numerals: jump_to_line,
 
     # Selecting text
-    'select line' + threeDigitNumber + 'until' + threeDigitNumber: select_lines_function,
+    'select line' + optional_numerals + 'until' + optional_numerals: select_lines_function,
 
     # Finding text
     'find': Key('cmd-f'),
@@ -73,8 +73,8 @@ context.keymap({
     
     # Navigation
     'Go to line': Key('cmd-g'),
-    'line up' + threeDigitNumber: repeat_function( 'alt-up'),
-    'line down' + threeDigitNumber: repeat_function( 'alt-down'),
+    'line up' + optional_numerals: repeat_function( 'alt-up'),
+    'line down' + optional_numerals: repeat_function( 'alt-down'),
 
     # tabbing
     'stiffy': Key('cmd-alt-left'),
@@ -82,12 +82,12 @@ context.keymap({
     'stippy': Key('cmd-alt-right'),
     'last tab': Key('cmd-alt-left'),
     '(new tab | nippy)': Key('cmd-n'),
-    'jump' + threeDigitNumber: jump_tabs,
+    'jump' + optional_numerals: jump_tabs,
 
     # editing
     'bracken': [Key('cmd-shift-ctrl-right')],
-    '(delete line | snap)': Key('cmd-shift-k'),
-    'snapple': Key('down cmd-shift-k up cmd-left'),
+    '(delete line | snap)' + optional_numerals: repeat_function('cmd-shift-k'),
+    'snapple' + optional_numerals: repeat_function('down cmd-shift-k up cmd-left'),
 
     # various
     'comment': Key('cmd-shift-7'),
@@ -104,5 +104,5 @@ context.keymap({
     # folding
     'fold all': Key('cmd-k cmd-0'),
     'unfold all': Key('cmd-k cmd-j'),
-    'fold level' + threeDigitNumber: fold_level,
+    'fold level' + optional_numerals: fold_level,
 })

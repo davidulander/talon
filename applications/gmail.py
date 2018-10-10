@@ -1,6 +1,6 @@
 from talon.voice import Context, Key, press, Str
 from talon import ctrl
-from user.utils import repeat_function, threeDigitNumber
+from user.utils import repeat_function, optional_numerals
 from time import sleep
 from talon.engine import engine
 from talon import applescript
@@ -32,7 +32,7 @@ delay = 0.1
 
 ctx.keymap({
     'mark': Key('x'),
-    'mark (0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)' + threeDigitNumber: repeat_function('x down', 0.15),
+    'mark (0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)' + optional_numerals: repeat_function('x down', 0.15),
     'mark all': Key('q'),
     'unmark [all]': Key('w'),
     'top message': [Key('up')] * 100,

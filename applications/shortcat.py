@@ -1,5 +1,5 @@
 from talon.voice import Context, Key, press, Str
-from user.utils import parse_words_as_integer, repeat_function, threeDigitNumber
+from user.utils import parse_words_as_integer, repeat_function, optional_numerals
     
 ctx = Context('shortcat', bundle='com.sproutcube.Shortcat')
 

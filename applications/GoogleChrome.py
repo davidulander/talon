@@ -1,7 +1,7 @@
 from talon.voice import Context, Key, press, Str
 from talon import applescript
 from user.utils import parse_words_as_integer
-from user.utils import parse_words_as_integer, repeat_function, threeDigitNumber
+from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 from time import sleep
 
 # It is recommended to use this script in tandem with Vimium, a Google Chrome plugin for controlling the browser via keyboard
@@ -32,28 +32,18 @@ def last_panel(m):
 def focus_address_bar(m):
     press('cmd-l')
 
-# Return focus from the devtools to the page
-def refocus_page(m):
-    focus_address_bar(None)
-    
-    # Escape button
-    # This leaves the focus on the page at previous tab focused point, not the beginning of the page
-    press('escape')
-
 def focus(m):
     press('e')
     press('return')
 
 def back(m):
-    refocus_page(None)
     press('cmd-[')
-    sleep(0.5)
+    sleep(0.75)
     focus(None)
 
 def forward(m):
-    refocus_page(None)
     press('cmd-]')
-    sleep(0.5)
+    sleep(0.75)
     focus(None)
 
 def jump_tab(m):
@@ -150,7 +140,7 @@ context.keymap({
     'developer': Key('cmd-alt-i'),
     'console': Key('cmd-alt-j'),
 
-    'refocus page': refocus_page,
+    'refocus page': focus,
     '[refocus] dev tools': open_focus_devtools,
     
     # Clipboard

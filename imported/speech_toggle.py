@@ -21,22 +21,21 @@ def on_menu(item):
 
 def swedish_mode(m):
     global is_swedish_mode
-    engine.mimic('go to sleep'.split())
-    sleep(0.5)
-    press('cmd-shift-alt-d')
     set_enabled(False)
-    is_swedish_mode = True
+    engine.mimic('go to sleep'.split())
+    if is_swedish_mode == False:
+        is_swedish_mode = True
+        sleep(0.5)
+        press('cmd-shift-alt-d')
 
 def talon_mode(m):
     global is_swedish_mode
     set_enabled(True)
+    engine.mimic('go to sleep'.split())
     if is_swedish_mode == True:
         is_swedish_mode = False
-        press('cmd-shift-alt-d')
         sleep(1)
-        engine.mimic('go to sleep'.split())
-    else:
-        engine.mimic('go to sleep'.split())
+        press('cmd-shift-alt-d')
 
 def dragon_mode(m):
     global is_swedish_mode
