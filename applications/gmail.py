@@ -45,4 +45,5 @@ ctx.keymap({
     'search': '/',
     'reply': 'a',
     'send': Key('cmd-return'),
+    'compose': Key('c'),
 })

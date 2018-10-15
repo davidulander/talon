@@ -69,7 +69,7 @@ def repeat_function(keyDescription, delay=0, actionsPerRepeatCycle=1):
                     sleep(delay)
     return repeater
 
-optional_numerals = '(0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)*'
+optional_numerals = '(0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)**'
 
 def parse_word(word):
     word = str(word)

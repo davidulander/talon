@@ -80,7 +80,7 @@ keymap.update({
     'slappy': [Key('end enter')],
     'slipper': [Key('home enter up')],
     '(stacy | spacey)': [Key('enter enter up')],
-
+    'tab' + optional_numerals: repeat_function('tab'),
 
     # select
     'select word': Key('alt-right alt-shift-left'),
@@ -135,6 +135,12 @@ keymap.update({
     'show app windows': lambda m: macos.dock_notify('com.apple.expose.front.awake'),
     'auto click': Key('cmd-alt-shift-ctrl-m'),
     'elipsis': ['...'],
+
+    'increase brightness': [Key('brightness_up')] * 2,
+    'decrease brightness': [Key('brightness_down')] * 2,
+    'increase volume': [Key('volume_up')] * 2,
+    'decrease volume': [Key('volume_down')] * 2,
+    'mute sound': Key('mute'),
 }) 
 
 ctx.keymap(keymap)

@@ -38,13 +38,9 @@ def focus(m):
 
 def back(m):
     press('cmd-[')
-    sleep(0.75)
-    focus(None)
 
 def forward(m):
     press('cmd-]')
-    sleep(0.75)
-    focus(None)
 
 def jump_tab(m):
     tab_number = parse_words_as_integer(m._words[1:])
