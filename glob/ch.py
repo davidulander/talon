@@ -57,8 +57,8 @@ keymap.update({
     '(left | up | right | down)' + optional_numerals : go_direction,
 
     # undo
-    '(regret | undo | dazzle | dizzle)' + optional_numerals: repeat_function('cmd-z'),
-    '(redo | razzle | rizzle)' + optional_numerals: repeat_function('cmd-shift-z'),
+    '(undo | dazzle)' + optional_numerals: repeat_function('cmd-z'),
+    '(redo | razzle)' + optional_numerals: repeat_function('cmd-shift-z'),
 
     # editing
     'cut': Key('cmd-x'),
