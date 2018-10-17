@@ -106,7 +106,7 @@ context.keymap({
     
     'stippy': Key('cmd-alt-right'),
     'next tab': Key('cmd-alt-right'),
-    'stiffy': Key('cmd-alt-left'),
+    'steffy': Key('cmd-alt-left'),
     'last tab': Key('cmd-alt-left'),
     
     'jump (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)': jump_tab,

@@ -77,7 +77,7 @@ context.keymap({
     'line down' + optional_numerals: repeat_function( 'alt-down'),
 
     # tabbing
-    'stiffy': Key('cmd-alt-left'),
+    'steffy': Key('cmd-alt-left'),
     'next tab': Key('cmd-alt-right'),
     'stippy': Key('cmd-alt-right'),
     'last tab': Key('cmd-alt-left'),
