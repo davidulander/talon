@@ -77,11 +77,6 @@ context.keymap({
     'line down' + optional_numerals: repeat_function( 'alt-down'),
 
     # tabbing
-    'steffy': Key('cmd-alt-left'),
-    'next tab': Key('cmd-alt-right'),
-    'stippy': Key('cmd-alt-right'),
-    'last tab': Key('cmd-alt-left'),
-    '(new tab | nippy)': Key('cmd-n'),
     'jump' + optional_numerals: jump_tabs,
 
     # editing
@@ -97,9 +92,10 @@ context.keymap({
     '(version | source) control': Key('ctrl-shift-g'),
     'extensions': Key('cmd-shift-x'),
     '(drop-down | drop)': Key('ctrl-space'),
-    'go to definition': Key('f12'),
+    '(go to | find) definition': Key('f12'),
     'go bracket': [Key('cmd-alt-shift-b')] * 2,
     'select bracket': Key('cmd-alt-shift-ctrl-b'),
+    'keyboard shortcuts': Key('cmd-k cmd-s'),
 
     # folding
     'fold all': Key('cmd-k cmd-0'),

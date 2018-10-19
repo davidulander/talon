@@ -100,15 +100,7 @@ context.keymap({
     'downloads': Key('cmd-shift-j'),
     'close downloads': Key('cmd-shift-j cmd-w'),
 
-    '(new tab | nippy)': Key('cmd-t'),
-    'close tab': Key('cmd-w'),
     '(reopen tab | undo crack)': Key('cmd-shift-t'),
-    
-    'stippy': Key('cmd-alt-right'),
-    'next tab': Key('cmd-alt-right'),
-    'steffy': Key('cmd-alt-left'),
-    'last tab': Key('cmd-alt-left'),
-    
     'jump (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)': jump_tab,
     '(end | rightmost) tab': Key('cmd-9'),
     

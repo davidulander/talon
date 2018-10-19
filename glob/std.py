@@ -186,7 +186,7 @@ keymap.update({
     '(tab | tarp)':   Key('tab'),
     'tarsh': Key('shift-tab'),
 
-    '(enter | return)': Key('enter'),
+    'enter': Key('enter'),
     'escape': Key('esc'),
     'questionmark': '?',
     'tilde': '~',

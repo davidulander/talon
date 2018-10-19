@@ -59,21 +59,25 @@ def move_mouse_relative(m):
         'down': (0, 1),
         'left': (-1, 0)
     }[direction_type]
-    move_mouse_programmatically_without_auto_click(0, 0, direction_vector[0] * line_number, direction_vector[1] * line_number)
+    current_position = ctrl.mouse_pos()
+    move_mouse_programmatically_without_auto_click(
+        current_position[0] + direction_vector[0] * line_number,
+        current_position[1] + direction_vector[1] * line_number
+    )
 
 def move_mouse_absolute(xPos, yPos):
     def move_mouse_to_position(m):
-        move_mouse_programmatically_without_auto_click(xPos, yPos, 0, 0)
+        move_mouse_programmatically_without_auto_click(xPos, yPos)
     return move_mouse_to_position
 
-def move_mouse_programmatically_without_auto_click(xPos, yPos, dx, dy):
+def move_mouse_programmatically_without_auto_click(xPos, yPos):
     if auto_clicker.is_activated():
         auto_clicker.disable()
-        ctrl.mouse(xPos, yPos, dx, dy)
+        ctrl.mouse(xPos, yPos)
         sleep(0.5)
         auto_clicker.enable()
     else:
-        ctrl.mouse(xPos, yPos, dx, dy)
+        ctrl.mouse(xPos, yPos)
 
 mouse_scroll_mode = {
     'LEFT': (220, 420),
@@ -83,22 +87,22 @@ mouse_scroll_mode = {
 
 current_mouse_scroll_mode = mouse_scroll_mode['MIDDLE']
 
-def scroll_mouse(direction):
+def scroll_mouse(direction, distance):
     def scroll(m):
         global current_mouse_scroll_mode
         (x, y) = current_mouse_scroll_mode
         if ctrl.mouse_pos() != (x, y):
             if auto_clicker.is_activated():
                 auto_clicker.disable()
-                ctrl.mouse(x, y, 0, 0)
-                ctrl.mouse_scroll(direction * 600, 0)
+                ctrl.mouse(x, y)
+                ctrl.mouse_scroll(direction * distance, 0)
                 sleep(0.5)
                 auto_clicker.enable()
             else:
-                ctrl.mouse(x, y, 0, 0)
-                ctrl.mouse_scroll(direction * 600, 0)
+                ctrl.mouse(x, y)
+                ctrl.mouse_scroll(direction * distance, 0)
         else:
-            ctrl.mouse_scroll(direction * 600, 0)
+            ctrl.mouse_scroll(direction * distance, 0)
     return scroll
 
 def change_mouse_scroll_mode(m):
@@ -107,7 +111,7 @@ def change_mouse_scroll_mode(m):
     mode = m._words[2].word.upper()
     current_mouse_scroll_mode = mouse_scroll_mode[mode]
     (x, y) = current_mouse_scroll_mode
-    move_mouse_programmatically_without_auto_click(x, y, 0, 0)
+    move_mouse_programmatically_without_auto_click(x, y)
 
 def toggle_mouse_visibility(m):
     if str(m._words[1]) == 'show':
@@ -129,8 +133,10 @@ keymap = {
     
     # scrolling
     'mouse mode (left | middle | right)': change_mouse_scroll_mode,
-    '(scroll mouse [down] | skip | skippy)': scroll_mouse(1),
-    '(scroll mouse up | hip | hippie | flick | flicky)': scroll_mouse(-1),
+    'skip': scroll_mouse(1, 600),
+    'skippy': scroll_mouse(1, 300),
+    'hip': scroll_mouse(-1, 600),
+    'hippie': scroll_mouse(-1, 300),
     # '[scroll] (bottom | doomway)': lambda m: ctrl.mouse_scroll(10000, 0),
     '[scroll] (bottom | doomway)': Key('cmd-down'),
     # '[(scroll | go)] [to] (top | jeepway)': lambda m: ctrl.mouse_scroll(-10000, 0),

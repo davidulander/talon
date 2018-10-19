@@ -67,8 +67,8 @@ keymap.update({
     'copy line': Key('end cmd-shift-left cmd-c'),
     'paste': Key('cmd-v'),
 
-    '(delete | slurp)' + optional_numerals: repeat_function('delete'),
-    'slurpy' + optional_numerals: repeat_function('alt-delete'),
+    'slurpy' + optional_numerals: repeat_function('delete'),
+    'slurp' + optional_numerals: repeat_function('alt-delete'),
     'delete all': Key('cmd-a backspace'),
 
     'snipple': Key('cmd-shift-left delete'),
@@ -115,12 +115,17 @@ keymap.update({
 	'go developer': go_to_path('~/Developer'),
 	'go talon': go_to_path('~/.talon/user'),
 
+    # handling tabs
+    'crack' + optional_numerals: repeat_function('cmd-w',0.1),
+    '(close tab) | (tab close)': Key('cmd-w'),
+    '(last tab | steffy)': Key('cmd-alt-left'),
+    '(next tab | steppy)': Key('cmd-alt-right'),
+    '(new tab | nippy)': Key('cmd-n'),
+
     # various
     'save': Key('cmd-s'),
     'maximize': Key('cmd-m'),
-    'crack' + optional_numerals: repeat_function('cmd-w',0.1),
     '(close | quit) application': Key('cmd-q'),
-    '(close tab) | (tab close)': Key('cmd-w'),
     'tab window': Key('alt-tab'),
     'tabbing menu': Key('cmd-alt-ctrl-shift-t'),
 

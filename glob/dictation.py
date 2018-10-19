@@ -1,20 +1,25 @@
 # from talon.voice import Context, ContextGroup, talon, press, Key, Str
-# from talon import app
+# from talon import app, cron
+# from talon_plugins import speech
+
+# # speech.menu.dragon_item
+
+# print(speech.menu.active_langs)
 
 # current_mode = 'start'
 
 # def switch_to_dictate_context(m):
 #     talon.disable()
-#     app.icon_color(1, 0, 0, 1)
 #     dictate_sentence_group.load()
 #     dictate_sentence_group.enable()
+#     # speech.menu.lang_activate(speech.menu.active_langs['sv_SE'])
 
 # def switch_to_talon_context(m):
 #     global current_mode
 #     current_mod = 'start'
 #     dictate_sentence_group.disable()
 #     talon.enable()
-#     app.icon_color(0, 0.7, 0, 1)
+#     # cron.after('0s', lambda: speech.menu.lang_activate(speech.menu.dragon_item))
 
 # def reset_mode(m):
 #     global current_mode
@@ -75,7 +80,7 @@
 
 # dictate_sentence.keymap({
 #     '<dgndictation>': sentence_text,
-#     'stop': switch_to_talon_context,
+#     'stopp': switch_to_talon_context,
 #     'dot': '.',
 #     'dot': ['.', reset_mode],
 #     'test': 'a',
@@ -83,6 +88,5 @@
 
 # ctx = Context('dictate_switch')
 # ctx.keymap({
-#     'start sentence': switch_to_dictate_context,
-#     'start sentence': switch_to_dictate_context,
+#     'testify': switch_to_dictate_context,
 # })
