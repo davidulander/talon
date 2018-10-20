@@ -78,6 +78,7 @@ context.keymap({
 
     # tabbing
     'jump' + optional_numerals: jump_tabs,
+    '(new tab | nippy)': Key('cmd-n'),
 
     # editing
     'bracken': [Key('cmd-shift-ctrl-right')],

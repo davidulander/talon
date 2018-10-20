@@ -120,7 +120,6 @@ keymap.update({
     '(close tab) | (tab close)': Key('cmd-w'),
     '(last tab | steffy)': Key('cmd-alt-left'),
     '(next tab | steppy)': Key('cmd-alt-right'),
-    '(new tab | nippy)': Key('cmd-n'),
 
     # various
     'save': Key('cmd-s'),
