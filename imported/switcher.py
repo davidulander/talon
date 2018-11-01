@@ -22,7 +22,7 @@ def switch_app(m, name=None):
 ctx = Context('switcher')
 keymap = {
     '(focus | fox) {switcher.apps}': switch_app,
-    '(focus | fox) term': lambda x: switch_app(x, 'iTerm2'),
+    '(focus | fox) (term | terminal)': lambda x: switch_app(x, 'iTerm2'),
     '(focus | fox) skype': lambda x: switch_app(x, 'Skype for Business'),
 }
 ctx.keymap(keymap)

@@ -17,7 +17,6 @@ keymap = {
     '(highlight command | insert command)': ['``', Key('left')],
     '(highlight code | insert code)': ['``````', Key('left left left')],
     'read all': Key('shift-esc'),
-    'space' + optional_numerals: function_with_numbers(1, 'cmd-'),
 
     # Channel
     'channel': Key('cmd-k'),
@@ -59,7 +58,6 @@ keymap = {
     '(bullet | bulleted) list': Key('cmd-shift-8'),
     '(number | numbered) list': Key('cmd-shift-7'),
     '(quotes | quotation)': Key('cmd-shift->'),
-    'bold': Key('cmd-b'),
     '(italic | italicize)': Key('cmd-i'),
     '(strike | strikethrough)': Key('cmd-shift-x'),
     'mark all read': Key('shift-esc'),

@@ -1,7 +1,8 @@
-from talon.voice import Context, ContextGroup, press
+from talon.voice import Context, ContextGroup, press, Key
 from talon.engine import engine
 from talon_plugins import speech
 from time import sleep
+from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 
 is_swedish_mode = False
 
@@ -44,5 +45,7 @@ sleepy.keymap({
     'dragon mode': dragon_mode,
     'talon mode': talon_mode,
     'swedish mode': swedish_mode,
+    
+    '(backspace | rep | rap)' + optional_numerals: repeat_function('alt-backspace'),
 })
 sleep_group.load()
