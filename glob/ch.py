@@ -91,7 +91,6 @@ keymap.update({
     'deselect': Key('alt-right alt-shift-left'),
     'find': Key('cmd-f'),   
 
-    'select instances': Key('cmd-shift-l'),
     'shreepway': Key('cmd-shift-up'),
     'shroomway': Key('cmd-shift-down'),
     'shreep' + optional_numerals: repeat_function('shift-up'),

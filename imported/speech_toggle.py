@@ -47,5 +47,6 @@ sleepy.keymap({
     'swedish mode': swedish_mode,
     
     '(backspace | rep | rap)' + optional_numerals: repeat_function('alt-backspace'),
+    'enter': Key('enter'),
 })
 sleep_group.load()
