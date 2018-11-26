@@ -56,10 +56,11 @@ websites = {
     'get hub': 'https://github.com',
     'reddit': 'https://reddit.com',
     'talon docs': 'https://github.com/dwighthouse/unofficial-talonvoice-docs',
-    'talon official docs': 'https://talonvoice.com/docs/index.html',
+    'official docs': 'https://talonvoice.com/docs/index.html',
     'hobo': 'https://se.hbonordic.com/',
     'messenger': 'https://www.messenger.com/',
     'youtube': 'https://www.youtube.com/',
+    'community': 'https://github.com/dwiel/talon_community',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
@@ -98,7 +99,7 @@ context.keymap({
     'zoom in': Key('cmd-+'),
     'zoom out': Key('cmd--'),
     'downloads': Key('cmd-shift-j'),
-    'close downloads': Key('cmd-shift-j cmd-w'),
+    '(close | hide). downloads': Key('cmd-shift-j cmd-w'),
 
     '(new tab | nippy)': Key('cmd-t'),
     '(reopen tab | undo crack)': Key('cmd-shift-t'),

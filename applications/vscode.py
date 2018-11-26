@@ -85,6 +85,7 @@ context.keymap({
     '(delete line | snap)' + optional_numerals: repeat_function('cmd-shift-k'),
     'snapple' + optional_numerals: repeat_function('down cmd-shift-k up cmd-left'),
     'select instances': Key('cmd-shift-l'),
+    'auto indent': Key('alt-shift-f'),
 
     # various
     'comment': Key('cmd-shift-7'),

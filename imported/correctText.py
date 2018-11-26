@@ -3,65 +3,91 @@ from talon import clip, tap
 from talon import cron
 import time
 
+# this is. a test.paragraph..it HasMore thanOne various.errors,in its capitalisation.. and...spacing? this script will attempt!to
+
 context = Context('test')
-delay = '1000ms'
 
-def correct_text():
-
-    # inputText=" this is a test paragraph.It has various errors,in its capitalisation and spacing  . this script will attempt  to fix these errors.  the aim is to use it with Dragon in applications where it can't auto space or auto capitalise."
-
-    cron.after(delay,press('cmd-c'))
-    time.sleep(0.1)
-    inputText=clip.get()
-    print(inputText)
-
-    correctText=''
-    uppern=True # whether to capitalise the next character
-    spacen=False # whether to allow the next character to be a space
-    spacenf=False #Whether to force a space before the next character if one doesn't exist
-    charp=''
-    for index,char in enumerate(inputText):
-        charNew=''
-        upper=uppern
-        space=spacen
-        if (char != ' ') and spacenf and (charp=='.'):
-            charNew+=' '
-        spacenf=False
-
-        if char== '.' or char==',':
-            while correctText[-1]==' ':
-                correctText=correctText[:-1]
-            spacen=True
-            uppern=True
-            spacenf=True
-            charNew+=char
-        elif char==' ':
-            if spacen:
-                charNew+=char
-                spacen=False
-            else:
-                charNew=''
-        elif upper:
-            charNew+=char.upper()
-            uppern=False
-            spacen=True
-        else:
-            charNew+=char
-            spacen=True
-
-        correctText+=charNew
-        charp=charNew
-
+def correctText():
+    with clip.capture() as s:
+        press('cmd-c')
+    inputText = s.get()
+    # print('!!!!')
+    # print(inputText)
+    # print('!!!!')
+    correctText = formatText(inputText)
     clip.set(correctText)
-    time.sleep(0.1)
-    cron.after(delay,press('cmd-v'))
+    press('cmd-v')
 
-def correct_text2(index):
+def formatText(inputText):
+    correctText = ''
+    uppern = True  # whether to capitalise the next character
+    spacen = False  # whether to allow the next character to be a space
+    spacenf = False  # Whether to force a space before the next character if one doesn't exist
+    charPrevious = ''
 
-    correct_text()
+    for index, charCurrent in enumerate(inputText):
+        charNew = ''
+        upper = uppern
+        space = spacen
+
+        if len(correctText) == 0:
+            uppern = False
+            if charCurrent == ' ':
+                continue
+            correctText = charCurrent.upper()
+            continue
+
+        if (charCurrent not in ' .') and spacenf and charPrevious in '.,!?':
+            charNew += ' '
+        spacenf = False
+
+        if charCurrent.isupper() and charPrevious != ' ' and len(charNew) < 1:
+            charNew += ' '
+
+        if charCurrent in '.!?':
+            while correctText[-1] == ' ':
+                correctText = correctText[:-1]
+            spacenf = True
+            spacen = True
+            uppern = True
+            charNew += charCurrent
+
+        elif charCurrent == ',':
+            while correctText[-1] == ' ':
+                correctText = correctText[:-1]
+            spacen = True
+            spacenf = True
+            charNew += charCurrent
+
+        elif charCurrent == ' ':
+            if spacen:
+                charNew += charCurrent
+                spacen = False
+            else:
+                charNew = ''
+        elif upper:
+            charNew += charCurrent.upper()
+            uppern = False
+            spacen = True
+        else:
+            charNew += charCurrent.lower()
+            spacen = True
+
+        correctText += charNew
+        charPrevious = charNew
+    
+    return correctText
+
+def correctSelectedText(m):
+    correctText()
+
+def correctAllText(m):
+    press('cmd-a')
+    correctText()
 
 keymap = {
-    'correct text': correct_text2,
+    'correct text': correctSelectedText,
+    'correct all text': correctAllText,
 }
 
 context.keymap(keymap)

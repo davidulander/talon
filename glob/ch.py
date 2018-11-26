@@ -148,6 +148,13 @@ keymap.update({
 
 ctx.keymap(keymap)
 
+ctx.vocab = [
+    'Talon',
+    'talon',
+]
+
+# ctx.vocab_remove = ['doctor', 'Doctor']
+
     # WORDS
     # gibby, shibby, swick, totch, baxley, peach, carmex, kite, wonkrim, wonkrish, scrhim, shrish, fame, fish, crimp, chris, jeep, dune, doom
     # shockey, shockoon, sprinkle, spring, dear, smear, trundle, jolt, snipline, sprinkoon
