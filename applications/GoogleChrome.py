@@ -70,23 +70,14 @@ context.set_list('websites', websites.keys())
 def open_website(m):
     name = str(m._words[1])
     w = websites.get(name)
-    code = r'''
-    tell application "Google Chrome"
-	if title of active tab of window 1 is "New Tab" then
-            set t to active tab of window 1
-	else
-            set t to make new tab at end of tabs of window 1
-	end if
-	set URL of t to "%s"
-    end tell
-    ''' % w
-    applescript.run(code)
+    press('cmd-t')
+    Str(w)(None)
+    press('enter')
 
 context.keymap({
     'address bar': focus_address_bar,
 
     'link': [Key('esc'), Key('esc'), Key('esc'), 'f'],
-    # 'link': [Key('esc'), Key('esc'), Key('e'), Key('return'), Key('f')],
 
     'back[ward]': back,
     'forward': forward,
@@ -99,7 +90,7 @@ context.keymap({
     'zoom in': Key('cmd-+'),
     'zoom out': Key('cmd--'),
     'downloads': Key('cmd-shift-j'),
-    '(close | hide). downloads': Key('cmd-shift-j cmd-w'),
+    '(close | hide) downloads': Key('cmd-shift-j cmd-w'),
 
     '(new tab | nippy)': Key('cmd-t'),
     '(reopen tab | undo crack)': Key('cmd-shift-t'),

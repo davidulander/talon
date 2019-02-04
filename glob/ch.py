@@ -62,9 +62,7 @@ keymap.update({
 
     # editing
     'cut': Key('cmd-x'),
-    'cut line': Key('end cmd-shift-left cmd-x'),
     'copy': Key('cmd-c'),
-    'copy line': Key('end cmd-shift-left cmd-c'),
     'paste': Key('cmd-v'),
 
     'slurpy' + optional_numerals: repeat_function('delete'),
@@ -113,6 +111,7 @@ keymap.update({
 	'go applications': Key('cmd-shift-a'),
 	'go developer': go_to_path('~/Developer'),
 	'go talon': go_to_path('~/.talon/user'),
+    'go pictures': go_to_path('~/Pictures'),
 
     # handling tabs
     'crack' + optional_numerals: repeat_function('cmd-w',0.1),
@@ -132,6 +131,7 @@ keymap.update({
     'select (a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z)+': shortcat_function,
     'split right': Key('cmd-alt-shift-right'),
     'split left': Key('cmd-alt-shift-left'),
+    'shift display': Key('shift-ctrl-alt-cmd-m'),
 
     'mission control': lambda m: macos.dock_notify('com.apple.expose.awake'),
     'show desktop': lambda m: macos.dock_notify('com.apple.showdesktop.awake'),
@@ -142,8 +142,12 @@ keymap.update({
     'increase brightness': [Key('brightness_up')] * 2,
     'decrease brightness': [Key('brightness_down')] * 2,
     'increase volume': [Key('volume_up')] * 2,
+    'volume up': [Key('volume_up')] * 2,
     'decrease volume': [Key('volume_down')] * 2,
+    'volume down': [Key('volume_down')] * 2,
     'mute sound': Key('mute'),
+
+    'paste e-mail': ['christian.h.hultin@gmail.com'],
 }) 
 
 ctx.keymap(keymap)
@@ -151,6 +155,11 @@ ctx.keymap(keymap)
 ctx.vocab = [
     'Talon',
     'talon',
+]
+
+ctx.vocab_remove = [
+    'tallow',
+    'Tallow',
 ]
 
 # ctx.vocab_remove = ['doctor', 'Doctor']

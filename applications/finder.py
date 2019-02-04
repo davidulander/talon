@@ -32,4 +32,5 @@ ctx.keymap({
 	'[go] applications': Key('cmd-shift-a'),
 	'[go] developer': go_to_path('~/Developer'),
 	'[go] talon': go_to_path('~/.talon/user'),
+	'[go] pictures': go_to_path('~/Pictures'),
  })

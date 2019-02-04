@@ -144,7 +144,7 @@ keymap = {
 
 
     # specific locations
-    'mouse notification': move_mouse_absolute(1380, 57),
+    'mouse pop': move_mouse_absolute(1380, 57),
     'mouse outlook': move_mouse_absolute(1376, 881),
 
 }

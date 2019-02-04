@@ -21,6 +21,8 @@ keymap = {
     'next pane': Key('ctrl-tab'),
     'make (durr | dear) [<dgndictation>]': ['mkdir ', text],
     'list': ['ls -a', Key('return')],
+    'restart voice recognition': ['restartTalonDragon\n'],
+    'restart talon': ['restartTalon\n'],
 
     # package managers
     'run': ['nmp run dev\n'],

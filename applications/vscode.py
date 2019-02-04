@@ -4,6 +4,7 @@ from user.utils import parse_words_as_integer, repeat_function, optional_numeral
 
 context = Context('VSCode', bundle='com.microsoft.VSCode')
 
+
 def jump_to_line(m):
     line_number = parse_words_as_integer(m._words[1:])
 
@@ -18,6 +19,7 @@ def jump_to_line(m):
     Str(str(line_number))(None)
     press('enter')
 
+
 def jump_tabs(m):
     line_number = parse_words_as_integer(m._words[1:])
 
@@ -27,11 +29,13 @@ def jump_tabs(m):
     for i in range(0, line_number):
         press('cmd-alt-right')
 
+
 def jump_to_next_word_instance(m):
     press('escape')
     press('cmd-f')
     Str(' '.join([str(s) for s in m.dgndictation[0]._words]))(None)
     press('return')
+
 
 def select_lines_function(m):
     divider = 0
@@ -49,12 +53,14 @@ def select_lines_function(m):
     for i in range(0, number_of_lines+1):
         press('shift-down')
 
+
 def fold_level(m):
     line_number = parse_words_as_integer(m._words)
     if line_number > 9:
         return
     press('cmd-k')
     press('cmd-' + str(line_number))
+
 
 context.keymap({
     # Navigating text
@@ -70,12 +76,17 @@ context.keymap({
 
     # Clipboard
     'clone': Key('alt-shift-down'),
-    
+    'cut line': Key('end cmd-shift-left cmd-x backspace'),
+    'copy line': Key('end cmd-shift-left cmd-c'),
+
     # Navigation
     'Go to line': Key('cmd-g'),
-    'line up' + optional_numerals: repeat_function( 'alt-up'),
-    'line down' + optional_numerals: repeat_function( 'alt-down'),
+    'go bracket': [Key('cmd-alt-shift-b')] * 2,
+    'explorer': Key('cmd-shift-e'),
+    'extensions': Key('cmd-shift-x'),
+    'open file': Key('cmd-down'),
 
+    'toggle pane': Key('cmd-b'),
     # tabbing
     'jump' + optional_numerals: jump_tabs,
     '(new tab | nippy)': Key('cmd-n'),
@@ -85,18 +96,17 @@ context.keymap({
     '(delete line | snap)' + optional_numerals: repeat_function('cmd-shift-k'),
     'snapple' + optional_numerals: repeat_function('down cmd-shift-k up cmd-left'),
     'select instances': Key('cmd-shift-l'),
-    'auto indent': Key('alt-shift-f'),
+    'indent': Key('alt-shift-f'),
+    'line up' + optional_numerals: repeat_function('alt-up'),
+    'line down' + optional_numerals: repeat_function('alt-down'),
 
     # various
     'comment': Key('cmd-shift-7'),
     'master': Key('cmd-p'),
     'search all': Key('cmd-shift-f'),
-    'explorer': Key('cmd-shift-e'),
     '(version | source) control': Key('ctrl-shift-g'),
-    'extensions': Key('cmd-shift-x'),
     '(drop-down | drop)': Key('ctrl-space'),
     '(go to | find) definition': Key('f12'),
-    'go bracket': [Key('cmd-alt-shift-b')] * 2,
     'select bracket': Key('cmd-alt-shift-ctrl-b'),
     'keyboard shortcuts': Key('cmd-k cmd-s'),
 

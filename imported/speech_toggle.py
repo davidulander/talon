@@ -40,7 +40,7 @@ sleepy = Context('sleepy', group=sleep_group)
 
 sleepy.keymap({
     'talon sleep': lambda m: speech.set_enabled(False),
-    'wake': lambda m: speech.set_enabled(True),
+    'talon wake': lambda m: speech.set_enabled(True),
 
     'dragon mode': dragon_mode,
     'talon mode': talon_mode,
