@@ -12,10 +12,5 @@ ctx = Context('react')
 
 ctx.keymap({
     # Snippets
-    'import react': snippet('imr'),
-    'functional component': snippet('rafc'),
-    # '': snippet(''),
-
-    # JSX / HTML:
-    
+    'log': snippet('cl'),
  })

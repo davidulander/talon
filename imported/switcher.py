@@ -1,5 +1,5 @@
 from talon.voice import Word, Context, Key, Rep, Str, press
-from talon import ui
+from talon import ui, ctrl
 import time
 import os
 
@@ -17,12 +17,19 @@ def switch_app(m, name=None):
             # TODO: replace sleep with a check to see when it is in foreground
             time.sleep(0.25)
             break
+    move_mouse_to_center_of_application()
 
 def launch_app(m):
     name = str(m['switcher.launch'][0])
     path = launch.get(name)
     if path:
         ui.launch(path=path)
+    move_mouse_to_center_of_application()
+
+def move_mouse_to_center_of_application():
+    x, y = ui.active_window().screen.rect.center
+    offset = 300 
+    ctrl.mouse_move(x, y+offset)
 
 ctx = Context('switcher')
 ctx.keymap({

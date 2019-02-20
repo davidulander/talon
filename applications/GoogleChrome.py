@@ -9,25 +9,21 @@ from time import sleep
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
 
-def open_focus_devtools(m):
-    press('cmd-shift-c')
-
 def show_panel(name):
-    open_focus_devtools(None)
-    
     # Open command menu
     press('cmd-shift-p')
-    
-    Str('Show %s'%(name))(None)
+    Str('Show %s' % (name))(None)
+    sleep(0.5)
     press('enter')
 
-def next_panel(m):
-    open_focus_devtools(None)
-    press('cmd-]')
-
-def last_panel(m):
-    open_focus_devtools(None)
-    press('cmd-[')
+def show_panel_adv(number):
+    press('cmd-shift-p')    
+    sleep(0.5)
+    Str('Show Elements')(None)
+    sleep(0.5)
+    press('enter')
+    for j in range(0, number):
+        press('cmd-å')
 
 def focus_address_bar(m):
     press('cmd-l')
@@ -36,8 +32,10 @@ def focus(m):
     press('e')
     press('return')
 
+
 def back(m):
     press('cmd-[')
+
 
 def forward(m):
     press('cmd-]')
@@ -47,6 +45,7 @@ def jump_tab(m):
     if tab_number != None and tab_number > 0 and tab_number < 10:
         command = 'cmd-'+str(tab_number)
         press(command)
+
 
 websites = {
     'facebook': 'https://facebook.com',
@@ -61,11 +60,13 @@ websites = {
     'messenger': 'https://www.messenger.com/',
     'youtube': 'https://www.youtube.com/',
     'community': 'https://github.com/dwiel/talon_community',
+    'local': 'https://localhost:3000',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
 
 context.set_list('websites', websites.keys())
+
 
 def open_website(m):
     name = str(m._words[1])
@@ -83,7 +84,6 @@ context.keymap({
     'forward': forward,
     'page': focus,
     'reload': Key('cmd-r'),
-    'hard reload': Key('cmd-shift-r'),
     'bookmark': Key('cmd-d'),
     'bookmark manager': Key('cmd-alt-b'),
     'history': Key('cmd-y'),
@@ -96,16 +96,21 @@ context.keymap({
     '(reopen tab | undo crack)': Key('cmd-shift-t'),
     'jump (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)': jump_tab,
     '(end | rightmost) tab': Key('cmd-9'),
-    
+
     'find': Key('cmd-f'),
     'next': Key('cmd-g'),
     '(last | prevous)': Key('cmd-shift-g'),
-    
-    'toggle dev tools': Key('cmd-alt-i'),
-    
-    'command [menu]': Key('cmd-shift-p'),
-    'next panel': next_panel,
-    '(last | prevous) panel': last_panel,
+
+    'refocus page': focus,
+
+    # developer tools
+    'master': Key('cmd-shift-p'),
+    'hard reload': Key('cmd-shift-r'),
+    'inspect': Key('cmd-shift-c'),
+    'device': Key('cmd-shift-m'),
+    'developer': Key('cmd-alt-i'),
+    'console': Key('cmd-alt-j'),
+    'panel' + optional_numerals: repeat_function('cmd-å'),
     '[show] application [panel]': lambda m: show_panel('Application'),
     '[show] audit[s] [panel]': lambda m: show_panel('Audits'),
     '[show] console [panel]': lambda m: show_panel('Console'),
@@ -115,15 +120,8 @@ context.keymap({
     '[show] performance [panel]': lambda m: show_panel('Performance'),
     '[show] security [panel]': lambda m: show_panel('Security'),
     '[show] source[s] [panel]': lambda m: show_panel('Sources'),
-    
-    'inspect': Key('cmd-shift-c'),
-    'device': Key('cmd-shift-m'),
-    'developer': Key('cmd-alt-i'),
-    'console': Key('cmd-alt-j'),
+    '[show] redux [panel]': lambda m: show_panel_adv(3),
 
-    'refocus page': focus,
-    '[refocus] dev tools': open_focus_devtools,
-    
     # Clipboard
     'cut': Key('cmd-x'),
     'copy': Key('cmd-c'),
@@ -132,4 +130,10 @@ context.keymap({
 
     # websites
     'website {GoogleChrome.websites}': open_website,
+
+    # workona
+    'workspace[s]': Key('alt-a'),
+    'switch workspace': Key('alt-s'),
+    'save tab': Key('alt-d'),
 })
+# 

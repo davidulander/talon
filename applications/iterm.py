@@ -11,24 +11,29 @@ def text(m):
 ctx = Context('iterm', bundle='com.googlecode.iterm2')
 
 keymap = {
+    # iterm functionality
     '[toggle] full-screen': Key('cmd-shift-enter'),
-    'exit': [Key('ctrl-c'), 'exit\n'],
-    'cancel': [Key('ctrl-c')],
-    'clear': [Key('ctrl-c'), 'clear\n'],
     'split horizontal': Key('cmd-shift-d'),
     'split vertical': Key('cmd-d'),
     '(new tab | nippy)': Key('cmd-t'),
     'next pane': Key('ctrl-tab'),
     'make (durr | dear) [<dgndictation>]': ['mkdir ', text],
-    'list': ['ls -a', Key('return')],
-    'restart voice recognition': ['restartTalonDragon\n'],
-    'restart talon': ['restartTalon\n'],
+
+    # shell scripts
+    'restart voice recognition': ['restartTalonDragon'],
+    'restart talon': ['restartTalon'],
 
     # package managers
-    'run': ['nmp run dev\n'],
-    'install node': ['npm i\n'],
+    'run': ['npm run dev'],
+    'install node': ['npm i'],
     'install (bower | power | bauer)': ['npm run bower\n'],
     'install (all | or | old)': ['npm i && npm run bower\n'],
+    
+    # General commands
+    'exit': [Key('ctrl-c'), 'exit'],
+    'cancel': [Key('ctrl-c')],
+    'clear': [Key('ctrl-c'), 'clear\n'],
+    'list': ['ls -a', Key('return')],
     
     # Git
     '(get | git)': ['git'],
@@ -48,6 +53,7 @@ keymap = {
     '(get | git) remote': ['git remote -v'],
     '(get | git) check out': ['git checkout '],
     '(get | git) merge': ['git merge '],
+    '(get | git) stash': ['git stash'],
     
 }
 

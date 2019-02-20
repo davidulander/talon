@@ -1,7 +1,9 @@
 from talon import macos
+from talon.engine import engine
 from talon.voice import Word, Context, Key, Rep, RepPhrase, Str, press
 from talon import ctrl, clip
 from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
+from talon_plugins import speech
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 import string
 
@@ -33,6 +35,11 @@ def go_to_path(path):
 	return path_function
 
 scrollingDistance = 60
+
+def lock_computer(m):
+    speech.set_enabled(False),
+    press('ctrl-cmd-q')
+
 
 ctx = Context('chInput')
 
@@ -75,8 +82,9 @@ keymap.update({
     '(rick | rip)' + optional_numerals: repeat_function('backspace'),
     '(backspace | rep | rap)' + optional_numerals: repeat_function('alt-backspace'),
 
+    'slap': Key('enter'),
     'slappy': [Key('end enter')],
-    'slipper': [Key('home enter up')],
+    'slippy': [Key('home enter up')],
     '(stacy | spacey)': [Key('enter enter up')],
     'tab' + optional_numerals: repeat_function('tab'),
 
@@ -127,27 +135,35 @@ keymap.update({
     'tabbing menu': Key('cmd-alt-ctrl-shift-t'),
 
     'worm': 'python',
-    '(short cat)': Key('shift-cmd-space'),
+    'short cat': Key('shift-cmd-space'),
     'select (a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z)+': shortcat_function,
     'split right': Key('cmd-alt-shift-right'),
     'split left': Key('cmd-alt-shift-left'),
-    'shift display': Key('shift-ctrl-alt-cmd-m'),
+    'shift (display | screen)': Key('shift-ctrl-alt-cmd-m'),
 
     'mission control': lambda m: macos.dock_notify('com.apple.expose.awake'),
     'show desktop': lambda m: macos.dock_notify('com.apple.showdesktop.awake'),
     'show app windows': lambda m: macos.dock_notify('com.apple.expose.front.awake'),
+    'lock (computer | screen)': lock_computer,
     'auto click': Key('cmd-alt-shift-ctrl-m'),
     'elipsis': ['...'],
 
     'increase brightness': [Key('brightness_up')] * 2,
     'decrease brightness': [Key('brightness_down')] * 2,
-    'increase volume': [Key('volume_up')] * 2,
+    '(increase | volume) (volume | increase)': [Key('volume_up')] * 2,
     'volume up': [Key('volume_up')] * 2,
-    'decrease volume': [Key('volume_down')] * 2,
+    '(decrease | volume) (volume | decrease)': [Key('volume_down')] * 2,
     'volume down': [Key('volume_down')] * 2,
     'mute sound': Key('mute'),
+    '(play | pause) sound': Key('play'),
 
     'paste e-mail': ['christian.h.hultin@gmail.com'],
+
+    # editing text
+    'bold': Key('cmd-b'),
+    'italics': Key('cmd-i'),
+    'underline': Key('cmd-u'),
+    
 }) 
 
 ctx.keymap(keymap)
@@ -160,6 +176,8 @@ ctx.vocab = [
 ctx.vocab_remove = [
     'tallow',
     'Tallow',
+    'tyler',
+    'Tyler',
 ]
 
 # ctx.vocab_remove = ['doctor', 'Doctor']

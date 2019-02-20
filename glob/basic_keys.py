@@ -37,6 +37,7 @@ symbols = {
     'forward slash': '/', 'slash': '/',
     'backslash': '\\',
     'minus': '-', 'dash': '-',
+    'underscore': '_',
     'equals': '=',
 }
 modifiers = {
