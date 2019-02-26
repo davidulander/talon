@@ -12,6 +12,7 @@ ctx = Context('iterm', bundle='com.googlecode.iterm2')
 
 keymap = {
     # shortcut projects:
+    'cd home': ['~/'],
     'cd talon': ['~/.talon/user'],
     'cd developer': ['~/Developer/'],
     'cd edge labs': ['~/Developer/edge-labs'],
@@ -38,7 +39,8 @@ keymap = {
     'exit': [Key('ctrl-c'), 'exit'],
     'cancel': [Key('ctrl-c')],
     'clear': [Key('ctrl-c'), 'clear\n'],
-    'list': ['ls -a', Key('return')],
+    'list': ['ls\n'],
+    'list more': ['ls -a', Key('return')],
     
     # Git
     '(get | git)': ['git'],
@@ -48,7 +50,7 @@ keymap = {
     '(get | git) simple commit': ["git add .  && git commit -m 'update'  && git push"],
     '(get | git) clone': ['git clone '],
     '(get | git) push': ['git push'],
-    '(get | git) status': ['git status', Key('return')],
+    '(get | git) status': ['git status\n'],
     '(get | git) (difference | did | dave)': ['git diff', Key('return')],
     '(get | git) pull': ['git pull'],
     '(get | git) pull origin master': ['git pull origin master'],
