@@ -52,7 +52,7 @@ def mouse_release(m):
 
 keymap = {
     'right click': delayed_right_click,
-    '(click | pick)': delayed_click,
+    '(click | pick | test)': delayed_click,
     'midclick': delayed_middle_click,
     'dubclick': delayed_dubclick,
     'tripclick': delayed_tripclick,

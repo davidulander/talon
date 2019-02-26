@@ -8,8 +8,8 @@ from user.utils import parse_words_as_integer, repeat_function, optional_numeral
 def move_mouse_relative(m):
     direction_type = m._words[1].word
     multiplier = 50
-    line_number = parse_words_as_integer(m._words[2:]) * multiplier
-    if line_number == None:
+    pixels_to_travel = parse_words_as_integer(m._words[2:]) * multiplier
+    if pixels_to_travel == None:
         return
     direction_vector = {
         'up': (0, -1),
@@ -17,8 +17,8 @@ def move_mouse_relative(m):
         'down': (0, 1),
         'left': (-1, 0)
     }[direction_type]
-    current_position = ctrl.mouse_pos()
-    ctrl.mouse_move(x, y)
+    (x, y) = ctrl.mouse_pos()
+    ctrl.mouse_move(x + direction_vector[0] * pixels_to_travel, y + direction_vector[1] * pixels_to_travel)
 
 def move_mouse_absolute(xPos, yPos):
     def move_mouse_to_position(m):

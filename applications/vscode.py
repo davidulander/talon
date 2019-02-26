@@ -85,8 +85,14 @@ context.keymap({
     'explorer': Key('cmd-shift-e'),
     'extensions': Key('cmd-shift-x'),
     'open file': Key('cmd-down'),
-
     'toggle pane': Key('cmd-b'),
+
+    # special input defined i keybindings.json file, this is from a stackoverflow tip which emulates wim 
+    'navigate left': Key('ctrl-cmd-shift-h'),
+    'navigate right': Key('ctrl-cmd-shift-l'),
+    'navigate up': Key('ctrl-cmd-shift-k'),
+    'navigate down': Key('ctrl-cmd-shift-j'),
+
     # tabbing
     'jump' + optional_numerals: jump_tabs,
     '(new tab | nippy)': Key('cmd-n'),
@@ -109,6 +115,8 @@ context.keymap({
     '(go to | find) definition': Key('f12'),
     'select bracket': Key('cmd-alt-shift-ctrl-b'),
     'keyboard shortcuts': Key('cmd-k cmd-s'),
+    '(edit file | pin tab)': Key('a cmd-z'),
+    'Split editor': Key('ctrl-cmd-alt-shift-7'),
 
     # folding
     'fold all': Key('cmd-k cmd-0'),

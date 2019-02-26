@@ -1,52 +1,52 @@
-from talon.voice import Str
-from talon import ui
+# from talon.voice import Str
+# from talon import ui
 
-from .speech_toggle import dictation
+# from .speech_toggle import dictation
 
-# cleans up some Dragon output from <dgndictation>
-mapping = {
-    'semicolon': ';',
-    'new-line': '\n',
-    'new-paragraph': '\n\n',
-}
-# used for auto-spacing
-punctuation = set('.,-!?')
-sentence_ends = set('.!?').union({'\n', '\n\n'})
+# # cleans up some Dragon output from <dgndictation>
+# mapping = {
+#     'semicolon': ';',
+#     'new-line': '\n',
+#     'new-paragraph': '\n\n',
+# }
+# # used for auto-spacing
+# punctuation = set('.,-!?')
+# sentence_ends = set('.!?').union({'\n', '\n\n'})
 
-def insert(s):
-    Str(s)(None)
+# def insert(s):
+#     Str(s)(None)
 
-class AutoFormat:
-    def __init__(self):
-        self.reset()
-        ui.register('app_deactivate', lambda app: self.reset())
-        ui.register('win_focus', lambda win: self.reset())
+# class AutoFormat:
+#     def __init__(self):
+#         self.reset()
+#         ui.register('app_deactivate', lambda app: self.reset())
+#         ui.register('win_focus', lambda win: self.reset())
 
-    def reset(self):
-        self.caps = True
-        self.space = False
+#     def reset(self):
+#         self.caps = True
+#         self.space = False
 
-    def insert_word(self, word):
-        word = str(word).lstrip('\\').split('\\', 1)[0]
-        word = mapping.get(word, word)
-        word = word.rstrip('-')
+#     def insert_word(self, word):
+#         word = str(word).lstrip('\\').split('\\', 1)[0]
+#         word = mapping.get(word, word)
+#         word = word.rstrip('-')
 
-        if self.caps:
-            word = word[0].upper() + word[1:]
+#         if self.caps:
+#             word = word[0].upper() + word[1:]
 
-        if self.space and word[0] not in punctuation and not '\n' in word:
-            insert(' ')
+#         if self.space and word[0] not in punctuation and not '\n' in word:
+#             insert(' ')
 
-        insert(word)
+#         insert(word)
 
-        self.caps = word in sentence_ends
-        self.space = '\n' not in word
+#         self.caps = word in sentence_ends
+#         self.space = '\n' not in word
 
-    def phrase(self, m):
-        for word in m.dgndictation[0]:
-            self.insert_word(word)
+#     def phrase(self, m):
+#         for word in m.dgndictation[0]:
+#             self.insert_word(word)
 
-auto_format = AutoFormat()
-dictation.keymap({
-    '<dgndictation>': auto_format.phrase,
-})
+# auto_format = AutoFormat()
+# dictation.keymap({
+#     '<dgndictation>': auto_format.phrase,
+# })

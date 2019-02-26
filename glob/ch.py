@@ -129,7 +129,6 @@ keymap.update({
 
     # various
     'save': Key('cmd-s'),
-    'maximize': Key('cmd-m'),
     '(close | quit) application': Key('cmd-q'),
     'tab window': Key('alt-tab'),
     'tabbing menu': Key('cmd-alt-ctrl-shift-t'),
@@ -137,8 +136,13 @@ keymap.update({
     'worm': 'python',
     'short cat': Key('shift-cmd-space'),
     'select (a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z)+': shortcat_function,
+
+    # 
+    'maximize': Key('cmd-alt-shift-m'),
     'split right': Key('cmd-alt-shift-right'),
     'split left': Key('cmd-alt-shift-left'),
+    'split bottom': Key('cmd-alt-shift-down'),
+    'split top': Key('cmd-alt-shift-up'),
     'shift (display | screen)': Key('shift-ctrl-alt-cmd-m'),
 
     'mission control': lambda m: macos.dock_notify('com.apple.expose.awake'),
@@ -171,6 +175,7 @@ ctx.keymap(keymap)
 ctx.vocab = [
     'Talon',
     'talon',
+    'Netlight',
 ]
 
 ctx.vocab_remove = [

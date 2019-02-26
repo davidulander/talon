@@ -11,6 +11,11 @@ def text(m):
 ctx = Context('iterm', bundle='com.googlecode.iterm2')
 
 keymap = {
+    # shortcut projects:
+    'cd talon': ['~/.talon/user'],
+    'cd developer': ['~/Developer/'],
+    'cd edge labs': ['~/Developer/edge-labs'],
+    
     # iterm functionality
     '[toggle] full-screen': Key('cmd-shift-enter'),
     'split horizontal': Key('cmd-shift-d'),

@@ -1,16 +1,11 @@
 from talon.voice import Key, Context, Str, press
-from time import sleep
+from .snippet import snippet
 
-def snippet(shortcut):
-    def snip(m):
-        Str(shortcut)(None)
-        sleep(0.1)
-        press('enter')
-    return snip
-
-ctx = Context('react')
+ctx = Context('javascript')
 
 ctx.keymap({
+    'fat arrow': '=>',
+
     # Snippets
     'log': snippet('cl'),
  })

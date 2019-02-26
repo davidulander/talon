@@ -252,7 +252,7 @@ ctx.keymap({
     'state past': 'pass',
 
     'plus': '+',
-    'arrow': '->',
+    # 'arrow': '->',
     'call': '()',
     'indirect': '&',
     'dereference': '*',
