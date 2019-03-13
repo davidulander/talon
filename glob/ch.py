@@ -45,6 +45,10 @@ ctx = Context('chInput')
 
 keymap = {}
 
+# Current lines are for logging the active window name
+# from talon import ui, cron
+# cron.interval('1s', lambda: print(ui.active_window()))
+
 keymap.update({
     # navigation
     'scroll [down]' + optional_numerals: repeat_function('down', actionsPerRepeatCycle=scrollingDistance),
@@ -124,11 +128,12 @@ keymap.update({
     # handling tabs
     'crack' + optional_numerals: repeat_function('cmd-w',0.1),
     '(close tab) | (tab close)': Key('cmd-w'),
-    '(last tab | steffy)': Key('cmd-alt-left'),
-    '(next tab | steppy)': Key('cmd-alt-right'),
+    'steffy' + optional_numerals: repeat_function('cmd-alt-left', 0.1),
+    'steppy' + optional_numerals: repeat_function('cmd-alt-right', 0.1),
 
     # various
     'save': Key('cmd-s'),
+    'save as': Key('cmd-shift-s'),
     '(close | quit) application': Key('cmd-q'),
     'tab window': Key('alt-tab'),
     'tabbing menu': Key('cmd-alt-ctrl-shift-t'),
@@ -137,13 +142,14 @@ keymap.update({
     'short cat': Key('shift-cmd-space'),
     'select (a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z)+': shortcat_function,
 
-    # 
-    'maximize': Key('cmd-alt-shift-m'),
-    'split right': Key('cmd-alt-shift-right'),
-    'split left': Key('cmd-alt-shift-left'),
-    'split bottom': Key('cmd-alt-shift-down'),
-    'split top': Key('cmd-alt-shift-up'),
-    'shift (display | screen)': Key('shift-ctrl-alt-cmd-m'),
+    # window management
+    'maximize': Key('ctrl-alt-cmd-shift-m'),
+    'split right': Key('ctrl-alt-cmd-shift-r'),
+    'split left': Key('cctrl-alt-cmd-shift-l'),
+    'split bottom': Key('ctrl-alt-cmd-shift-b'),
+    'split top': Key('ctrl-alt-cmd-shift-t'),
+    'shift (display | screen)': Key('ctrl-alt-cmd-shift-down ctrl-alt-cmd-shift-m'),
+    'shift (display | screen) same size': Key('ctrl-alt-cmd-shift-down'),
 
     'mission control': lambda m: macos.dock_notify('com.apple.expose.awake'),
     'show desktop': lambda m: macos.dock_notify('com.apple.showdesktop.awake'),

@@ -61,7 +61,6 @@ def fold_level(m):
     press('cmd-k')
     press('cmd-' + str(line_number))
 
-
 context.keymap({
     # Navigating text
     'line' + optional_numerals: jump_to_line,
@@ -117,6 +116,7 @@ context.keymap({
     'keyboard shortcuts': Key('cmd-k cmd-s'),
     '(edit file | pin tab)': Key('a cmd-z'),
     'Split editor': Key('ctrl-cmd-alt-shift-7'),
+    '(merge | join) editor[s]': [Key('cmd-shift-p'), 'Join All Editor Group\n'],
 
     # folding
     'fold all': Key('cmd-k cmd-0'),

@@ -31,6 +31,7 @@ keymap = {
 
     # package managers
     'run': ['npm run dev'],
+    'run test': ['npm run test'],
     'install node': ['npm i'],
     'install (bower | power | bauer)': ['npm run bower\n'],
     'install (all | or | old)': ['npm i && npm run bower\n'],
@@ -61,6 +62,7 @@ keymap = {
     '(get | git) check out': ['git checkout '],
     '(get | git) merge': ['git merge '],
     '(get | git) stash': ['git stash'],
+    '(get | git) stash pop': ['git stash pop'],
     
 }
 

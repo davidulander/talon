@@ -5,6 +5,7 @@ ctx = Context('javascript')
 
 ctx.keymap({
     'fat arrow': '=>',
+    'fat arrow function': [' = () => {\n'],
 
     # Snippets
     'log': snippet('cl'),

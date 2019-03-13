@@ -50,7 +50,7 @@ sleepy.keymap({
     'dictation mode': dictation_mode,
 
     '(backspace | rep | rap)' + optional_numerals: repeat_function('alt-backspace'),
-    'enter': Key('enter'),
+    '(enter | slap)': Key('enter'),
 })
 sleep_group.load()
 

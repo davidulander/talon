@@ -362,3 +362,11 @@ def repeat_function(keyDescription, delay=0, actionsPerRepeatCycle=1):
                     press(key)
                     sleep(delay)
     return repeater
+
+def command_with_delay(keyDescription, delay):
+    def repeater(m):
+        keysToBePressed = keyDescription.split()
+        for key in keysToBePressed:
+            press(key)
+            sleep(delay)
+    return repeater

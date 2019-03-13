@@ -50,9 +50,15 @@ def mouse_release(m):
     x, y = click_pos(m)
     ctrl.mouse_click(x, y, up=True)
 
+def regular_click(m):
+    ctrl.mouse_click(x=None, y=None, button=0, times=1)
+
+def regular_right_click(m):
+    ctrl.mouse_click(x=None, y=None, button=1, times=1)
+
 keymap = {
-    'right click': delayed_right_click,
-    '(click | pick | test)': delayed_click,
+    'right click': regular_right_click,
+    '(click | pick | test)': regular_click, # delayed_click,
     'midclick': delayed_middle_click,
     'dubclick': delayed_dubclick,
     'tripclick': delayed_tripclick,

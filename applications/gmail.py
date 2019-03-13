@@ -1,20 +1,12 @@
 from talon.voice import Context, Key, press, Str
 from talon import ctrl
-from user.utils import repeat_function, optional_numerals
+from user.utils import repeat_function, optional_numerals, command_with_delay
 from time import sleep
 from talon.engine import engine
 from talon import applescript
 
-titles = ('- Gmail - Google Chrome')
-ctx = Context('gmail', func=lambda app, win: win.title.endswith(titles))
-
-def command_with_delay(keyDescription, delay):
-    def repeater(m):
-        keysToBePressed = keyDescription.split()
-        for key in keysToBePressed:
-            press(key)
-            sleep(delay)
-    return repeater
+titles = '- Gmail - Google Chrome'
+ctx = Context('gmail', func=lambda app, win: win.title.endswith(titles) or titles in win.title)
 
 def go_to_website(url):
     def website(m):
