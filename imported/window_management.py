@@ -1,5 +1,9 @@
 from talon import ui, tap
 
+# Note that this is not connected to voice recognition, but merely
+# for keyboard shortcuts to work with window management. You have to
+# tie the shortcuts to voice recognition in a separate place
+
 def move_screen(off):
     win = ui.active_window()
     src_screen = win.screen

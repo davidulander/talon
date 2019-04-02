@@ -58,7 +58,7 @@ def regular_right_click(m):
 
 keymap = {
     'right click': regular_right_click,
-    '(click | pick | test)': regular_click, # delayed_click,
+    '(click | pick )': regular_click, # delayed_click,
     'midclick': delayed_middle_click,
     'dubclick': delayed_dubclick,
     'tripclick': delayed_tripclick,

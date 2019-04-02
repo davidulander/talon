@@ -6,6 +6,7 @@ from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
 from talon_plugins import speech
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 import string
+from time import sleep
 
 def go_direction(m):
     direction_type = m._words[0].word
@@ -40,6 +41,10 @@ def lock_computer(m):
     speech.set_enabled(False),
     press('ctrl-cmd-q')
 
+def shift_screen(m):
+    press('ctrl-alt-cmd-shift-down')
+    sleep(0.5)
+    press('ctrl-alt-cmd-shift-m')
 
 ctx = Context('chInput')
 
@@ -80,13 +85,10 @@ keymap.update({
     'slurp' + optional_numerals: repeat_function('alt-delete'),
     'delete all': Key('cmd-a backspace'),
 
-    'snipple': Key('cmd-shift-left delete'),
-    'snipper': Key('cmd-shift-right delete'),
-
     '(rick | rip)' + optional_numerals: repeat_function('backspace'),
     '(backspace | rep | rap)' + optional_numerals: repeat_function('alt-backspace'),
 
-    'slap': Key('enter'),
+    'slap' + optional_numerals: repeat_function('enter'),
     'slappy': [Key('end enter')],
     'slippy': [Key('home enter up')],
     '(stacy | spacey)': [Key('enter enter up')],
@@ -136,7 +138,7 @@ keymap.update({
     'save as': Key('cmd-shift-s'),
     '(close | quit) application': Key('cmd-q'),
     'tab window': Key('alt-tab'),
-    'tabbing menu': Key('cmd-alt-ctrl-shift-t'),
+    'tabbing menu': Key('f12'),
 
     'worm': 'python',
     'short cat': Key('shift-cmd-space'),
@@ -145,10 +147,14 @@ keymap.update({
     # window management
     'maximize': Key('ctrl-alt-cmd-shift-m'),
     'split right': Key('ctrl-alt-cmd-shift-r'),
-    'split left': Key('cctrl-alt-cmd-shift-l'),
+    'split top right': Key('ctrl-alt-cmd-shift-p'),
+    'split bottom right': Key('ctrl-alt-cmd-shift-n'),
+    'split left': Key('ctrl-alt-cmd-shift-l'),
+    'split top left': Key('ctrl-alt-cmd-shift-q'),
+    'split bottom left': Key('ctrl-alt-cmd-shift-z'),
     'split bottom': Key('ctrl-alt-cmd-shift-b'),
     'split top': Key('ctrl-alt-cmd-shift-t'),
-    'shift (display | screen)': Key('ctrl-alt-cmd-shift-down ctrl-alt-cmd-shift-m'),
+    'shift (display | screen)': shift_screen,
     'shift (display | screen) same size': Key('ctrl-alt-cmd-shift-down'),
 
     'mission control': lambda m: macos.dock_notify('com.apple.expose.awake'),
@@ -182,6 +188,12 @@ ctx.vocab = [
     'Talon',
     'talon',
     'Netlight',
+    'refactoring',
+    'Refactoring',
+    'Array',
+    'array',
+    'undefined',
+    'Undefined',
 ]
 
 ctx.vocab_remove = [

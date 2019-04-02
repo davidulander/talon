@@ -12,10 +12,10 @@ ctx = Context('iterm', bundle='com.googlecode.iterm2')
 
 keymap = {
     # shortcut projects:
-    'cd home': ['~/'],
-    'cd talon': ['~/.talon/user'],
-    'cd developer': ['~/Developer/'],
-    'cd edge labs': ['~/Developer/edge-labs'],
+    'cd home': ['cd ~/'],
+    'cd talon': ['cd ~/.talon/user'],
+    'cd developer': ['cd ~/Developer/'],
+    'cd edge labs': ['cd ~/Developer/edge-labs'],
     
     # iterm functionality
     '[toggle] full-screen': Key('cmd-shift-enter'),
@@ -31,7 +31,7 @@ keymap = {
 
     # package managers
     'run': ['npm run dev'],
-    'run test': ['npm run test'],
+    'run static': ['npm run test'],
     'install node': ['npm i'],
     'install (bower | power | bauer)': ['npm run bower\n'],
     'install (all | or | old)': ['npm i && npm run bower\n'],
@@ -44,7 +44,6 @@ keymap = {
     'list more': ['ls -a', Key('return')],
     
     # Git
-    '(get | git)': ['git'],
     '(get | git) add': ['git add '],
     '(get | git) add all': ['git add .'],
     '(get | git) commit': ["git commit -m ''", Key('left')],
@@ -63,7 +62,7 @@ keymap = {
     '(get | git) merge': ['git merge '],
     '(get | git) stash': ['git stash'],
     '(get | git) stash pop': ['git stash pop'],
-    
+    '(get | git) log': ['git log'],
 }
 
 ctx.keymap(keymap)

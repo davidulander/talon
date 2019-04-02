@@ -1,3 +1,4 @@
+from talon import ctrl
 from talon.voice import Context, Key, press, Str
 from user.utils import parse_words_as_integer
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
@@ -61,6 +62,19 @@ def fold_level(m):
     press('cmd-k')
     press('cmd-' + str(line_number))
 
+distance_to_navigate = 500
+
+def navigate_right(m):
+    press('ctrl-cmd-shift-l')
+    (x, y) = ctrl.mouse_pos()
+    ctrl.mouse(x + distance_to_navigate, y)
+
+def navigate_left(m):
+    press('ctrl-cmd-shift-h')
+    (x, y) = ctrl.mouse_pos()
+    ctrl.mouse(x - distance_to_navigate, y)
+
+
 context.keymap({
     # Navigating text
     'line' + optional_numerals: jump_to_line,
@@ -87,8 +101,8 @@ context.keymap({
     'toggle pane': Key('cmd-b'),
 
     # special input defined i keybindings.json file, this is from a stackoverflow tip which emulates wim 
-    'navigate left': Key('ctrl-cmd-shift-h'),
-    'navigate right': Key('ctrl-cmd-shift-l'),
+    'navigate left': navigate_left,
+    'navigate right': navigate_right,
     'navigate up': Key('ctrl-cmd-shift-k'),
     'navigate down': Key('ctrl-cmd-shift-j'),
 
@@ -99,6 +113,9 @@ context.keymap({
     # editing
     'bracken': [Key('cmd-shift-ctrl-right')],
     '(delete line | snap)' + optional_numerals: repeat_function('cmd-shift-k'),
+    '(snipper | clear line)': Key('cmd-right home cmd-shift-right delete'),
+    # 'snipple': Key('end cmd-shift-left delete'),
+
     'snapple' + optional_numerals: repeat_function('down cmd-shift-k up cmd-left'),
     'select instances': Key('cmd-shift-l'),
     'indent': Key('alt-shift-f'),

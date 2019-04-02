@@ -61,6 +61,8 @@ websites = {
     'youtube': 'https://www.youtube.com/',
     'community': 'https://github.com/dwiel/talon_community',
     'local': 'https://localhost:3000',
+    'rebel': 'https://rebel.netlight.com/',
+    'stack overflow': 'https://www.facebook.com/',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
@@ -122,6 +124,8 @@ context.keymap({
     'show source[s] [panel]': lambda m: show_panel('Sources'),
     'show redux [panel]': lambda m: show_panel_adv(3),
     'show react [panel]': lambda m: show_panel_adv(1),
+    'play': Key('f12'),
+    'step': Key('f9'),
 
     # Clipboard
     'cut': Key('cmd-x'),

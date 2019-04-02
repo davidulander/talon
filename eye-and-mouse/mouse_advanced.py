@@ -1,7 +1,7 @@
 import time
 from time import sleep
 from talon import cron, ctrl, tap
-from talon.voice import Context, Key
+from talon.voice import Context, Key, press
 from user.utils import optional_numerals
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 
@@ -35,7 +35,12 @@ current_mouse_scroll_mode = mouse_scroll_mode['MIDDLE']
 
 def scroll_mouse(direction, distance):
     def scroll(m):
-        ctrl.mouse_scroll(direction * distance, 0)
+        numberOfTimes = parse_words_as_integer(m._words)
+        if numberOfTimes == None:
+            numberOfTimes = 1
+
+        for i in range(0, numberOfTimes):
+            ctrl.mouse_scroll(direction * distance, 0)
     return scroll
 
 def change_mouse_scroll_mode(m):
@@ -79,6 +84,15 @@ def mouse_scroll(amount):
 
     return scroll
 
+def mouse_install(m):
+    move_mouse_absolute(1860, 92)(m)
+    ctrl.mouse_click(x=None, y=None, button=0, times=1)
+    press('down')
+    sleep(0.3)
+    press('down')
+    sleep(0.3)
+    press('down')
+
 scrollAmount = 0
 scrollJob = None
 
@@ -99,12 +113,13 @@ keymap = {
     # specific locations
     'mouse pop': move_mouse_absolute(1860, 60),
     'mouse outlook': move_mouse_absolute(1376, 881),
+    'mouse install': mouse_install,
 
     # scrolling
-    'skip': scroll_mouse(1, 600),
-    'skippy': scroll_mouse(1, 300),
-    'hip': scroll_mouse(-1, 600),
-    'hippie': scroll_mouse(-1, 300),
+    'skip' + optional_numerals: scroll_mouse(1, 600),
+    'skippy' + optional_numerals: scroll_mouse(1, 300),
+    'hip' + optional_numerals: scroll_mouse(-1, 600),
+    'hippie' + optional_numerals: scroll_mouse(-1, 300),
     # '[scroll] (bottom | doomway)': lambda m: ctrl.mouse_scroll(10000, 0),
     '[scroll] (bottom | doomway)': Key('cmd-down'),
     # '[(scroll | go)] [to] (top | jeepway)': lambda m: ctrl.mouse_scroll(-10000, 0),
