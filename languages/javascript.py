@@ -7,6 +7,8 @@ ctx.keymap({
     'fat arrow': '=>',
     'fat arrow function': [' = () => {\n'],
     'no value': 'undefined',
+    'constant': 'const ',
+    'let': 'let ',
 
     # Snippets
     'log': snippet('cl'),

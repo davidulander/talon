@@ -62,7 +62,7 @@ websites = {
     'community': 'https://github.com/dwiel/talon_community',
     'local': 'https://localhost:3000',
     'rebel': 'https://rebel.netlight.com/',
-    'stack overflow': 'https://www.facebook.com/',
+    'stack overflow': 'https://stackoverflow.com/',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
