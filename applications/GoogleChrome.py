@@ -63,6 +63,8 @@ websites = {
     'local': 'https://localhost:3000',
     'rebel': 'https://rebel.netlight.com/',
     'stack overflow': 'https://stackoverflow.com/',
+    'board': 'https://git.sto.netlight.se/feedback-tool/feedback-tool-front-end/boards',
+    'merge request': 'https://git.sto.netlight.se/feedback-tool/feedback-tool-front-end/merge_requests',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
@@ -75,6 +77,15 @@ def open_website(m):
     w = websites.get(name)
     press('cmd-t')
     Str(w)(None)
+    press('enter')
+
+def go_to_website(m):
+    name = str(m._words[1])
+    w = websites.get(name)
+    focus_address_bar(None)
+    sleep(0.1)
+    Str(w)(None)
+    sleep(0.2)
     press('enter')
 
 context.keymap({
@@ -134,7 +145,8 @@ context.keymap({
     'paste same style': Key('cmd-alt-shift-v'),
 
     # websites
-    'website {GoogleChrome.websites}': open_website,
+    'new website {GoogleChrome.websites}': open_website,
+    'website {GoogleChrome.websites}': go_to_website,
 
     # workona
     'workspace[s]': Key('alt-a'),

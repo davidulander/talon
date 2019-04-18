@@ -11,8 +11,8 @@ ctx.keymap({
     # '': snippet(''),
 
     # JSX / HTML:
-    'props': 'this.props.',
-    'state': 'this.state.',
+    'this props': 'this.props.',
+    'this state': 'this.state.',
     'set state': 'this.setState({',
     
  })

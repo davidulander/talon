@@ -16,6 +16,7 @@ keymap = {
     'cd talon': ['cd ~/.talon/user'],
     'cd developer': ['cd ~/Developer/'],
     'cd edge labs': ['cd ~/Developer/edge-labs'],
+    'cd feedback': ['cd ~/Developer/feedback-tool-front-end'],
     
     # iterm functionality
     '[toggle] full-screen': Key('cmd-shift-enter'),
@@ -30,11 +31,10 @@ keymap = {
     'restart talon': ['restartTalon'],
 
     # package managers
-    'run': ['npm run dev'],
-    'run static': ['npm run test'],
-    'install node': ['npm i'],
-    'install (bower | power | bauer)': ['npm run bower\n'],
-    'install (all | or | old)': ['npm i && npm run bower\n'],
+    'run': ['npm run dev_start'],
+    # 'start': ['npm start'],
+    'test': ['npm run test'],
+    'node install': ['npm i'],
     
     # General commands
     'exit': [Key('ctrl-c'), 'exit'],
@@ -59,6 +59,7 @@ keymap = {
     '(get | git) fetch': ['git fetch'],
     '(get | git) remote': ['git remote -v'],
     '(get | git) check out': ['git checkout '],
+    '(get | git) check out master': ['git checkout master'],
     '(get | git) merge': ['git merge '],
     '(get | git) stash': ['git stash'],
     '(get | git) stash pop': ['git stash pop'],

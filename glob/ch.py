@@ -43,7 +43,7 @@ def lock_computer(m):
 
 def shift_screen(m):
     press('ctrl-alt-cmd-shift-down')
-    sleep(0.5)
+    sleep(0.7)
     press('ctrl-alt-cmd-shift-m')
 
 ctx = Context('chInput')

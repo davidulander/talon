@@ -124,6 +124,7 @@ context.keymap({
 
     # various
     'comment': Key('cmd-shift-7'),
+    'block comment': Key('alt-shift-a'),
     'master': Key('cmd-p'),
     'search all': Key('cmd-shift-f'),
     '(version | source) control': Key('ctrl-shift-g'),

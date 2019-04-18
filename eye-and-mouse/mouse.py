@@ -57,8 +57,8 @@ def regular_right_click(m):
     ctrl.mouse_click(x=None, y=None, button=1, times=1)
 
 keymap = {
-    'right click': regular_right_click,
-    '(click | pick )': regular_click, # delayed_click,
+    '(click | pick )': delayed_click, # regular_click,
+    'right click': delayed_right_click, # regular_right_click,
     'midclick': delayed_middle_click,
     'dubclick': delayed_dubclick,
     'tripclick': delayed_tripclick,

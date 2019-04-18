@@ -121,9 +121,9 @@ keymap = {
     'hip' + optional_numerals: scroll_mouse(-1, 600),
     'hippie' + optional_numerals: scroll_mouse(-1, 300),
     # '[scroll] (bottom | doomway)': lambda m: ctrl.mouse_scroll(10000, 0),
-    '[scroll] (bottom | doomway)': Key('cmd-down'),
+    '(scroll | go) [to] (bottom | doomway)': Key('cmd-down'),
     # '[(scroll | go)] [to] (top | jeepway)': lambda m: ctrl.mouse_scroll(-10000, 0),
-    '[(scroll | go)] [to] (top | jeepway)': Key('cmd-up'),
+    '(scroll | go) [to] (top | jeepway)': Key('cmd-up'),
     
     # imported scrolling
     "wheel down": mouse_scroll(30),
