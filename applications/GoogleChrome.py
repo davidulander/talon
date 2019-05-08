@@ -60,7 +60,7 @@ websites = {
     'messenger': 'https://www.messenger.com/',
     'youtube': 'https://www.youtube.com/',
     'community': 'https://github.com/dwiel/talon_community',
-    'local': 'https://localhost:3000',
+    'localhost': 'https://localhost:3000',
     'rebel': 'https://rebel.netlight.com/',
     'stack overflow': 'https://stackoverflow.com/',
     'board': 'https://git.sto.netlight.se/feedback-tool/feedback-tool-front-end/boards',
@@ -137,6 +137,8 @@ context.keymap({
     'show react [panel]': lambda m: show_panel_adv(1),
     'play': Key('f12'),
     'step': Key('f9'),
+    'steffy' + optional_numerals: repeat_function('cmd-alt-left', 0.1),
+    'steppy' + optional_numerals: repeat_function('cmd-alt-right', 0.1),
 
     # Clipboard
     'cut': Key('cmd-x'),

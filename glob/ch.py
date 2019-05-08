@@ -22,12 +22,6 @@ def go_direction(m):
     for i in range(0, line_number):
         press(direction_type)
 
-def shortcat_function(m):
-    command = 'ctrl'
-    for word in m._words[1:]:
-        command += '-' + word.word
-    return Key(command)
-
 def go_to_path(path):
 	def path_function(m):
 		press('cmd-shift-g')
@@ -130,8 +124,6 @@ keymap.update({
     # handling tabs
     'crack' + optional_numerals: repeat_function('cmd-w',0.1),
     '(close tab) | (tab close)': Key('cmd-w'),
-    'steffy' + optional_numerals: repeat_function('cmd-alt-left', 0.1),
-    'steppy' + optional_numerals: repeat_function('cmd-alt-right', 0.1),
 
     # various
     'save': Key('cmd-s'),
@@ -141,8 +133,6 @@ keymap.update({
     'tabbing menu': Key('f12'),
 
     'worm': 'python',
-    'short cat': Key('shift-cmd-space'),
-    'select (a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z)+': shortcat_function,
 
     # window management
     'maximize': Key('ctrl-alt-cmd-shift-m'),
@@ -161,7 +151,6 @@ keymap.update({
     'show desktop': lambda m: macos.dock_notify('com.apple.showdesktop.awake'),
     'show app windows': lambda m: macos.dock_notify('com.apple.expose.front.awake'),
     'lock (computer | screen)': lock_computer,
-    'auto click': Key('cmd-alt-shift-ctrl-m'),
     'elipsis': ['...'],
 
     'increase brightness': [Key('brightness_up')] * 2,

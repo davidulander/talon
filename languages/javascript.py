@@ -1,7 +1,7 @@
 from talon.voice import Key, Context, Str, press
 from .snippet import snippet
 
-ctx = Context('javascript')
+ctx = Context('javascript', bundle='com.microsoft.VSCode')
 
 ctx.keymap({
     'fat arrow': '=>',

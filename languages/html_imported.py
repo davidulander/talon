@@ -2,7 +2,7 @@ from talon.voice import Context, Key, press
 import talon.clip as clip
 from ..utils import text, parse_words, parse_words_as_integer, insert, word, join_words
 
-context = Context('html')
+context = Context('html', bundle='com.microsoft.VSCode')
 
 def remove_spaces_around_dashes(m):
     words = parse_words(m)

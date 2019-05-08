@@ -99,6 +99,8 @@ context.keymap({
     'extensions': Key('cmd-shift-x'),
     'open file': Key('cmd-down'),
     'toggle pane': Key('cmd-b'),
+    'steffy' + optional_numerals: repeat_function('cmd-alt-left', 0.1),
+    'steppy' + optional_numerals: repeat_function('cmd-alt-right', 0.1),
 
     # special input defined i keybindings.json file, this is from a stackoverflow tip which emulates wim 
     'navigate left': navigate_left,
@@ -133,7 +135,7 @@ context.keymap({
     'select bracket': Key('cmd-alt-shift-ctrl-b'),
     'keyboard shortcuts': Key('cmd-k cmd-s'),
     '(edit file | pin tab)': Key('a cmd-z'),
-    'Split editor': Key('ctrl-cmd-alt-shift-7'),
+    'Split editor': [Key('ctrl-cmd-alt-shift-7'), navigate_right],
     '(merge | join) editor[s]': [Key('cmd-shift-p'), 'Join All Editor Group\n'],
 
     # folding

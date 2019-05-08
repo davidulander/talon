@@ -1,4 +1,5 @@
 from talon.voice import Key, Context
+from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 
 def text(m):
     try:
@@ -17,24 +18,28 @@ keymap = {
     'cd developer': ['cd ~/Developer/'],
     'cd edge labs': ['cd ~/Developer/edge-labs'],
     'cd feedback': ['cd ~/Developer/feedback-tool-front-end'],
+    'cd voice demo': ['cd ~/Developer/voicedemo'],
     
     # iterm functionality
     '[toggle] full-screen': Key('cmd-shift-enter'),
     'split horizontal': Key('cmd-shift-d'),
     'split vertical': Key('cmd-d'),
     '(new tab | nippy)': Key('cmd-t'),
-    'next pane': Key('ctrl-tab'),
+    'next pane': Key('ctrl-tab'),   
+    'steffy' + optional_numerals: repeat_function('ctrl-shift-tab', 0.1),
+    'steppy' + optional_numerals: repeat_function('ctrl-tab', 0.1),
     'make (durr | dear) [<dgndictation>]': ['mkdir ', text],
 
     # shell scripts
     'restart voice recognition': ['restartTalonDragon'],
-    'restart talon': ['restartTalon'],
+    'restart talon': ['restartOnlyTalon'],
 
     # package managers
-    'run': ['npm run dev_start'],
+    'start': ['npm run start'],
     # 'start': ['npm start'],
     'test': ['npm run test'],
     'node install': ['npm i'],
+    'generate': ['npm run generate'],
     
     # General commands
     'exit': [Key('ctrl-c'), 'exit'],
