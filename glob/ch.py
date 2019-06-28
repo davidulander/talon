@@ -131,8 +131,8 @@ keymap.update({
     '(close | quit) application': Key('cmd-q'),
     'tab window': Key('alt-tab'),
     'tabbing menu': Key('f12'),
-
     'worm': 'python',
+    'back tick': '`',
 
     # window management
     'maximize': Key('ctrl-alt-cmd-shift-m'),
@@ -160,9 +160,10 @@ keymap.update({
     '(decrease | volume) (volume | decrease)': [Key('volume_down')] * 2,
     'volume down': [Key('volume_down')] * 2,
     'mute sound': Key('mute'),
-    '(play | pause) sound': Key('play'),
+    '(play | pause) (sound | music)': Key('play'),
 
     'paste e-mail': ['christian.h.hultin@gmail.com'],
+    'paste work e-mail': ['christian.hultin@netlight.com'],
 
     # editing text
     'bold': Key('cmd-b'),
@@ -183,6 +184,8 @@ ctx.vocab = [
     'array',
     'undefined',
     'Undefined',
+    'Back-end',
+    'back-end',
 ]
 
 ctx.vocab_remove = [
@@ -190,6 +193,8 @@ ctx.vocab_remove = [
     'Tallow',
     'tyler',
     'Tyler',
+    'mark',
+    'Mark',
 ]
 
 # ctx.vocab_remove = ['doctor', 'Doctor']

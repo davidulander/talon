@@ -348,16 +348,18 @@ def preserve_clipboard(fn):
 
     return wrapped_function
 
-def repeat_function(keyDescription, delay=0, actionsPerRepeatCycle=1):
+def repeat_function(keyDescription, delay=0, actionsPerRepeatCycle=1, cycles=1):
     def repeater(m):
         keysToBePressed = keyDescription.split()
-        numberOfTimes = parse_words_as_integer(m._words)
-
-        if numberOfTimes == None:
-            numberOfTimes = 1
+        numberOfCycles = cycles
+        
+        if cycles <= 1:
+            numberOfCycles = parse_words_as_integer(m._words)
+            if numberOfCycles == None:
+                numberOfCycles = 1
 
         for j in range(0, actionsPerRepeatCycle):
-            for i in range(0, numberOfTimes):
+            for i in range(0, numberOfCycles):
                 for key in keysToBePressed:
                     press(key)
                     sleep(delay)

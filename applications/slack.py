@@ -1,15 +1,16 @@
 from talon.voice import Context, Key, press, Str
+from time import sleep
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
-    
-def function_with_numbers(numberOfWords, keyDescription):
-    def repeater(m): 
-        number = parse_words_as_integer(m._words[numberOfWords:])
 
-        if number == None:
-            return
-
-        press(keyDescription + str(number))
-    return repeater
+def channel_name(name):
+    def channelSwitcher(m):
+        delay = 0.3
+        press('cmd-k')
+        sleep(delay)
+        Str(name)(None)
+        sleep(delay)
+        press('enter')
+    return channelSwitcher
 
 ctx = Context('slack', bundle='com.tinyspeck.slackmacgap')
 
@@ -26,6 +27,12 @@ keymap = {
     '[channel] unread last': Key('alt-shift-up'),
     '[channel] unread next': Key('alt-shift-down'),
     '[channel] info': Key('cmd-shift-i'),
+
+    # team members
+    'channel Kim': channel_name('Kim Ytterberg'),
+    'channel Marcus': channel_name('Marcus Ahlberg'),
+    'channel Mat': channel_name('Matti Lundgren'),
+    'channel stream': channel_name('stream1'),
     
     # Navigation
     'move focus': Key('ctrl-`'),

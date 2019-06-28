@@ -65,6 +65,8 @@ websites = {
     'stack overflow': 'https://stackoverflow.com/',
     'board': 'https://git.sto.netlight.se/feedback-tool/feedback-tool-front-end/boards',
     'merge request': 'https://git.sto.netlight.se/feedback-tool/feedback-tool-front-end/merge_requests',
+    'back end merge': 'https://git.sto.netlight.se/feedback-tool/feedback-tool-back-end/merge_requests',
+    'back end board': 'https://git.sto.netlight.se/feedback-tool/feedback-tool-back-end/boards',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
@@ -115,12 +117,18 @@ context.keymap({
     '(last | prevous)': Key('cmd-shift-g'),
 
     'refocus page': focus,
+    
+    # strings to paste:
+    'localhost': ['https://localhost:3000'],
+    'playground (account | username | login)': ['matl@playground.netlight.com'],
+    'playground password': ['Hejsan123'],
 
     # developer tools
     'master': Key('cmd-shift-p'),
     'hard reload': Key('cmd-shift-r'),
     'inspect': Key('cmd-shift-c'),
     'device': Key('cmd-shift-m'),
+    'move (dock | console)': Key('cmd-shift-d'),
     'developer': Key('cmd-alt-i'),
     'console': Key('cmd-alt-j'),
     'panel' + optional_numerals: repeat_function('cmd-å'),

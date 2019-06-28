@@ -87,6 +87,7 @@ def mouse_scroll(amount):
 def mouse_install(m):
     move_mouse_absolute(1860, 92)(m)
     ctrl.mouse_click(x=None, y=None, button=0, times=1)
+    sleep(0.3)
     press('down')
     sleep(0.3)
     press('down')
@@ -113,7 +114,7 @@ keymap = {
     # specific locations
     'mouse pop': move_mouse_absolute(1860, 60),
     'mouse outlook': move_mouse_absolute(1376, 881),
-    'mouse install': mouse_install,
+    'mouse (install | update)': mouse_install,
 
     # scrolling
     'skip' + optional_numerals: scroll_mouse(1, 600),
