@@ -39,7 +39,5 @@ sleepy.keymap({
     'talon mode': talon_mode,
     'swedish mode': swedish_mode,
 
-    '(backspace | rep | rap)' + optional_numerals: repeat_function('alt-backspace'),
-    '(enter | slap)': Key('enter'),
 })
 sleep_group.load()

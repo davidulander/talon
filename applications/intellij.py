@@ -95,10 +95,10 @@ context.keymap({
     # Navigation
     'Go to line': Key('cmd-l'),
     'go bracket': [Key('cmd-alt-shift-b')] * 2,
-    'explorer': Key('cmd-shift-e'),
+    'explorer': Key('cmd-1'),
     'extensions': Key('cmd-shift-x'),
     'open file': Key('cmd-down'),
-    'toggle pane': Key('cmd-b'),
+    'toggle pane': Key('cmd-1'),
     'steffy' + optional_numerals: repeat_function('cmd-alt-ctrl-left', 0.1),
     'steppy' + optional_numerals: repeat_function('cmd-alt-ctrl-right', 0.1),
 
@@ -126,7 +126,7 @@ context.keymap({
 
     # various
     '(comment | cast)': Key('cmd-ctrl-shift-7'),
-    'hide (terminal | dock)': Key('shift-escape'),
+    'hide (terminal | dock)': Key('cmd-4 shift-escape'),
     'block comment': Key('alt-shift-a'),
     'master': Key('cmd-shift-p'),
     'search all': Key('cmd-shift-f'),
@@ -140,7 +140,8 @@ context.keymap({
     '(merge | join) editor[s]': Key('ctrl-cmd-alt-shift-8'),
 
     # IntelliJ specific
-    'run backend': Key('ctrl-r'),
+    'run (backend | application)': Key('ctrl-r'),
+    'stop (backend | application)': Key('cmd-f2'),
     'run function': Key('ctrl-shift-r'),
 
     'settings': Key('cmd-,'),

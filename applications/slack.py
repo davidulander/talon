@@ -28,11 +28,11 @@ keymap = {
     '[channel] unread next': Key('alt-shift-down'),
     '[channel] info': Key('cmd-shift-i'),
 
-    # team members
+    # specific channels
     'channel Kim': channel_name('Kim Ytterberg'),
     'channel Marcus': channel_name('Marcus Ahlberg'),
     'channel Mat': channel_name('Matti Lundgren'),
-    'channel stream': channel_name('stream1'),
+    'channel stream': channel_name('stream-sense'),
     
     # Navigation
     'move focus': Key('ctrl-`'),

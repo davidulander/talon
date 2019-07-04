@@ -63,10 +63,10 @@ websites = {
     'localhost': 'https://localhost:3000',
     'rebel': 'https://rebel.netlight.com/',
     'stack overflow': 'https://stackoverflow.com/',
-    'board': 'https://git.sto.netlight.se/feedback-tool/feedback-tool-front-end/boards',
-    'merge request': 'https://git.sto.netlight.se/feedback-tool/feedback-tool-front-end/merge_requests',
-    'back end merge': 'https://git.sto.netlight.se/feedback-tool/feedback-tool-back-end/merge_requests',
-    'back end board': 'https://git.sto.netlight.se/feedback-tool/feedback-tool-back-end/boards',
+    'board': 'https://git.sto.netlight.se/feedback-tool/feedback-client/boards',
+    'merge request': 'https://git.sto.netlight.se/feedback-tool/feedback-client/merge_requests',
+    'back end merge': 'https://git.sto.netlight.se/feedback-tool/feedback-api/merge_requests',
+    'back end board': 'https://git.sto.netlight.se/feedback-tool/feedback-api/boards',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
