@@ -71,7 +71,7 @@ keymap.update({
     '(redo | razzle)' + optional_numerals: repeat_function('cmd-shift-z'),
 
     # editing
-    'cut': Key('cmd-x'),
+    'cut': Key('cmd-x5'),
     'copy': Key('cmd-c'),
     'paste': Key('cmd-v'),
 
@@ -130,7 +130,7 @@ keymap.update({
     'save as': Key('cmd-shift-s'),
     '(close | quit) application': Key('cmd-q'),
     'tab window': Key('alt-tab'),
-    'tabbing menu': Key('f12'),
+    'tabbing menu': Key('f6'),
     'worm': 'python',
     'back tick': '`',
 
@@ -145,6 +145,7 @@ keymap.update({
     'split bottom': Key('ctrl-alt-cmd-shift-b'),
     'split top': Key('ctrl-alt-cmd-shift-t'),
     'shift (display | screen)': shift_screen,
+    'shift two (displays | screens)': [shift_screen,shift_screen],
     'shift (display | screen) same size': Key('ctrl-alt-cmd-shift-down'),
 
     'mission control': lambda m: macos.dock_notify('com.apple.expose.awake'),

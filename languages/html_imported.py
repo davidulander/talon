@@ -4,17 +4,21 @@ from ..utils import text, parse_words, parse_words_as_integer, insert, word, joi
 
 context = Context('html', bundle='com.microsoft.VSCode')
 
+
 def remove_spaces_around_dashes(m):
     words = parse_words(m)
     s = ' '.join(words)
     s = s.replace(' – ', '-')
     insert(s)
 
+
 def CursorText(s):
     left, right = s.split('{.}', 1)
     return [left + right, Key(' '.join(['left'] * len(right)))]
 
 # Adapted from select_text_to_right_of_cursor in generic_editor.py by jcooper-korg from talon slack. Will figure out a more elegant solution later.
+
+
 def skip_tag_right(m):
     key = '>'
     old = clip.get()
@@ -35,6 +39,8 @@ def skip_tag_right(m):
     press("right", wait=0)
 
 # Adapted from select_text_to_left_of_cursor in generic_editor.py by jcooper-korg from talon slack. Will figure out a more elegant solution later.
+
+
 def skip_tag_left(m):
     old = clip.get()
     key = '<'
@@ -69,48 +75,48 @@ context.keymap({
     '(tag | ellie) body': CursorText('<body>{.}</body>'),
 
     '(tag | ellie) header': CursorText('<header>{.}</header>'),
-    '(tag | ellie) open header' : '<header>',
-    '(tag | ellie) close header' : '</header>',
+    '(tag | ellie) open header': '<header>',
+    '(tag | ellie) close header': '</header>',
 
     '(tag | ellie) main': CursorText('<main>{.}</main>'),
-    '(tag | ellie) open main' : '<main>',
-    '(tag | ellie) close main' : '</main>',
+    '(tag | ellie) open main': '<main>',
+    '(tag | ellie) close main': '</main>',
 
     '(tag | ellie) article': CursorText('<article>{.}</article>'),
-    '(tag | ellie) open article' : '<article>',
-    '(tag | ellie) close article' : '</article>',
+    '(tag | ellie) open article': '<article>',
+    '(tag | ellie) close article': '</article>',
 
     '(tag | ellie) footer': CursorText('<footer>{.}</footer>'),
-    '(tag | ellie) open footer' : '<footer>',
-    '(tag | ellie) close footer' : '</footer>',
+    '(tag | ellie) open footer': '<footer>',
+    '(tag | ellie) close footer': '</footer>',
 
-    '(tag | ellie) div': CursorText('<div>{.}</div>'),
-    '(tag | ellie) open div' : '<div>',
-    '(tag | ellie) close div' : '</div>',
+    '(tag | ellie) div': CursorText('<div className={classes.{.}}></div>'),
+    '(tag | ellie) open div': '<div>',
+    '(tag | ellie) close div': '</div>',
 
     '(tag | ellie) span': CursorText('<span>{.}</span>'),
-    '(tag | ellie) open span' : '<span>',
-    '(tag | ellie) close span' : '</span>',
+    '(tag | ellie) open span': '<span>',
+    '(tag | ellie) close span': '</span>',
 
     #  parse_words_as_integer doesn't seem to work so we'll do it the bad way for now
     # '(tag | ellie) heading <dgndictation>': ['<h', parse_words_as_integer, '></h', parse_words_as_integer, '>'],
-    '(tag | ellie) heading one' : CursorText('<h1>{.}</h1>'),
-    '(tag | ellie) heading two' : CursorText('<h2>{.}</h2>'),
-    '(tag | ellie) heading three' : CursorText('<h3>{.}</h3>'),
-    '(tag | ellie) heading four' : CursorText('<h4>{.}</h4>'),
-    '(tag | ellie) heading five' : CursorText('<h5>{.}</h5>'),
-    '(tag | ellie) heading six' : CursorText('<h6>{.}</h6>'),
-    
+    '(tag | ellie) heading one': CursorText('<h1>{.}</h1>'),
+    '(tag | ellie) heading two': CursorText('<h2>{.}</h2>'),
+    '(tag | ellie) heading three': CursorText('<h3>{.}</h3>'),
+    '(tag | ellie) heading four': CursorText('<h4>{.}</h4>'),
+    '(tag | ellie) heading five': CursorText('<h5>{.}</h5>'),
+    '(tag | ellie) heading six': CursorText('<h6>{.}</h6>'),
 
-    '((tag | ellie) paragraph | (tag | ellie) pee)' : CursorText('<p>{.}</p>'),
 
-    '((tag | ellie) yule | (tag | ellie) un-list | (tag | ellie) un-ordered list)' : CursorText('<ul>{.}</ul>'),
-    '((tag | ellie) open un-ordered list | (tag | ellie) open un-list)' : '<ul>',
-    '((tag | ellie) close un-ordered list | (tag | ellie) close un-list)' : '</ul>',
- 
-    '((tag | ellie) list item | (tag | ellie) lie)' : CursorText('<li>{.}</li>'),
-    '((tag | ellie) open list item | (tag | ellie) open lie)' : '<li>',
-    '((tag | ellie) close list item | (tag | ellie) close lie)' : '</li>',
+    '((tag | ellie) paragraph | (tag | ellie) pee)': CursorText('<p>{.}</p>'),
+
+    '((tag | ellie) yule | (tag | ellie) un-list | (tag | ellie) un-ordered list)': CursorText('<ul>{.}</ul>'),
+    '((tag | ellie) open un-ordered list | (tag | ellie) open un-list)': '<ul>',
+    '((tag | ellie) close un-ordered list | (tag | ellie) close un-list)': '</ul>',
+
+    '((tag | ellie) list item | (tag | ellie) lie)': CursorText('<li>{.}</li>'),
+    '((tag | ellie) open list item | (tag | ellie) open lie)': '<li>',
+    '((tag | ellie) close list item | (tag | ellie) close lie)': '</li>',
 
     '(tag | ellie) link': CursorText('<a href="" alt="">{.}</a>'),
     '(tag | ellie) open link': CursorText('<a href="{.}" alt="">'),
@@ -121,11 +127,11 @@ context.keymap({
     '(tag | ellie) her': '<hr>',
     '(tag | ellie) burr': '<br>',
 
-    # Attributes - example: "tag div addy class box" will output "<div class="box"></div> 
-    'addy class <dgndictation>' : [Key('left'), ' class=""', Key('left'), remove_spaces_around_dashes, Key('right right')],
-    'addy ID <dgndictation>' : [Key('left'), ' id=""', Key('left'), remove_spaces_around_dashes, Key('right right')],
+    # Attributes - example: "tag div addy class box" will output "<div class="box"></div>
+    'addy class <dgndictation>': [Key('left'), ' class=""', Key('left'), remove_spaces_around_dashes, Key('right right')],
+    'addy ID <dgndictation>': [Key('left'), ' id=""', Key('left'), remove_spaces_around_dashes, Key('right right')],
 
     # Moving Around between tags
-    'skip (tag | ellie) right' : skip_tag_right,
-    'skip (tag | ellie) left' : skip_tag_left,
+    'skip (tag | ellie) right': skip_tag_right,
+    'skip (tag | ellie) left': skip_tag_left,
 })

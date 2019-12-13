@@ -143,6 +143,7 @@ context.keymap({
     'run (backend | application)': Key('ctrl-r'),
     'stop (backend | application)': Key('cmd-f2'),
     'run function': Key('ctrl-shift-r'),
+    'run checkstyle': Key('ctrl-shift-alt-cmd-c'),
 
     'settings': Key('cmd-,'),
     'next file': Key('cmd-shift-ctrl-alt-right'),

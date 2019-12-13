@@ -14,5 +14,6 @@ ctx.keymap({
     'this props': 'this.props.',
     'this state': 'this.state.',
     'set state': 'this.setState({',
-    
- })
+    'class name': ['className={classes.}', Key('left')],
+
+})

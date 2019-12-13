@@ -33,6 +33,7 @@ keymap = {
     'channel Marcus': channel_name('Marcus Ahlberg'),
     'channel Mat': channel_name('Matti Lundgren'),
     'channel stream': channel_name('stream-sense'),
+    'channel Sebastian': channel_name('Sebastian Wedmalm'),
     
     # Navigation
     'move focus': Key('ctrl-`'),

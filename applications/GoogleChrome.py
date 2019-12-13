@@ -9,6 +9,7 @@ from time import sleep
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
 
+
 def show_panel(name):
     # Open command menu
     press('cmd-shift-p')
@@ -16,8 +17,9 @@ def show_panel(name):
     sleep(0.5)
     press('enter')
 
+
 def show_panel_adv(number):
-    press('cmd-shift-p')    
+    press('cmd-shift-p')
     sleep(0.5)
     Str('Show Elements')(None)
     sleep(0.5)
@@ -25,8 +27,10 @@ def show_panel_adv(number):
     for j in range(0, number):
         press('cmd-å')
 
+
 def focus_address_bar(m):
     press('cmd-l')
+
 
 def focus(m):
     press('e')
@@ -39,6 +43,7 @@ def back(m):
 
 def forward(m):
     press('cmd-]')
+
 
 def jump_tab(m):
     tab_number = parse_words_as_integer(m._words[1:])
@@ -63,8 +68,11 @@ websites = {
     'localhost': 'https://localhost:3000',
     'rebel': 'https://rebel.netlight.com/',
     'stack overflow': 'https://stackoverflow.com/',
+    # git lab
     'board': 'https://git.sto.netlight.se/feedback-tool/feedback-client/boards',
-    'merge request': 'https://git.sto.netlight.se/feedback-tool/feedback-client/merge_requests',
+    'laugh board': 'https://git.sto.netlight.se/groups/laf-tool/-/boards',
+    'merge': 'https://git.sto.netlight.se/feedback-tool/feedback-client/merge_requests',
+    'laugh merge': 'https://git.sto.netlight.se/laf-tool/laf-client/merge_requests',
     'back end merge': 'https://git.sto.netlight.se/feedback-tool/feedback-api/merge_requests',
     'back end board': 'https://git.sto.netlight.se/feedback-tool/feedback-api/boards',
 }
@@ -81,6 +89,7 @@ def open_website(m):
     Str(w)(None)
     press('enter')
 
+
 def go_to_website(m):
     name = str(m._words[1])
     w = websites.get(name)
@@ -90,12 +99,13 @@ def go_to_website(m):
     sleep(0.2)
     press('enter')
 
+
 context.keymap({
     'address bar': focus_address_bar,
 
     'link': [Key('esc'), Key('esc'), Key('esc'), 'f'],
 
-    'back[ward]': back,
+    'back': Key('cmd-['),
     'forward': forward,
     'page': focus,
     'reload': Key('cmd-r'),
@@ -117,10 +127,10 @@ context.keymap({
     '(last | prevous)': Key('cmd-shift-g'),
 
     'refocus page': focus,
-    
+
     # strings to paste:
     'localhost': ['https://localhost:3000'],
-    'playground (account | username | login)': ['matl@playground.netlight.com'],
+    'playground (account | username | login | credentials )': ['matl@playground.netlight.com', Key('tab'), 'Hejsan123', Key('enter')],
     'playground password': ['Hejsan123'],
 
     # developer tools
@@ -163,4 +173,4 @@ context.keymap({
     'switch workspace': Key('alt-s'),
     'save tab': Key('alt-d'),
 })
-# 
+#

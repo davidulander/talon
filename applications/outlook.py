@@ -5,6 +5,7 @@ ctx = Context('outlook', bundle='com.microsoft.Outlook')
 
 ctx.keymap({
     'reply': Key('cmd-r'),
+    'read': Key('cmd-t'),
     'reply all': Key('cmd-shift-r'),
     'send e-mail': Key('cmd-enter'),
     'clear flag': None,

@@ -62,12 +62,15 @@ def fold_level(m):
     press('cmd-k')
     press('cmd-' + str(line_number))
 
+
 distance_to_navigate = 500
+
 
 def navigate_right(m):
     press('ctrl-cmd-shift-l')
     (x, y) = ctrl.mouse_pos()
     ctrl.mouse(x + distance_to_navigate, y)
+
 
 def navigate_left(m):
     press('ctrl-cmd-shift-h')
@@ -98,11 +101,12 @@ context.keymap({
     'explorer': Key('cmd-shift-e'),
     'extensions': Key('cmd-shift-x'),
     'open file': Key('cmd-down'),
+    'delete file': Key('cmd-backspace'),
     'toggle pane': Key('cmd-b'),
     'steffy' + optional_numerals: repeat_function('cmd-alt-left', 0.1),
     'steppy' + optional_numerals: repeat_function('cmd-alt-right', 0.1),
 
-    # special input defined i keybindings.json file, this is from a stackoverflow tip which emulates wim 
+    # special input defined i keybindings.json file, this is from a stackoverflow tip which emulates wim
     'navigate left': navigate_left,
     'navigate right': navigate_right,
     'navigate up': Key('ctrl-cmd-shift-k'),
@@ -131,12 +135,15 @@ context.keymap({
     'search all': Key('cmd-shift-f'),
     '(version | source) control': Key('ctrl-shift-g'),
     '(drop-down | drop)': Key('ctrl-space'),
+    'quickfix': Key('cmd-.'),
     '(go to | find) definition': Key('f12'),
     'select bracket': Key('cmd-alt-shift-ctrl-b'),
     'keyboard shortcuts': Key('cmd-k cmd-s'),
     '(edit file | pin tab)': Key('a cmd-z'),
     'Split editor': [Key('ctrl-cmd-alt-shift-7'), navigate_right],
     '(merge | join) editor[s]': [Key('cmd-shift-p'), 'Join All Editor Group\n'],
+    'reload window': [Key('cmd-shift-p'), 'Reload window\n'],
+
 
     # folding
     'fold all': Key('cmd-k cmd-0'),
