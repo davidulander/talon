@@ -71,7 +71,7 @@ keymap.update({
     '(redo | razzle)' + optional_numerals: repeat_function('cmd-shift-z'),
 
     # editing
-    'cut': Key('cmd-x5'),
+    'cut': Key('cmd-x'),
     'copy': Key('cmd-c'),
     'paste': Key('cmd-v'),
 

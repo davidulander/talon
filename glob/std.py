@@ -291,7 +291,7 @@ ctx.keymap({
 
     'shebang bash': '#!/bin/bash -u\n',
 
-    'new window': Key('cmd-n'),
+    'new window': Key('cmd-shift-n'),
     'next window': Key('cmd-`'),
     'last window': Key('cmd-shift-`'),
     'next app': Key('cmd-tab'),
