@@ -76,6 +76,7 @@ keymap = {
     'log': ['git log\n'],
     'reset hard': ['git reset --hard'],
     'master': ['git checkout master\n'],
+    'reload submodule': ['git submodule deinit -f . && git submodule update --init'],
 
     # Docker
     'docker componse': ['docker-compose -f docker-compose-env.yml up -d'],

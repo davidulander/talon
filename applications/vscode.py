@@ -3,7 +3,8 @@ from talon.voice import Context, Key, press, Str
 from user.utils import parse_words_as_integer
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 
-context = Context('VSCode', bundle='com.microsoft.VSCode')
+# context = Context('VSCode', bundle='com.microsoft.VSCode')
+context = Context('VSCode', bundle='com.microsoft.VSCodeInsiders')
 
 
 def jump_to_line(m):
@@ -143,7 +144,6 @@ context.keymap({
     'Split editor': [Key('ctrl-cmd-alt-shift-7'), navigate_right],
     '(merge | join) editor[s]': [Key('cmd-shift-p'), 'Join All Editor Group\n'],
     'reload window': [Key('cmd-shift-p'), 'Reload window\n'],
-
 
     # folding
     'fold all': Key('cmd-k cmd-0'),

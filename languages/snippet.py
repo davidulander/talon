@@ -1,7 +1,7 @@
 from talon.voice import Key, Context, Str, press
 from time import sleep
 
-ctx = Context('javascript', bundle='com.microsoft.VSCode')
+ctx = Context('javascript', bundle='com.microsoft.VSCodeInsiders')
 
 def snippet(shortcut):
     def snip(m):

@@ -1,7 +1,7 @@
 from talon.voice import Key, Context, Str, press
 from .snippet import snippet
 
-ctx = Context('css', bundle='com.microsoft.VSCode')
+ctx = Context('css', bundle='com.microsoft.VSCodeInsiders')
 
 ctx.keymap({
     'pixels': ['px;'],
@@ -34,5 +34,6 @@ ctx.keymap({
     'style border left': ['border-left: '],
     'style border bottom': ['border-bottom: '],
     'style border radius': ['border-radius: '],
+    'style border generic': ['border: 1px solid black;'],
 
 })
