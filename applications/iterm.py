@@ -53,6 +53,7 @@ keymap = {
     'clear': [Key('ctrl-c'), 'clear\n'],
     'list': ['ls\n'],
     'list more': 'ls -a\n',
+    'search': Key('ctrl-r'),
 
     # Git
     'add': ['git add '],
@@ -64,7 +65,7 @@ keymap = {
     'status': ['git status\n'],
     '(difference | did | dave)': 'git diff\n',
     'pull': ['git pull\n'],
-    'git pull origin master': ['git pull origin master\n'],
+    'origin master': ['git pull origin master\n'],
     '[remote] add upstream': ['git remote add upstream'],
     'fetch upstream': ['git fetch upstream'],
     'fetch': ['git fetch\n'],
@@ -75,7 +76,7 @@ keymap = {
     'stash pop': ['git stash pop\n'],
     'log': ['git log\n'],
     'reset hard': ['git reset --hard'],
-    'master': ['git checkout master\n'],
+    'go (to) master': ['git checkout master\n'],
     'reload submodule': ['git submodule deinit -f . && git submodule update --init'],
 
     # Docker

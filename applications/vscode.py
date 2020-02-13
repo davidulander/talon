@@ -137,7 +137,7 @@ context.keymap({
     '(version | source) control': Key('ctrl-shift-g'),
     '(drop-down | drop)': Key('ctrl-space'),
     'quickfix': Key('cmd-.'),
-    '(go to | find) definition': Key('f12'),
+    '(go to | find) definition': Key('cmd+i'),
     'select bracket': Key('cmd-alt-shift-ctrl-b'),
     'keyboard shortcuts': Key('cmd-k cmd-s'),
     '(edit file | pin tab)': Key('a cmd-z'),

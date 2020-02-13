@@ -130,7 +130,7 @@ keymap.update({
     'save as': Key('cmd-shift-s'),
     '(close | quit) application': Key('cmd-q'),
     'tab window': Key('alt-tab'),
-    'tabbing menu': Key('f6'),
+    'windows': Key('f6'),
     'worm': 'python',
     'back tick': '`',
 
