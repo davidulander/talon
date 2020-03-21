@@ -294,6 +294,7 @@ ctx.keymap({
     'new window': Key('cmd-shift-n'),
     'next window': Key('cmd-`'),
     'last window': Key('cmd-shift-`'),
+    'new app': Key('cmd-space'),
     'next app': Key('cmd-tab'),
     'last app': Key('cmd-shift-tab'),
     'next tab': Key('ctrl-tab'),
