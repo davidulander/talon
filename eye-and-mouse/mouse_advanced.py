@@ -122,22 +122,22 @@ keymap = {
     'mouse (install | update)': mouse_install,
 
     # scrolling
-    'skip' + optional_numerals: mouse_smooth_scroll(600),
-    'skippy' + optional_numerals: mouse_smooth_scroll(300),
-    'hip' + optional_numerals: mouse_smooth_scroll(-600),
-    'hippie' + optional_numerals: mouse_smooth_scroll(-300),
-    'skip right' + optional_numerals: scroll_mouse(1, distanceX=600),
-    'skippy right' + optional_numerals: scroll_mouse(1, distanceX=300),
-    'skip left' + optional_numerals: scroll_mouse(-1, distanceX=600),
-    'skippy left' + optional_numerals: scroll_mouse(-1, distanceX=300),
+    'hip' + optional_numerals: mouse_smooth_scroll(600),
+    'hippy' + optional_numerals: mouse_smooth_scroll(300),
+    'skip' + optional_numerals: mouse_smooth_scroll(-600),
+    'skippie' + optional_numerals: mouse_smooth_scroll(-300),
+    'skip left' + optional_numerals: scroll_mouse(1, distanceX=600),
+    'skippy left' + optional_numerals: scroll_mouse(1, distanceX=300),
+    'skip right' + optional_numerals: scroll_mouse(-1, distanceX=600),
+    'skippy right' + optional_numerals: scroll_mouse(-1, distanceX=300),
     '(scroll | go) [to] (bottom | doomway)': Key('cmd-down'),
     '(scroll | go) [to] (top | jeepway)': Key('cmd-up'),
 
     # imported scrolling
-    "wheel down": mouse_smooth_scroll(600),
-    "wheel down continuous": [mouse_scroll(30), startScrolling],
-    "wheel up": mouse_smooth_scroll(-600),
-    "wheel up continuous": [mouse_scroll(-30), startScrolling],
+    "wheel up": mouse_smooth_scroll(600),
+    "wheel up continuous": [mouse_scroll(30), startScrolling],
+    "wheel down": mouse_smooth_scroll(-600),
+    "wheel down continuous": [mouse_scroll(-30), startScrolling],
     "wheel stop": stopScrolling,
 }
 ctx.keymap(keymap)
