@@ -153,7 +153,7 @@ context.keymap({
     'show source[s] [panel]': lambda m: show_panel('Sources'),
     'show redux [panel]': lambda m: show_panel_adv(3),
     'show react [panel]': lambda m: show_panel_adv(1),
-    'play': Key('f12'),
+    # 'play': Key('f12'),
     'step': Key('f9'),
     'steffy' + optional_numerals: repeat_function('cmd-alt-left', 0.1),
     'steppy' + optional_numerals: repeat_function('cmd-alt-right', 0.1),
