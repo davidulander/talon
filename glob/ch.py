@@ -119,7 +119,8 @@ keymap.update({
 	'go applications': Key('cmd-shift-a'),
 	'go developer': go_to_path('~/Developer'),
 	'go talon': go_to_path('~/.talon/user'),
-    'go pictures': go_to_path('~/Pictures'),
+  'go twopointyou': go_to_path('~/Projects/twopointyou'),
+  'go pictures': go_to_path('~/Pictures'),
 
     # handling tabs
     'crack' + optional_numerals: repeat_function('cmd-w',0.1),
@@ -163,8 +164,8 @@ keymap.update({
     'mute sound': Key('mute'),
     '(play | pause) (sound | music)': Key('play'),
 
-    'paste e-mail': ['christian.h.hultin@gmail.com'],
-    'paste work e-mail': ['christian.hultin@netlight.com'],
+    'paste e-mail': ['david.ulander@gmail.com'],
+    'paste work e-mail': ['david.ulander@netlight.com'],
 
     # editing text
     'bold': Key('cmd-b'),
