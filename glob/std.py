@@ -149,8 +149,11 @@ ctx.keymap({
     '(dot dot | dotdot)': '..',
     'cd': 'cd ',
     'cd talon home': 'cd {}'.format(TALON_HOME),
-    'cd talon user': 'cd {}'.format(TALON_USER),
+    'cd talon user': 'cd {}\n'.format(TALON_USER),
     'cd talon plugins': 'cd {}'.format(TALON_PLUGINS),
+    'cd twopointyou': 'cd /Users/daul/Projects/two-point-you/\n',
+
+    'run code': 'code .\n',
 
     'run make (durr | dear)': 'mkdir ',
     'run get': 'git ',

@@ -119,7 +119,7 @@ keymap.update({
 	'go applications': Key('cmd-shift-a'),
 	'go developer': go_to_path('~/Developer'),
 	'go talon': go_to_path('~/.talon/user'),
-  'go twopointyou': go_to_path('~/Projects/twopointyou'),
+  'go twopointyou': go_to_path('~/Projects/two-point-you'),
   'go pictures': go_to_path('~/Pictures'),
 
     # handling tabs
