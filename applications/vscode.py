@@ -3,8 +3,8 @@ from talon.voice import Context, Key, press, Str
 from user.utils import parse_words_as_integer
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 
-# context = Context('VSCode', bundle='com.microsoft.VSCode')
-context = Context('VSCode', bundle='com.microsoft.VSCodeInsiders')
+context = Context('VSCode', bundle='com.microsoft.VSCode')
+# context = Context('VSCode', bundle='com.microsoft.VSCodeInsiders')
 
 
 def jump_to_line(m):
@@ -92,26 +92,32 @@ context.keymap({
     'find next <dgndictation>': jump_to_next_word_instance,
 
     # Clipboard
-    'clone': Key('alt-shift-down'),
     'cut line': Key('end cmd-shift-left cmd-x backspace'),
     'copy line': Key('end cmd-shift-left cmd-c'),
-
+    'clone' + optional_numerals: repeat_function('alt-shift-d'),
+    
     # Navigation
     'Go to line': Key('cmd-g'),
     'go bracket': [Key('cmd-alt-shift-b')] * 2,
     'explorer': Key('cmd-shift-e'),
     'extensions': Key('cmd-shift-x'),
-    'open file': Key('cmd-down'),
-    'delete file': Key('cmd-backspace'),
+    'open': Key('cmd-down'),
+    'open file': Key('cmd-p'),
+    'navigate right' + optional_numerals: repeat_function('ctrl-shift-right'),
+    'navigate left' + optional_numerals: repeat_function('ctrl-shift-left'),
+    'back': Key('ctrl--'),
+    'forward': Key('ctrl-shift--'),
     'toggle pane': Key('cmd-b'),
+    'split editor [right]': Key('ctrl-shift-up'),
+    'split editor left': Key('ctrl-shift-down'),
     'steffy' + optional_numerals: repeat_function('cmd-alt-left', 0.1),
     'steppy' + optional_numerals: repeat_function('cmd-alt-right', 0.1),
 
     # special input defined i keybindings.json file, this is from a stackoverflow tip which emulates wim
-    'navigate left': navigate_left,
-    'navigate right': navigate_right,
-    'navigate up': Key('ctrl-cmd-shift-k'),
-    'navigate down': Key('ctrl-cmd-shift-j'),
+    # 'navigate left': navigate_left,
+    # 'navigate right': navigate_right,
+    # 'navigate up': Key('ctrl-cmd-shift-k'),
+    # 'navigate down': Key('ctrl-cmd-shift-j'),
 
     # tabbing
     'jump' + optional_numerals: jump_tabs,
@@ -119,11 +125,12 @@ context.keymap({
 
     # editing
     'bracken': [Key('cmd-shift-ctrl-right')],
+    'delete file | delete line': Key('cmd-backspace'),
     '(delete line | snap)' + optional_numerals: repeat_function('cmd-shift-k'),
     '(snipper | clear line)': Key('cmd-right home cmd-shift-right delete'),
     # 'snipple': Key('end cmd-shift-left delete'),
-
     'snapple' + optional_numerals: repeat_function('down cmd-shift-k up cmd-left'),
+    'select' + optional_numerals: repeat_function('cmd-d'),
     'select instances': Key('cmd-shift-l'),
     'indent': Key('alt-shift-f'),
     'line up' + optional_numerals: repeat_function('alt-up'),
@@ -132,21 +139,32 @@ context.keymap({
     # various
     '(comment | cast)': Key('cmd-shift-7'),
     'block comment': Key('alt-shift-a'),
-    'master': Key('cmd-p'),
+    'command': Key('cmd-shift-p'),
     'search all': Key('cmd-shift-f'),
     '(version | source) control': Key('ctrl-shift-g'),
     '(drop-down | drop)': Key('ctrl-space'),
     'quickfix': Key('cmd-.'),
-    '(go to | find) definition': Key('cmd+i'),
+    'definition': Key('f12'),
+    'references': Key('alt-shift-f12'),
     'select bracket': Key('cmd-alt-shift-ctrl-b'),
     'keyboard shortcuts': Key('cmd-k cmd-s'),
     '(edit file | pin tab)': Key('a cmd-z'),
-    'Split editor': [Key('ctrl-cmd-alt-shift-7'), navigate_right],
+    
     '(merge | join) editor[s]': [Key('cmd-shift-p'), 'Join All Editor Group\n'],
     'reload window': [Key('cmd-shift-p'), 'Reload window\n'],
 
     # folding
     'fold all': Key('cmd-k cmd-0'),
     'unfold all': Key('cmd-k cmd-j'),
+    'fold': Key('cmd-k cmd-l'),
     'fold level' + optional_numerals: fold_level,
+
+    # terminal
+    'terminal': Key('ctrl-å'),
+    'close terminal': Key('ctrl-å ctrl-å'),
+    'kill terminal': Key('ctrl-k'),
+    'new terminal': Key('ctrl-7'),
+    'next terminal': Key('ctrl-9'),
+    'last terminal': Key('ctrl-8'),
+
 })
