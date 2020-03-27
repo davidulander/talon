@@ -152,6 +152,7 @@ ctx.keymap({
     'cd talon user': 'cd {}\n'.format(TALON_USER),
     'cd talon plugins': 'cd {}'.format(TALON_PLUGINS),
     'cd twopointyou': 'cd /Users/daul/Projects/two-point-you/\n',
+    'cd app': 'cd app\n',
 
     'run code': 'code .\n',
 
@@ -183,6 +184,9 @@ ctx.keymap({
     'dot pie': '.py',
     'run make': 'make\n',
     'run jobs': 'jobs\n',
+
+    'run ios dev': 'npm run ios:dev\n',
+    'run android dev': 'npm run android:dev\n',
 
     'const': 'const ',
     'static': 'static ',
