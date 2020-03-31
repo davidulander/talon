@@ -58,6 +58,7 @@ websites = {
     'trello': 'https://trello.com',
     'gmail': 'https://gmail.com',
     'get hub': 'https://github.com',
+    'get lab': 'https://gitlab.com',
     'reddit': 'https://reddit.com',
     'talon docs': 'https://github.com/dwighthouse/unofficial-talonvoice-docs',
     'official docs': 'https://talonvoice.com/docs/index.html',
@@ -68,13 +69,6 @@ websites = {
     'localhost': 'https://localhost:3000',
     'rebel': 'https://rebel.netlight.com/',
     'stack overflow': 'https://stackoverflow.com/',
-    # git lab
-    'board': 'https://git.sto.netlight.se/feedback-tool/feedback-client/boards',
-    'laugh board': 'https://git.sto.netlight.se/groups/laf-tool/-/boards',
-    'merge': 'https://git.sto.netlight.se/feedback-tool/feedback-client/merge_requests',
-    'laugh merge': 'https://git.sto.netlight.se/laf-tool/laf-client/merge_requests',
-    'back end merge': 'https://git.sto.netlight.se/feedback-tool/feedback-api/merge_requests',
-    'back end board': 'https://git.sto.netlight.se/feedback-tool/feedback-api/boards',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
@@ -129,9 +123,9 @@ context.keymap({
     'refocus page': focus,
 
     # strings to paste:
-    'localhost': ['https://localhost:3000'],
-    'playground (account | username | login | credentials )': ['matl@playground.netlight.com', Key('tab'), 'Hejsan123', Key('enter')],
-    'playground password': ['Hejsan123'],
+    # 'localhost': ['https://localhost:3000'],
+    # 'playground (account | username | login | credentials )': ['matl@playground.netlight.com', Key('tab'), 'Hejsan123', Key('enter')],
+    # 'playground password': ['Hejsan123'],
 
     # developer tools
     # 'master': Key('cmd-shift-p'),
