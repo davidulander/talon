@@ -151,6 +151,8 @@ ctx.keymap({
     'cd talon home': 'cd {}'.format(TALON_HOME),
     'cd talon user': 'cd {}\n'.format(TALON_USER),
     'cd talon plugins': 'cd {}'.format(TALON_PLUGINS),
+    'open talon log': 'code /Users/daul/.talon/talon.log \n',
+
     'cd twopointyou': 'cd /Users/daul/Projects/two-point-you/\n',
     'cd app': 'cd app\n',
 
