@@ -69,6 +69,7 @@ websites = {
     'localhost': 'https://localhost:3000',
     'rebel': 'https://rebel.netlight.com/',
     'stack overflow': 'https://stackoverflow.com/',
+    'aws': 'https://aws.com/',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
