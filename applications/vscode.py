@@ -95,7 +95,7 @@ context.keymap({
     'cut line': Key('end cmd-shift-left cmd-x backspace'),
     'copy line': Key('end cmd-shift-left cmd-c'),
     'clone' + optional_numerals: repeat_function('alt-shift-d'),
-    
+
     # Navigation
     'Go to line': Key('cmd-g'),
     'go bracket': [Key('cmd-alt-shift-b')] * 2,
@@ -113,20 +113,13 @@ context.keymap({
     'steffy' + optional_numerals: repeat_function('ctrl-shift-left', 0.1),
     'steppy' + optional_numerals: repeat_function('ctrl-shift-right', 0.1),
 
-    # special input defined i keybindings.json file, this is from a stackoverflow tip which emulates wim
-    # 'navigate left': navigate_left,
-    # 'navigate right': navigate_right,
-    # 'navigate up': Key('ctrl-cmd-shift-k'),
-    # 'navigate down': Key('ctrl-cmd-shift-j'),
-
     # tabbing
     'jump' + optional_numerals: jump_tabs,
     '(new tab | nippy)': Key('cmd-n'),
 
     # editing
-    'bracken': [Key('cmd-shift-ctrl-right')],
-    'delete file | delete line': Key('cmd-backspace'),
-    '(delete line | snap)' + optional_numerals: repeat_function('cmd-shift-k'),
+    'delete file': Key('cmd-backspace'),
+    'snap' + optional_numerals: repeat_function('cmd-shift-k'),
     '(snipper | clear line)': Key('cmd-right home cmd-shift-right delete'),
     # 'snipple': Key('end cmd-shift-left delete'),
     'snapple' + optional_numerals: repeat_function('down cmd-shift-k up cmd-left'),
@@ -135,6 +128,8 @@ context.keymap({
     'indent': Key('alt-shift-f'),
     'line up' + optional_numerals: repeat_function('alt-up'),
     'line down' + optional_numerals: repeat_function('alt-down'),
+    'cursor down' + optional_numerals: repeat_function('ctrl-alt-down'),
+    'cursor up' + optional_numerals: repeat_function('ctrl-alt-up'),
 
     # various
     '(comment | cast)': Key('cmd-shift-7'),
@@ -144,8 +139,8 @@ context.keymap({
     '(version | source) control': Key('ctrl-shift-g'),
     '(drop-down | drop)': Key('ctrl-space'),
     'quickfix': Key('cmd-.'),
-    'definition': Key('f12'),
-    'references': Key('alt-shift-f12'),
+    'def': Key('f12'),
+    'ref': Key('alt-shift-f12'),
     'select bracket': Key('cmd-alt-shift-ctrl-b'),
     'keyboard shortcuts': Key('cmd-k cmd-s'),
     '(edit file | pin tab)': Key('a cmd-z'),

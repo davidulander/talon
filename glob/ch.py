@@ -75,6 +75,7 @@ keymap.update({
     'copy': Key('cmd-c'),
     'paste': Key('cmd-v'),
 
+    'delete line | snappy': Key('cmd-backspace'),
     'slurpy' + optional_numerals: repeat_function('delete'),
     'slurp' + optional_numerals: repeat_function('alt-delete'),
     'delete all': Key('cmd-a backspace'),
@@ -87,6 +88,7 @@ keymap.update({
     'slippy': [Key('home enter up')],
     '(stacy | spacey)': [Key('enter enter up')],
     'tab' + optional_numerals: repeat_function('tab'),
+    'tabby' + optional_numerals: repeat_function('shift-tab'),
 
     # select
     'select word': Key('alt-right alt-shift-left'),
@@ -103,8 +105,8 @@ keymap.update({
     'shroom' + optional_numerals: repeat_function('shift-down'),
     'lecksy': Key('cmd-shift-left'), # select rest of line (left)
     'ricksy': Key('cmd-shift-right'), # select the rest of line (right)
-    'scram' + optional_numerals: repeat_function('alt-shift-left'), # select word to the left
-    'scrish' + optional_numerals: repeat_function('alt-shift-right'),  # select word to the right
+    'scrish' + optional_numerals: repeat_function('alt-shift-left'), # select word to the left
+    'scram' + optional_numerals: repeat_function('alt-shift-right'),  # select word to the right
 
     # finder shortcuts
     'go computer': Key('cmd-shift-c'),
@@ -119,8 +121,8 @@ keymap.update({
 	'go applications': Key('cmd-shift-a'),
 	'go developer': go_to_path('~/Developer'),
 	'go talon': go_to_path('~/.talon/user'),
-  'go twopointyou': go_to_path('~/Projects/two-point-you'),
-  'go pictures': go_to_path('~/Pictures'),
+    'go twopointyou': go_to_path('~/Projects/two-point-you'),
+    'go pictures': go_to_path('~/Pictures'),
 
     # handling tabs
     'crack' + optional_numerals: repeat_function('cmd-w',0.1),
