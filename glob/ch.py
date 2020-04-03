@@ -167,7 +167,8 @@ keymap.update({
     '(play | pause) (sound | music)': Key('play'),
 
     'paste e-mail': ['david.ulander@gmail.com'],
-    'paste work e-mail': ['david.ulander@netlight.com'],
+    'paste work e-mail': ['daul@netlight.com'],
+    'paste work e-mail full': ['david.ulander@netlight.com'],
 
     # editing text
     'bold': Key('cmd-b'),
