@@ -112,6 +112,8 @@ context.keymap({
     'split editor left': Key('ctrl-shift-down'),
     'steffy' + optional_numerals: repeat_function('ctrl-shift-left', 0.1),
     'steppy' + optional_numerals: repeat_function('ctrl-shift-right', 0.1),
+    'search fold': Key('ctrl-alt-f'),
+    'explorer fold': Key('ctrl-alt-c'),
 
     # tabbing
     'jump' + optional_numerals: jump_tabs,

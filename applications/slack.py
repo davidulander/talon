@@ -36,7 +36,8 @@ keymap = {
     # specific channels
     'channel bugs': channel_name('ui-bugs'),
     'channel general': channel_name('general'),
-    'channel Isak': channel_name('Isak Starlander'),
+    'channel starlander': channel_name('Isak Starlander'),
+    'channel christian': channel_name('Christian Hultin'),
     
     # Navigation
     'move focus': Key('ctrl-`'),

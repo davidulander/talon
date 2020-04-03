@@ -169,7 +169,7 @@ ctx.keymap({
     'run get checkout master': 'git checkout master \n',
     'run get checkout dev': 'git checkout dev \n',
     'run get clone': 'git clone ',
-    'run get commit': 'git commit ',
+    'run get commit': ['git commit -m ""', Key('left')],
     'run get simple commit': 'git add . && git commit -m "Update" \n',
     'run get diff': 'git diff ',
     'run get fetch': 'git fetch \n',
