@@ -166,6 +166,8 @@ ctx.keymap({
     'run get bisect': 'git bisect ',
     'run get branch': 'git branch ',
     'run get checkout': 'git checkout ',
+    'run get checkout master': 'git checkout master \n',
+    'run get checkout dev': 'git checkout dev \n',
     'run get clone': 'git clone ',
     'run get commit': 'git commit ',
     'run get simple commit': 'git add . && git commit -m "Update" \n',

@@ -19,6 +19,11 @@ keymap = {
     '(highlight code | insert code)': ['``````', Key('left left left')],
     'read all': Key('shift-esc'),
 
+    # Workspace
+    'workspace 1': Key('cmd-1'),
+    'workspace 2': Key('cmd-2'),
+    'workspace 3': Key('cmd-3'),
+
     # Channel
     'channel': Key('cmd-k'),
     'channel last': Key('alt-up'),
@@ -29,11 +34,9 @@ keymap = {
     '[channel] info': Key('cmd-shift-i'),
 
     # specific channels
-    'channel Kim': channel_name('Kim Ytterberg'),
-    'channel Marcus': channel_name('Marcus Ahlberg'),
-    'channel Mat': channel_name('Matti Lundgren'),
-    'channel stream': channel_name('stream-sense'),
-    'channel Sebastian': channel_name('Sebastian Wedmalm'),
+    'channel bugs': channel_name('ui-bugs'),
+    'channel general': channel_name('general'),
+    'channel Isak': channel_name('Isak Starlander'),
     
     # Navigation
     'move focus': Key('ctrl-`'),
