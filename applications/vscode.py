@@ -114,6 +114,7 @@ context.keymap({
     'steppy' + optional_numerals: repeat_function('ctrl-shift-right', 0.1),
     'search fold': Key('ctrl-alt-f'),
     'explorer fold': Key('ctrl-alt-c'),
+    'close other': Key('cmd-alt-t'),
 
     # tabbing
     'jump' + optional_numerals: jump_tabs,
