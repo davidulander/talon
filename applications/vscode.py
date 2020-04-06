@@ -165,4 +165,12 @@ context.keymap({
     'next terminal': Key('ctrl-9'),
     'last terminal': Key('ctrl-8'),
 
+    # javascript
+    'arrow function': [' = () => {\n'],
+    'no value': 'undefined',
+    'constant': 'const ',
+    'let': 'let ',
+    'export': 'export ',
+    'import': 'import ',
+    'knull': 'null ',
 })
