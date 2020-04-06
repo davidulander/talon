@@ -194,8 +194,14 @@ ctx.keymap({
     'run make': 'make\n',
     'run jobs': 'jobs\n',
 
+    'npm run ': 'npm run ',
     'run apple dev': 'npm run ios:dev\n',
     'run android dev': 'npm run android:dev\n',
+    'run test unit': 'npm run test:unit\n',
+    'run test': 'npm run test\n',
+    'run test integration': 'npm run test:integration\n',
+    'run fix': 'npm run fix:format && npm run fix:lint \n',
+    'run transpile': 'npm run transpile\n',
 
     'const': 'const ',
     'static': 'static ',
@@ -269,7 +275,7 @@ ctx.keymap({
     'state past': 'pass',
 
     'plus': '+',
-    # 'arrow': '->',
+    'arrow': '=>',
     'call': '()',
     'indirect': '&',
     'dereference': '*',
@@ -324,4 +330,6 @@ ctx.keymap({
     'scroll up': [Key('up')] * 30,
 
     'copy active bundle': copy_bundle,
+    
+    'cancel' : Key('ctrl-c')
 })
