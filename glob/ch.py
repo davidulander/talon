@@ -104,9 +104,9 @@ keymap.update({
     'sheep' + optional_numerals: repeat_function('shift-up'),
     'shore' + optional_numerals: repeat_function('shift-down'),
     'leek': Key('cmd-shift-left'), # select rest of line (left)
-    'rick': Key('cmd-shift-right'), # select the rest of line (right)
+    'reck': Key('cmd-shift-right'), # select the rest of line (right)
     'lecksy' + optional_numerals: repeat_function('alt-shift-left'), # select word to the left
-    'ricksy' + optional_numerals: repeat_function('alt-shift-right'),  # select word to the right
+    'recksy' + optional_numerals: repeat_function('alt-shift-right'),  # select word to the right
 
     # finder shortcuts
     'go computer': Key('cmd-shift-c'),
