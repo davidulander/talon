@@ -80,7 +80,7 @@ keymap.update({
     'slurp' + optional_numerals: repeat_function('alt-delete'),
     'delete all': Key('cmd-a backspace'),
 
-    '(rick | rip)' + optional_numerals: repeat_function('backspace'),
+    'rip' + optional_numerals: repeat_function('backspace'),
     '(backspace | rep | rap)' + optional_numerals: repeat_function('alt-backspace'),
 
     'slap' + optional_numerals: repeat_function('enter'),
@@ -99,14 +99,14 @@ keymap.update({
     'deselect': Key('alt-right alt-shift-left'),
     'find': Key('cmd-f'),   
 
-    'shreepway': Key('cmd-shift-up'),
-    'shroomway': Key('cmd-shift-down'),
-    'shreep' + optional_numerals: repeat_function('shift-up'),
-    'shroom' + optional_numerals: repeat_function('shift-down'),
-    'lecksy': Key('cmd-shift-left'), # select rest of line (left)
-    'ricksy': Key('cmd-shift-right'), # select the rest of line (right)
-    'scrish' + optional_numerals: repeat_function('alt-shift-left'), # select word to the left
-    'scram' + optional_numerals: repeat_function('alt-shift-right'),  # select word to the right
+    'sheepway': Key('cmd-shift-up'),
+    'shoreway': Key('cmd-shift-down'),
+    'sheep' + optional_numerals: repeat_function('shift-up'),
+    'shore' + optional_numerals: repeat_function('shift-down'),
+    'leek': Key('cmd-shift-left'), # select rest of line (left)
+    'rick': Key('cmd-shift-right'), # select the rest of line (right)
+    'lecksy' + optional_numerals: repeat_function('alt-shift-left'), # select word to the left
+    'ricksy' + optional_numerals: repeat_function('alt-shift-right'),  # select word to the right
 
     # finder shortcuts
     'go computer': Key('cmd-shift-c'),
