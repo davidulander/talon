@@ -172,5 +172,5 @@ context.keymap({
     'let': 'let ',
     'export': 'export ',
     'import': 'import ',
-    'knull': 'null ',
+    'null': 'null ',
 })
