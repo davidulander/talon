@@ -115,6 +115,8 @@ context.keymap({
     'search fold': Key('ctrl-alt-f'),
     'explorer fold': Key('ctrl-alt-c'),
     'close other': Key('cmd-alt-t'),
+    'manager': Key('cmd-shift-m'),
+    'projects': Key('alt-cmd-p'),
 
     # tabbing
     'jump' + optional_numerals: jump_tabs,

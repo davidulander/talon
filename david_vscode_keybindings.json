@@ -200,5 +200,17 @@
     {
         "key": "ctrl+g",
         "command": "-workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "workbench.files.action.collapseExplorerFolders"
+    },
+    {
+        "key": "ctrl+alt+f",
+        "command": "search.action.collapseSearchResults"
+    },
+    {
+        "key": "shift+cmd+m",
+        "command": "workbench.view.extension.project-manager"
     }
 ]
