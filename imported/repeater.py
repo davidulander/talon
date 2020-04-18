@@ -23,15 +23,15 @@ def repeat(m):
        return repeater(None)
 
 ctx.keymap({
-   'ouno': MyRep(1),
-   'doss': MyRep(2),
+   'wink': MyRep(1),
+   'soup': MyRep(2),
    'trace': MyRep(3),
-   'cutroo': MyRep(4),
-   'sincko': MyRep(5),
-   'seis': MyRep(6),
-   'siete': MyRep(7),
-   'ottchou': MyRep(8),
-   'noueve': MyRep(9),
-   'diez': MyRep(10),
+   'quarr': MyRep(4),
+   'fypes': MyRep(5),
+   'sixty': MyRep(6),
+   'shoot': MyRep(7),
+   'octy': MyRep(8),
+   'niou': MyRep(9),
+   'tiou': MyRep(10),
    'repeat (0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)+': repeat,
 })
