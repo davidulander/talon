@@ -28,8 +28,8 @@ def launch_app(m):
 
 def move_mouse_to_center_of_application():
     x, y = ui.active_window().screen.rect.center
-    offset = 300 
-    ctrl.mouse_move(x, y+offset)
+    offsety = -100 
+    ctrl.mouse_move(x, y+offsety)
 
 ctx = Context('switcher')
 ctx.keymap({
