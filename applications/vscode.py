@@ -1,4 +1,4 @@
-from talon import ctrl
+from talon import ui, ctrl
 from talon.voice import Context, Key, press, Str
 from user.utils import parse_words_as_integer
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
@@ -64,20 +64,24 @@ def fold_level(m):
     press('cmd-' + str(line_number))
 
 
-distance_to_navigate = 500
+def go_to_explorer(m):
+    press('cmd-shift-e')
+    (x, y) = ui.active_window().screen.rect.center
+    offsety = -100 
+    offsetx = -800
+    ctrl.mouse_move(x+offsetx, y+offsety)
 
+def focus_on_terminal(m):
+    press('ctrl-å')
+    (x, y) = ui.active_window().screen.rect.center
+    offsety = 300 
+    ctrl.mouse_move(x, y+offsety)
 
-def navigate_right(m):
-    press('ctrl-cmd-shift-l')
-    (x, y) = ctrl.mouse_pos()
-    ctrl.mouse(x + distance_to_navigate, y)
-
-
-def navigate_left(m):
-    press('ctrl-cmd-shift-h')
-    (x, y) = ctrl.mouse_pos()
-    ctrl.mouse(x - distance_to_navigate, y)
-
+def focus_editor(m):
+    press('cmd-shift-9')
+    (x, y) = ui.active_window().screen.rect.center
+    offsety = -100 
+    ctrl.mouse_move(x, y+offsety)
 
 context.keymap({
     # Navigating text
@@ -99,8 +103,9 @@ context.keymap({
     # Navigation
     'Go to line': Key('cmd-g'),
     'go bracket': [Key('cmd-alt-shift-b')] * 2,
-    'explorer': Key('cmd-shift-e'),
+    'explorer': go_to_explorer,
     'extensions': Key('cmd-shift-x'),
+    'editor': focus_editor,
     'open': Key('cmd-down'),
     'open file': Key('cmd-p'),
     # 'navigate right' + optional_numerals: repeat_function('ctrl-shift-right'),
@@ -161,8 +166,8 @@ context.keymap({
     'fold level' + optional_numerals: fold_level,
 
     # terminal
-    'terminal': Key('ctrl-å'),
-    'close terminal': Key('ctrl-å ctrl-å'),
+    'terminal': focus_on_terminal,
+    'close terminal': Key('cmd-shift-9'),
     'kill terminal': Key('ctrl-k'),
     'new terminal': Key('ctrl-7'),
     'next terminal': Key('ctrl-9'),
