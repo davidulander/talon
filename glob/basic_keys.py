@@ -1,7 +1,7 @@
 from talon.voice import Context, Str, press
 import string
 
-alpha_alt = 'asp bat cap drum each fail gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank said'.split()
+alpha_alt = 'asp bat cap drum each fail gust harp sit jury crunch look made near osk pole quench red sun trap urge vest whale plex yank said'.split()
 alphabet = dict(zip(alpha_alt, string.ascii_lowercase))
 alphabet.update({'orb': 'å', 'elf': 'ä', 'irv': 'ö'})
 
