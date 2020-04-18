@@ -117,6 +117,7 @@ context.keymap({
     'close other': Key('cmd-alt-t'),
     'manager': Key('cmd-shift-m'),
     'projects': Key('alt-cmd-p'),
+    'show references': Key('cmd-shift-f12'),
 
     # tabbing
     'jump' + optional_numerals: jump_tabs,

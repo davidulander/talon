@@ -103,10 +103,10 @@ keymap.update({
     'shoreway': Key('cmd-shift-down'),
     'sheep' + optional_numerals: repeat_function('shift-up'),
     'shore' + optional_numerals: repeat_function('shift-down'),
-    'leek': Key('cmd-shift-left'), # select rest of line (left)
-    'reck': Key('cmd-shift-right'), # select the rest of line (right)
-    'lecksy' + optional_numerals: repeat_function('alt-shift-left'), # select word to the left
-    'recksy' + optional_numerals: repeat_function('alt-shift-right'),  # select word to the right
+    'lecksy': Key('cmd-shift-left'), # select rest of line (left)
+    'ricksy': Key('cmd-shift-right'), # select the rest of line (right)
+    'scram' + optional_numerals: repeat_function('alt-shift-left'), # select word to the left
+    'scrish' + optional_numerals: repeat_function('alt-shift-right'),  # select word to the right
 
     # finder shortcuts
     'go computer': Key('cmd-shift-c'),
