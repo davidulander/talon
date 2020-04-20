@@ -155,6 +155,7 @@ context.keymap({
     'select bracket': Key('cmd-alt-shift-ctrl-b'),
     'keyboard shortcuts': Key('cmd-k cmd-s'),
     '(edit file | pin tab)': Key('a cmd-z'),
+    'save all': Key('cmd-alt-s'),
     
     '(merge | join) editor[s]': [Key('cmd-shift-p'), 'Join All Editor Group\n'],
     'reload window': [Key('cmd-shift-p'), 'Reload window\n'],
