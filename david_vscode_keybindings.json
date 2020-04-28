@@ -212,5 +212,33 @@
     {
         "key": "shift+cmd+m",
         "command": "workbench.view.extension.project-manager"
+    },
+    {
+        "key": "shift+cmd+f12",
+        "command": "workbench.view.extension.references-view"
+    },
+    {
+        "key": "shift+cmd+9",
+        "command": "workbench.action.closePanel"
+    },
+    {
+        "key": "alt+cmd+i",
+        "command": "git.stageAll"
+    },
+    {
+        "key": "alt+cmd+o",
+        "command": "git.commitStaged"
+    },
+    {
+        "key": "ctrl+alt+cmd+u",
+        "command": "git.unstage"
+    },
+    {
+        "key": "ctrl+alt+cmd+i",
+        "command": "git.unstageAll"
+    },
+    {
+        "key": "alt+cmd+u",
+        "command": "git.stage"
     }
 ]
