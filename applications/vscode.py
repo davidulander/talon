@@ -71,6 +71,10 @@ def go_to_explorer(m):
     offsetx = -800
     ctrl.mouse_move(x+offsetx, y+offsety)
 
+def explorer_fold(m):
+    press('ctrl-alt-c')
+    go_to_explorer(m)
+
 def focus_on_terminal(m):
     press('ctrl-å')
     (x, y) = ui.active_window().screen.rect.center
@@ -118,7 +122,7 @@ context.keymap({
     'steffy' + optional_numerals: repeat_function('ctrl-shift-left', 0.1),
     'steppy' + optional_numerals: repeat_function('ctrl-shift-right', 0.1),
     'search fold': Key('ctrl-alt-f'),
-    'explorer fold': Key('ctrl-alt-c'),
+    'ex fold': explorer_fold,
     'close other': Key('cmd-alt-t'),
     'manager': Key('cmd-shift-m'),
     'projects': Key('alt-cmd-p'),
@@ -127,6 +131,13 @@ context.keymap({
     # tabbing
     'jump' + optional_numerals: jump_tabs,
     '(new tab | nippy)': Key('cmd-n'),
+
+    # git
+    'stage file': Key('alt-cmd-u'),
+    'unstage file': Key('ctrl-alt-cmd-u'),
+    'stage all': Key('alt-cmd-i'),
+    'unstage all': Key('ctrl-alt-cmd-i'),
+    'commit stage': Key('alt-cmd-o'),
 
     # editing
     'delete file': Key('cmd-backspace'),
