@@ -136,7 +136,7 @@ ctx.keymap({
     '(angle | left angle | less than)': '<', '(rangle | are angle | right angle | greater than)': '>',
 
     '(star | asterisk)': '*',
-    '(pound | hash [sign] | thorpe | number sign)': '#',
+    '(hash [sign] | thorpe | number sign)': '#',
     'percent [sign]': '%',
     'caret': '^',
     'at sign': '@',
@@ -186,7 +186,9 @@ ctx.keymap({
     'run get reset one commit hard': 'git reset HEAD~1 --hard \n',
     'run get show': 'git show ',
     'run get status': 'git status \n',
-    'run get stash': 'git stash \n',
+    'run get stash': 'git stash',
+    'run get stash pop': 'git stash pop \n',
+    'run get stash apply': 'git stash apply\n',
     'run get tag': 'git tag ',
     
     'run (them | vim)': 'vim ',
@@ -196,6 +198,7 @@ ctx.keymap({
     'run jobs': 'jobs\n',
 
     'npm run ': 'npm run ',
+    'npm install': 'npm install ',
     'run apple dev': 'npm run ios:dev\n',
     'run android dev': 'npm run android:dev\n',
     'run test unit': 'npm run test:unit\n',
@@ -276,7 +279,7 @@ ctx.keymap({
     'state past': 'pass',
 
     'plus': '+',
-    'arrow': '=>',
+    'fat arrow': '=>',
     'call': '()',
     'indirect': '&',
     'dereference': '*',
@@ -333,4 +336,6 @@ ctx.keymap({
     'copy active bundle': copy_bundle,
     
     'cancel' : Key('ctrl-c')
+
+    'export stack name': 'export STACK_NAME=',
 })
