@@ -25,10 +25,10 @@ def repeat(m):
 ctx.keymap({
    'wink': MyRep(1),
    'soup': MyRep(2),
-   'trace': MyRep(3),
+   'tram': MyRep(3),
    'quarr': MyRep(4),
    'fypes': MyRep(5),
-   'sixty': MyRep(6),
+   'sexy': MyRep(6),
    'shoot': MyRep(7),
    'octy': MyRep(8),
    'niou': MyRep(9),
