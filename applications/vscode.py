@@ -132,6 +132,7 @@ context.keymap({
     # tabbing
     'jump' + optional_numerals: jump_tabs,
     '(new tab | nippy)': Key('cmd-n'),
+    'reopen tab': Key('shift-cmd-t'),
 
     # git
     'stage file': Key('alt-cmd-u'),
