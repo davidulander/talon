@@ -166,6 +166,7 @@ keymap.update({
     'mute sound': Key('mute'),
     '(play | pause) (sound | music)': Key('play'),
 
+    'paste name': ['David Ulander'],
     'paste e-mail': ['david.ulander@gmail.com'],
     'paste work e-mail': ['daul@netlight.com'],
     'paste work e-mail full': ['david.ulander@netlight.com'],
