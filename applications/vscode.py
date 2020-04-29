@@ -97,6 +97,7 @@ context.keymap({
     # Finding text
     'find': Key('cmd-f'),
     'find all': Key('cmd-shift-f'),
+    'find list': Key('ctrl-cmd-alt-f'),
     'find next <dgndictation>': jump_to_next_word_instance,
 
     # Clipboard

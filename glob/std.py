@@ -335,7 +335,7 @@ ctx.keymap({
 
     'copy active bundle': copy_bundle,
     
-    'cancel' : Key('ctrl-c')
+    'cancel' : Key('ctrl-c'),
 
     'export stack name': 'export STACK_NAME=',
 })
