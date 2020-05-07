@@ -87,6 +87,25 @@ def focus_editor(m):
     offsety = -100 
     ctrl.mouse_move(x, y+offsety)
 
+def split_editor_right(m):
+    press('ctrl-shift-up')
+    focus_editor_right(m)
+
+
+def split_editor_left(m):
+    press('ctrl-shift-down')
+    focus_editor_left(m)
+
+def focus_editor_right(m):
+    (x, y) = ui.active_window().screen.rect.center
+    offsetx = 500
+    ctrl.mouse_move(x+offsetx, y)
+    
+def focus_editor_left(m):
+    (x, y) = ui.active_window().screen.rect.center
+    offsetx = -400
+    ctrl.mouse_move(x+offsetx, y)
+
 context.keymap({
     # Navigating text
     'line' + optional_numerals: jump_to_line,
@@ -111,6 +130,8 @@ context.keymap({
     'explorer': go_to_explorer,
     'extensions': Key('cmd-shift-x'),
     'editor': focus_editor,
+    'editor right': focus_editor_right,
+    'editor left': focus_editor_left,
     'open': Key('cmd-down'),
     'open file': Key('cmd-p'),
     # 'navigate right' + optional_numerals: repeat_function('ctrl-shift-right'),
@@ -118,11 +139,11 @@ context.keymap({
     'back': Key('ctrl--'),
     'forward': Key('ctrl-shift--'),
     # 'toggle pane': Key('cmd-b'),
-    'split editor [right]': Key('ctrl-shift-up'),
-    'split editor left': Key('ctrl-shift-down'),
+    'split editor [right]': split_editor_right,
+    'split editor left': split_editor_left,
     'steffy' + optional_numerals: repeat_function('ctrl-shift-left', 0.1),
     'steppy' + optional_numerals: repeat_function('ctrl-shift-right', 0.1),
-    'search fold': Key('ctrl-alt-f'),
+    'find fold': Key('ctrl-alt-f'),
     'ex fold': explorer_fold,
     'close other': Key('cmd-alt-t'),
     'manager': Key('cmd-shift-m'),

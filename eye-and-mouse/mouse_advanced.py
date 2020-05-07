@@ -8,7 +8,7 @@ from user.utils import parse_words_as_integer, repeat_function, optional_numeral
 # MOVING MOUSE
 def move_mouse_relative(m):
     direction_type = m._words[1].word
-    multiplier = 50
+    multiplier = 100
     pixels_to_travel = parse_words_as_integer(m._words[2:]) * multiplier
     if pixels_to_travel == None:
         return
