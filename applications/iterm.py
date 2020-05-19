@@ -26,6 +26,8 @@ keymap = {
     'cd voice demo': ['cd ~/Developer/voicedemo'],
 
     # iterm functionality
+    'home': [Key('home')],
+    'end': [Key('end')],
     '[toggle] full-screen': Key('cmd-shift-enter'),
     'split horizontal': Key('cmd-shift-d'),
     'split vertical': Key('cmd-d'),
