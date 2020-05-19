@@ -58,20 +58,20 @@ def rot13(i, word, _):
     return out
 
 formatters = {
-    'dunder': (True,  lambda i, word, _: '__%s__' % word if i == 0 else word),
+    # 'dunder': (True,  lambda i, word, _: '__%s__' % word if i == 0 else word),
     'camel':  (True,  lambda i, word, _: word if i == 0 else word.capitalize()),
     'pascal':  (True,  lambda i, word, _: word.capitalize()),
     'snake':  (True,  lambda i, word, _: word if i == 0 else '_'+word),
-    'smash':  (True,  lambda i, word, _: word),
+    # 'smash':  (True,  lambda i, word, _: word),
     # spinal or kebab?
-    'kebab':  (True,  lambda i, word, _: word if i == 0 else '-'+word),
+    # 'kebab':  (True,  lambda i, word, _: word if i == 0 else '-'+word),
     # 'sentence':  (False, lambda i, word, _: word.capitalize() if i == 0 else word),
     'title':  (False, lambda i, word, _: word.capitalize()),
     'allcaps': (False, lambda i, word, _: word.upper()),
-    'dubstring': (False, surround('"')),
-    'string': (False, surround("'")),
-    'padded': (False, surround(" ")),
-    'rot-thirteen':  (False, rot13),
+    # 'dubstring': (False, surround('"')),
+    # 'string': (False, surround("'")),
+    # 'padded': (False, surround(" ")),
+    # 'rot-thirteen':  (False, rot13),
 }
 
 def FormatText(m):
@@ -155,6 +155,7 @@ ctx.keymap({
 
     'cd twopointyou': 'cd /Users/daul/Projects/two-point-you/\n',
     'cd app': 'cd app\n',
+    'restart talon': 'restartTalonDragon\n',
 
     'run code': 'code .\n',
 
@@ -252,6 +253,7 @@ ctx.keymap({
     'comment see': '// ',
     'comment py': '# ',
 
+    'word cognito': 'cognito',
     'word queue': 'queue',
     'word eye': 'eye',
     'word error': 'error',
