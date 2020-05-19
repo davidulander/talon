@@ -16,7 +16,9 @@ def jump_to_line(m):
     # Zeroth line should go to first line
     if line_number == 0:
         line_number = 1
-
+    
+    focus_editor(m)
+    ctrl.mouse_click(x=None, y=None, button=0, times=1)    
     press('cmd-g')
     Str(str(line_number))(None)
     press('enter')
@@ -106,6 +108,11 @@ def focus_editor_left(m):
     offsetx = -400
     ctrl.mouse_move(x+offsetx, y)
 
+def go_to_source_control(m):
+    press('ctrl-shift-g')
+    press('tab')
+    press('down')
+    
 context.keymap({
     # Navigating text
     'line' + optional_numerals: jump_to_line,
@@ -122,7 +129,7 @@ context.keymap({
     # Clipboard
     'cut line': Key('end cmd-shift-left cmd-x backspace'),
     'copy line': Key('end cmd-shift-left cmd-c'),
-    'clone' + optional_numerals: repeat_function('alt-shift-d'),
+    'clone it' + optional_numerals: repeat_function('alt-shift-d'),
 
     # Navigation
     'Go to line': Key('cmd-g'),
@@ -181,7 +188,7 @@ context.keymap({
     'block comment': Key('alt-shift-a'),
     'command': Key('cmd-shift-p'),
     'search all': Key('cmd-shift-f'),
-    '(version | source) control': Key('ctrl-shift-g'),
+    'source control': go_to_source_control,
     '(drop-down | drop)': Key('ctrl-space'),
     'quickfix': Key('cmd-.'),
     'definition | def': Key('f12'),
