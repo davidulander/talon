@@ -33,5 +33,5 @@ ctx.keymap({
    'octy': MyRep(8),
    'niou': MyRep(9),
    'tiou': MyRep(10),
-   'repeat (0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)+': repeat,
+#    'repeat (0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)+': repeat,
 })
