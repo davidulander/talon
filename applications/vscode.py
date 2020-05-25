@@ -119,6 +119,8 @@ context.keymap({
 
     # Selecting text
     'select line' + optional_numerals + 'until' + optional_numerals: select_lines_function,
+    'select' + optional_numerals: repeat_function('cmd-d alt-cmd-r'),
+    'select instances': Key('cmd-shift-l'),
 
     # Finding text
     'find': Key('cmd-f'),
@@ -175,8 +177,6 @@ context.keymap({
     '(snipper | clear line)': Key('cmd-right home cmd-shift-right delete'),
     # 'snipple': Key('end cmd-shift-left delete'),
     'snapple' + optional_numerals: repeat_function('down cmd-shift-k up cmd-left'),
-    'select' + optional_numerals: repeat_function('cmd-d'),
-    'select instances': Key('cmd-shift-l'),
     'indent': Key('alt-shift-f'),
     'line up' + optional_numerals: repeat_function('alt-up'),
     'line down' + optional_numerals: repeat_function('alt-down'),
