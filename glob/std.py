@@ -254,6 +254,8 @@ ctx.keymap({
     'comment see': '// ',
     'comment py': '# ',
 
+    'word dev': 'dev',
+    'word prod': 'prod',
     'word cognito': 'cognito',
     'word queue': 'queue',
     'word eye': 'eye',
