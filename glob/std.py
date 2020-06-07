@@ -232,6 +232,7 @@ ctx.keymap({
     'empty array': '[]',
     'empty dict': '{}',
 
+    'state let': 'let ',
     'state (def | deaf | deft)': 'def ',
     'state else if': 'elif ',
     'state if': 'if ',
