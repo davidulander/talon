@@ -120,6 +120,8 @@ keymap = {
     'mouse pop': move_mouse_absolute(1860, 60),
     'mouse outlook': move_mouse_absolute(1376, 881),
     'mouse (install | update)': mouse_install,
+    'mouse lefty': move_mouse_absolute(70, 500),
+    'mouse righty': move_mouse_absolute(1800, 500),
 
     # scrolling
     'hip' + optional_numerals: mouse_smooth_scroll(600),
