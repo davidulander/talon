@@ -36,6 +36,7 @@ keymap = {
     # specific channels
     'channel bugs': channel_name('ui-bugs'),
     'channel general': channel_name('general'),
+    'channel me': channel_name('David Ulander'),
     'channel starlander': channel_name('Isak Starlander'),
     'channel christian': channel_name('Christian Hultin'),
     
@@ -45,7 +46,7 @@ keymap = {
     'previous section': Key('shift-f6'),
     'page up': Key('pageup'),
     'page down': Key('pagedown'),
-    '(open | collapse) right pane': Key('cmd-.'),
+    'toggle pane': Key('cmd-.'),
     'direct messages': Key('cmd-shift-k'),
     'threads': Key('cmd-.'),
     '(history [next] | back | backward)': Key('cmd-['),
@@ -59,17 +60,17 @@ keymap = {
     '(go | undo | toggle) full': Key('ctrl-cmd-f'),
 
     # Messaging
+    'edit message': Key('cmd-up'),
     'add line': Key('shift-enter'),
-    '(slaw | slapper)': [Key('cmd-right'), Key('shift-enter')],
-    '(react | reaction)': Key('cmd-shift-\\'),
+    # '(slaw | slapper)': [Key('cmd-right'), Key('shift-enter')],
+    # '(react | reaction)': Key('cmd-shift-\\'),
     'user': Key('@'),
     'tag channel': Key('#'),
     '([insert] command | commandify)': Key('cmd-shift-c'),
-    'variable': ['``', Key('left')],
-    '[insert] code': ['``````', Key('left left left'), Key('shift-enter'), Key('shift-enter'), Key('up')],
+    '[insert] code': ['```'],
     '(bullet | bulleted) list': Key('cmd-shift-8'),
     '(number | numbered) list': Key('cmd-shift-7'),
-    '(quotes | quotation)': Key('cmd-shift->'),
+    '(quotes | quotation)': Key('cmd-shift-9'),
     '(italic | italicize)': Key('cmd-i'),
     '(strike | strikethrough)': Key('cmd-shift-x'),
     'mark all read': Key('shift-esc'),
@@ -87,14 +88,24 @@ keymap = {
     
     # Emojis
     'thumbs up': ':+1:',
+    'okay hand': ':ok_hand:',
+    'happy smiley': ':smiley:',
     'smiley': ':slightly_smiling_face:',
     'laugh out loud': ':joy:',
     'thinking face': ':thinking_face:',
+    'sweat smile': ':sweat_smile:',
+    'checkmark': ':white_check_mark:',
+    'blush': ':blush:',
+    'celebrate': ':tada:',
+    'champagne': ':champagne:',
+    'upvote': ':upvote:',
+    'praying hands': ':pray:',
+    'read heart ': ':heart:',
     'mind blown': [':mindblown1::mindblown2:', Key('shift-enter'), ':mindblown3::mindblown4:'],
     'amazed': [':mindblown1::mindblown2:', Key('shift-enter'), ':mindblown3::mindblown4:'],
 
     # Miscellaneous
-    'shortcuts': Key('cmd-/'),
+    'shortcuts': Key('cmd-/'), # Not working
     'search': Key('cmd-f'),
 
 }
