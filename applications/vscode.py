@@ -113,6 +113,17 @@ def go_to_source_control(m):
     press('tab')
     press('down')
     
+def named_function(m):
+    press('cmd-shift-r')
+    press('n')
+    press('enter')
+
+def import_named(m):
+    press('cmd-shift-r')
+    press('i')
+    press('d')
+    press('enter')
+
 context.keymap({
     # Navigating text
     'line' + optional_numerals: jump_to_line,
@@ -182,6 +193,11 @@ context.keymap({
     'line down' + optional_numerals: repeat_function('alt-down'),
     'cursor down' + optional_numerals: repeat_function('ctrl-alt-down'),
     'cursor up' + optional_numerals: repeat_function('ctrl-alt-up'),
+
+    # snippets
+    'snippets': Key('cmd-shift-r'),
+    'named function': named_function,
+    'import named': import_named,
 
     # various
     '(comment | cast)': Key('cmd-shift-7'),

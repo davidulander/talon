@@ -199,12 +199,21 @@ ctx.keymap({
     'run make': 'make\n',
     'run jobs': 'jobs\n',
 
+    # npm
     'npm run ': 'npm run ',
     'npm install': 'npm install ',
+    'run test': 'npm run test\n',
+    'run build': 'npm run build\n',
+    'run coverage': 'npm run test:coverage\n',
+    
+    # Internal-it
+    'run level': 'npm run start \n',
+    'run level mock': 'npm run start:mockedBackend \n',
+
+    # twopointyou
     'run apple dev': 'npm run ios:dev\n',
     'run android dev': 'npm run android:dev\n',
     'run test unit': 'npm run test:unit\n',
-    'run test': 'npm run test\n',
     'run test integration': 'npm run test:integration\n',
     'run fix': 'npm run fix:format && npm run fix:lint \n',
     'run transpile': 'npm run transpile\n',

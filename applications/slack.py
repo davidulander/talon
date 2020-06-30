@@ -89,6 +89,7 @@ keymap = {
     # Emojis
     'thumbs up': ':+1:',
     'okay hand': ':ok_hand:',
+    'arm muscle': ':muscle:',
     'happy smiley': ':smiley:',
     'smiley': ':slightly_smiling_face:',
     'laugh out loud': ':joy:',

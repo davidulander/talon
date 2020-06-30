@@ -4,13 +4,15 @@ from ..imported.switcher import switch_app
 ctx = Context('outlook', bundle='com.microsoft.Outlook')
 
 ctx.keymap({
+    'new e-mail': Key('cmd-n'),
+    'new meeting': [Key('ctrl-f2'), Key('right'),Key('right'),Key('down'),Key('down'),Key('space'),Key('down'),Key('down'),Key('enter')],
     'reply': Key('cmd-r'),
     'read': Key('cmd-t'),
     'reply all': Key('cmd-shift-r'),
     'send e-mail': Key('cmd-enter'),
     'clear flag': None,
     'next pain': Key('shift-ctrl-['),
-    'pree.lv pain': Key('shift-ctrl-]'),
+    'previous pain': Key('shift-ctrl-]'),
     'mark': Key('cmd-t'),
     'unread': Key('cmd-shift-t'),
     'dismiss outlook': [
@@ -20,7 +22,7 @@ ctx.keymap({
 
     # navigation
     'calendar': Key('cmd-2'),
-    'mail': Key('cmd-1'),
+    'inbox': Key('cmd-1'),
 })
 
 
