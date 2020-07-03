@@ -7,7 +7,7 @@ ctx.keymap({
     'new e-mail': Key('cmd-n'),
     'new meeting': [Key('ctrl-f2'), Key('right'),Key('right'),Key('down'),Key('down'),Key('space'),Key('down'),Key('down'),Key('enter')],
     'reply': Key('cmd-r'),
-    'read': Key('cmd-t'),
+    'mark read': Key('cmd-t'),
     'reply all': Key('cmd-shift-r'),
     'send e-mail': Key('cmd-enter'),
     'clear flag': None,

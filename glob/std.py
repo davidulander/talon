@@ -264,6 +264,7 @@ ctx.keymap({
     'comment see': '// ',
     'comment py': '# ',
 
+    'word was': 'was',
     'word array': 'array',
     'word dev': 'dev',
     'word prod': 'prod',
