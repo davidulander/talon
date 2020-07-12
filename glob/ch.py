@@ -164,7 +164,6 @@ keymap.update({
     '(decrease | volume) (volume | decrease)': [Key('volume_down')] * 2,
     'volume down': [Key('volume_down')] * 2,
     'mute sound': Key('mute'),
-    '(play | pause) (sound | music)': Key('play'),
 
     'paste name': ['David Ulander'],
     'paste e-mail': ['david.ulander@gmail.com'],
