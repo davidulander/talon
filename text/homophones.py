@@ -1,7 +1,7 @@
 from talon import app, clip, cron, resource
 from talon.voice import Context, Str, press, Key
 from talon.webview import Webview
-from ..glob.basic_keys import digits
+from ..misc.basic_keys import digits
 
 from ..utils import parse_word
 import os
