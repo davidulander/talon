@@ -108,22 +108,6 @@ keymap.update({
     'scram' + optional_numerals: repeat_function('alt-shift-left'), # select word to the left
     'scrish' + optional_numerals: repeat_function('alt-shift-right'),  # select word to the right
 
-    # finder shortcuts
-    'go computer': Key('cmd-shift-c'),
-	'go desktop': Key('cmd-shift-d'),
-	'go all files': Key('cmd-shift-f'),
-	'go home': Key('cmd-shift-h'),
-	'go icloud': Key('cmd-shift-i'),
-	'go documents': Key('cmd-shift-o'),
-	'go air drop': Key('cmd-shift-r'),
-	'go utilities': Key('cmd-shift-u'),
-	'go downloads': Key('cmd-shift-l'),
-	'go applications': Key('cmd-shift-a'),
-	'go developer': go_to_path('~/Developer'),
-	'go talon': go_to_path('~/.talon/user'),
-    'go twopointyou': go_to_path('~/Projects/two-point-you'),
-    'go pictures': go_to_path('~/Pictures'),
-
     # handling tabs
     'crack' + optional_numerals: repeat_function('cmd-w',0.1),
     '(close tab) | (tab close)': Key('cmd-w'),
