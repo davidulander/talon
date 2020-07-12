@@ -57,30 +57,6 @@ keymap = {
     'list more': 'ls -a\n',
     'search': Key('ctrl-r'),
 
-    # Git
-    'add': ['git add '],
-    'add all': ['git add .'],
-    'commit': ["git commit -m ''", Key('left')],
-    'simple commit': ["git add .  && git commit -m 'update'  && git push"],
-    'clone': ['git clone '],
-    'push': ['git push'],
-    'status': ['git status\n'],
-    '(difference | did | dave)': 'git diff\n',
-    'pull': ['git pull\n'],
-    'origin master': ['git pull origin master\n'],
-    '[remote] add upstream': ['git remote add upstream'],
-    'fetch upstream': ['git fetch upstream'],
-    'fetch': ['git fetch\n'],
-    'remote': ['git remote -v'],
-    'check out': ['git checkout '],
-    'merge': ['git merge '],
-    'stash': ['git stash\n'],
-    'stash pop': ['git stash pop\n'],
-    'log': ['git log\n'],
-    'reset hard': ['git reset --hard'],
-    'go (to) master': ['git checkout master\n'],
-    'reload submodule': ['git submodule deinit -f . && git submodule update --init'],
-
     # Docker
     'docker componse': ['docker-compose -f docker-compose-env.yml up -d'],
 }
