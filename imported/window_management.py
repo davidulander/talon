@@ -1,8 +1,12 @@
+from talon import macos
 from talon import ui, tap
+from talon.voice import Word, Context, Key, Rep, RepPhrase, Str, press
+from talon_plugins import speech
 
 # Note that this is not connected to voice recognition, but merely
 # for keyboard shortcuts to work with window management. You have to
-# tie the shortcuts to voice recognition in a separate place
+# tie the shortcuts to voice recognition in a separate place.
+# This is done at the bottom of this file.
 
 def move_screen(off):
     win = ui.active_window()
@@ -65,3 +69,45 @@ def on_key(typ, e):
         win.rect = rect
 
 tap.register(tap.KEY|tap.HOOK, on_key)
+
+# Map voice to keys
+ctx = Context('windowManagement')
+
+
+
+def lock_computer(m):
+    speech.set_enabled(False),
+    press('ctrl-cmd-q')
+
+def shift_screen(m):
+    press('ctrl-alt-cmd-shift-down')
+    sleep(0.7)
+    press('ctrl-alt-cmd-shift-m')
+
+keymap = {}
+
+# Current lines are for logging the active window name
+# from talon import ui, cron
+# cron.interval('1s', lambda: print(ui.active_window()))
+
+keymap.update({
+    # window management
+    'maximize': Key('ctrl-alt-cmd-shift-m'),
+    'split right': Key('ctrl-alt-cmd-shift-r'),
+    'split top right': Key('ctrl-alt-cmd-shift-p'),
+    'split bottom right': Key('ctrl-alt-cmd-shift-n'),
+    'split left': Key('ctrl-alt-cmd-shift-l'),
+    'split top left': Key('ctrl-alt-cmd-shift-q'),
+    'split bottom left': Key('ctrl-alt-cmd-shift-z'),
+    'split bottom': Key('ctrl-alt-cmd-shift-b'),
+    'split top': Key('ctrl-alt-cmd-shift-t'),
+    'shift (display | screen)': shift_screen,
+    'shift two (displays | screens)': [shift_screen,shift_screen],
+    'shift (display | screen) same size': Key('ctrl-alt-cmd-shift-down'),
+    'lock (computer | screen)': lock_computer,
+    'mission control': lambda m: macos.dock_notify('com.apple.expose.awake'),
+    'show desktop': lambda m: macos.dock_notify('com.apple.showdesktop.awake'),
+    'show app windows': lambda m: macos.dock_notify('com.apple.expose.front.awake'),
+}) 
+
+ctx.keymap(keymap)

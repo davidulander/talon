@@ -1,9 +1,7 @@
-from talon import macos
 from talon.engine import engine
 from talon.voice import Word, Context, Key, Rep, RepPhrase, Str, press
 from talon import ctrl, clip
 from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
-from talon_plugins import speech
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 import string
 from time import sleep
@@ -22,25 +20,10 @@ def go_direction(m):
     for i in range(0, line_number):
         press(direction_type)
 
-def go_to_path(path):
-	def path_function(m):
-		press('cmd-shift-g')
-		Str(path)(None)
-		press('return')
-	return path_function
-
 scrollingDistance = 60
 
-def lock_computer(m):
-    speech.set_enabled(False),
-    press('ctrl-cmd-q')
 
-def shift_screen(m):
-    press('ctrl-alt-cmd-shift-down')
-    sleep(0.7)
-    press('ctrl-alt-cmd-shift-m')
-
-ctx = Context('chInput')
+ctx = Context('customInput')
 
 keymap = {}
 
@@ -121,24 +104,6 @@ keymap.update({
     'worm': 'python',
     'back tick': '`',
 
-    # window management
-    'maximize': Key('ctrl-alt-cmd-shift-m'),
-    'split right': Key('ctrl-alt-cmd-shift-r'),
-    'split top right': Key('ctrl-alt-cmd-shift-p'),
-    'split bottom right': Key('ctrl-alt-cmd-shift-n'),
-    'split left': Key('ctrl-alt-cmd-shift-l'),
-    'split top left': Key('ctrl-alt-cmd-shift-q'),
-    'split bottom left': Key('ctrl-alt-cmd-shift-z'),
-    'split bottom': Key('ctrl-alt-cmd-shift-b'),
-    'split top': Key('ctrl-alt-cmd-shift-t'),
-    'shift (display | screen)': shift_screen,
-    'shift two (displays | screens)': [shift_screen,shift_screen],
-    'shift (display | screen) same size': Key('ctrl-alt-cmd-shift-down'),
-
-    'mission control': lambda m: macos.dock_notify('com.apple.expose.awake'),
-    'show desktop': lambda m: macos.dock_notify('com.apple.showdesktop.awake'),
-    'show app windows': lambda m: macos.dock_notify('com.apple.expose.front.awake'),
-    'lock (computer | screen)': lock_computer,
     'elipsis': ['...'],
 
     'increase brightness': [Key('brightness_up')] * 2,
