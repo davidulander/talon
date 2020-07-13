@@ -4,8 +4,6 @@ from user.utils import parse_words_as_integer
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 
 context = Context('VSCode', bundle='com.microsoft.VSCode')
-# context = Context('VSCode', bundle='com.microsoft.VSCodeInsiders')
-
 
 def jump_to_line(m):
     line_number = parse_words_as_integer(m._words[1:])
@@ -113,17 +111,6 @@ def go_to_source_control(m):
     press('tab')
     press('down')
     
-def named_function(m):
-    press('cmd-shift-r')
-    press('n')
-    press('enter')
-
-def import_named(m):
-    press('cmd-shift-r')
-    press('i')
-    press('d')
-    press('enter')
-
 context.keymap({
     # Navigating text
     'line' + optional_numerals: jump_to_line,
@@ -194,11 +181,6 @@ context.keymap({
     'cursor down' + optional_numerals: repeat_function('ctrl-alt-down'),
     'cursor up' + optional_numerals: repeat_function('ctrl-alt-up'),
 
-    # snippets
-    'snippets': Key('cmd-shift-r'),
-    'named function': named_function,
-    'import named': import_named,
-
     # various
     '(comment | cast)': Key('cmd-shift-7'),
     'block comment': Key('alt-shift-a'),
@@ -230,13 +212,4 @@ context.keymap({
     'new terminal': Key('ctrl-7'),
     'next terminal': Key('ctrl-9'),
     'last terminal': Key('ctrl-8'),
-
-    # javascript
-    'arrow function': [' = () => {\n'],
-    'no value': 'undefined',
-    'constant': 'const ',
-    'let': 'let ',
-    'export': 'export ',
-    'import': 'import ',
-    'null': 'null ',
 })

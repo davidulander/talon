@@ -12,14 +12,8 @@ ctx = Context("git")
 
 ctx.keymap(
     {
-        # TODO: remove duplication between the two groups of commands as we really
-        # only need one set of commands (eg by completing github issue #40 (use a
-        # more comprehensive git grammar))
-        # git commands originally from std.py
-        # git commands originally from terminal.py
-        # PREFIX + "[<dgndictation>]": ["git ", text],
         PREFIX + "add [<dgndictation>]": ["git add ", text],
-        PREFIX + "add all": 'git add .\n',
+        PREFIX + "add all": "git add .\n",
         PREFIX + "add partial [<dgndictation>]": ["git add -p ", text],
         PREFIX + "bisect": "git bisect ",
         PREFIX + "branch": "git branch ",
@@ -36,8 +30,8 @@ ctx.keymap(
         PREFIX + "checkout branch [<dgndictation>]": ["git checkout -B ", text],
         PREFIX + "cherry pick [<dgndictation>]": ["git cherry-pick ", text],
         PREFIX + "commit [<dgndictation>]": ['git commit -m ""', Key("left"), text],
-        PREFIX + 'simple commit': 'git add . && git commit -m "Update" \n',
-        PREFIX + "commit no": ['git commit -m "" -n', Key('left'),Key('left'),Key('left'),Key('left')],
+        PREFIX + "simple commit": 'git add . && git commit -m "Update" \n',
+        PREFIX + "commit no": ['git commit -m "" -n', Key("left"),Key("left"),Key("left"),Key("left")],
         PREFIX
         + "commit amend [<dgndictation>]": [
             'git commit --amend -m ""',
@@ -77,9 +71,9 @@ ctx.keymap(
         PREFIX + "remote add [<dgndictation>]": ["git remote add ", text],
         PREFIX + "(remove | R M) [<dgndictation>]": ["git rm ", text],
         PREFIX + "reset [<dgndictation>]": ["git reset ", text],
-        PREFIX + "reset one commit": 'git reset HEAD~1 \n',
+        PREFIX + "reset one commit": "git reset HEAD~1 \n",
         PREFIX + "reset hard": "git reset --hard ",
-        PREFIX + "reset one commit hard': 'git reset HEAD~1 --hard \n',
+        PREFIX + "reset one commit hard": "git reset HEAD~1 --hard \n",
 
         PREFIX + "revert [<dgndictation>]": ["git revert ", text],
         PREFIX + "show": "git show ",

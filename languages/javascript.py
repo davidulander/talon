@@ -1,15 +1,29 @@
 from talon.voice import Key, Context, Str, press
-from .snippet import snippet
+from time import sleep
 
-ctx = Context('javascript', bundle='com.microsoft.VSCodeInsiders')
+def snippet(shortcut):
+    def snip(m):
+        press('cmd-shift-r')
+        sleep(0.1)
+        Str(shortcut)(None)
+        press('enter')
+    return snip
+
+ctx = Context('javascript', bundle='com.microsoft.VSCode')
 
 ctx.keymap({
+    'constant': 'const ',
+    'let': 'let ',
+    'export': 'export ',
+    'import': 'import ',
+    'null': 'null ',
     'fat arrow': '=>',
     'fat arrow function': [' = () => {\n'],
     'no value': 'undefined',
-    'constant': 'const ',
-    'let': 'let ',
 
     # Snippets
-    'log': snippet('cl'),
+    'snippets': Key('cmd-shift-r'),
+    'named function': snippet('n'),
+    'import named': snippet('id'),
  })
+ 

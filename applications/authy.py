@@ -2,7 +2,7 @@ from talon import ui, ctrl
 from talon.voice import Key, Context, Str, press
 from talon import ctrl, tap
 
-ctx = Context('Authy')
+ctx = Context('Authy', bundle='com.authy.authy-mac')
 
 def copy_code(m):
     (x, y) = ui.active_window().screen.rect.center

@@ -1,5 +1,5 @@
 from talon.voice import Context, Key
-from ..imported.switcher import switch_app
+from ..misc.switcher import switch_app
 
 ctx = Context('outlook', bundle='com.microsoft.Outlook')
 

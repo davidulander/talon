@@ -23,7 +23,6 @@ alternate_keys = {
     'doom': 'down',
     'junk': 'backspace',
     'shock': 'enter',
-    'scape': 'escape',
 }
 symbols = {
     'back tick': '`', 'tick': '`',
@@ -95,11 +94,36 @@ def press_keys(m):
 
 ctx = Context('basic_keys')
 ctx.keymap({
-    '(uppercase | ship) {basic_keys.alphabet}+ [(lowercase | sunk)]': uppercase_letters,
+    '(uppercase | shunt) {basic_keys.alphabet}+ [(lowercase | sunk)]': uppercase_letters,
     '{basic_keys.modifiers}* {basic_keys.alphabet}+': press_keys,
     '{basic_keys.modifiers}* {basic_keys.digits}+': press_keys,
     '{basic_keys.modifiers}* {basic_keys.keys}+': press_keys,
     '(go | {basic_keys.modifiers}+) {basic_keys.arrows}+': press_keys,
+
+    # symbols
+    'plus': '+',
+    'question [mark]': '?',
+    'tilde': '~',
+    '(bang | exclamation point)': '!',
+    'dollar [sign]': '$',
+    'downscore': '_',
+    'colon': ':',
+    '(paren | left paren)': '(', '(rparen | are paren | right paren)': ')',
+    '(brace | left brace)': '{', '(rbrace | are brace | right brace)': '}',
+    '(angle | left angle | less than)': '<', '(rangle | are angle | right angle | greater than)': '>',
+    '(star | asterisk)': '*',
+    'hash [sign]': '#',
+    'percent [sign]': '%',
+    'caret': '^',
+    'at sign': '@',
+    '(and sign | ampersand | amper)': '&',
+    'pipe': '|',
+    'power to sign': '^',
+    '(dubquote | double quote)': '"',
+    'triple quote': "'''",
+    'back tick': '`',
+    'elipsis': ['...'],
+
 })
 ctx.set_list('alphabet', alphabet.keys())
 ctx.set_list('arrows', arrows.keys())

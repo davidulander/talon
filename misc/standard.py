@@ -23,24 +23,16 @@ def go_direction(m):
 scrollingDistance = 60
 
 
-ctx = Context('customInput')
+ctx = Context('standard')
 
-keymap = {}
-
-# Current lines are for logging the active window name
-# from talon import ui, cron
-# cron.interval('1s', lambda: print(ui.active_window()))
-
-keymap.update({
+ctx.keymap({
     # navigation
     'scroll [down]' + optional_numerals: repeat_function('down', actionsPerRepeatCycle=scrollingDistance),
     'scroll up' + optional_numerals: repeat_function('up', actionsPerRepeatCycle=scrollingDistance),
     'page down' + optional_numerals: repeat_function('pagedown'),
     'page up' + optional_numerals: repeat_function('pageup'),
-
     'home': Key('cmd-left'),
     '(end | and)': Key('cmd-right'),
-
     '(lefty | leah | leah | lee)' + optional_numerals: repeat_function('left'),
     '(righty | law | la)' + optional_numerals: repeat_function('right'),
     'big up': [Key('up')] * 10,
@@ -66,6 +58,7 @@ keymap.update({
     'rip' + optional_numerals: repeat_function('backspace'),
     '(backspace | rep | rap)' + optional_numerals: repeat_function('alt-backspace'),
 
+    # enter tab
     'slap' + optional_numerals: repeat_function('enter'),
     'slappy': [Key('end enter')],
     'slippy': [Key('home enter up')],
@@ -101,59 +94,13 @@ keymap.update({
     '(close | quit) application': Key('cmd-q'),
     'tab window': Key('alt-tab'),
     'windows': Key('cmd-shift-ctrl-alt-v'),
-    'worm': 'python',
-    'back tick': '`',
-
-    'elipsis': ['...'],
-
+    
+    # computer
     'increase brightness': [Key('brightness_up')] * 2,
     'decrease brightness': [Key('brightness_down')] * 2,
     '(increase | volume) (volume | increase)': [Key('volume_up')] * 2,
     'volume up': [Key('volume_up')] * 2,
     '(decrease | volume) (volume | decrease)': [Key('volume_down')] * 2,
     'volume down': [Key('volume_down')] * 2,
-    'mute sound': Key('mute'),
-
-    'paste name': ['David Ulander'],
-    'paste e-mail': ['david.ulander@gmail.com'],
-    'paste work e-mail': ['daul@netlight.com'],
-    'paste work e-mail full': ['david.ulander@netlight.com'],
-
-    # editing text
-    'bold': Key('cmd-b'),
-    'italics': Key('cmd-i'),
-    'underline': Key('cmd-u'),
-    
+    'mute sound': Key('mute'),    
 }) 
-
-ctx.keymap(keymap)
-
-ctx.vocab = [
-    'Talon',
-    'talon',
-    'Netlight',
-    'refactoring',
-    'Refactoring',
-    'Array',
-    'array',
-    'undefined',
-    'Undefined',
-    'Back-end',
-    'back-end',
-]
-
-ctx.vocab_remove = [
-    'tallow',
-    'Tallow',
-    'tyler',
-    'Tyler',
-    'mark',
-    'Mark',
-]
-
-# ctx.vocab_remove = ['doctor', 'Doctor']
-
-    # WORDS
-    # gibby, shibby, swick, totch, baxley, peach, carmex, kite, wonkrim, wonkrish, scrhim, shrish, fame, fish, crimp, chris, jeep, dune, doom
-    # shockey, shockoon, sprinkle, spring, dear, smear, trundle, jolt, snipline, sprinkoon
-    # rizzle, dizzle, dazzle, razzle
