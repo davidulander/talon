@@ -20,6 +20,7 @@ ctx.keymap({
     'fat arrow function': [' = () => {\n'],
     'no value': 'undefined',
     'const': 'const ',
+    'seelog': ['console.log()', Key('left')],
     
     'state let': 'let ',
     'state if': 'if ',
