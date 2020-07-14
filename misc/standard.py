@@ -94,6 +94,7 @@ ctx.keymap({
     '(close | quit) application': Key('cmd-q'),
     'tab window': Key('alt-tab'),
     'windows': Key('cmd-shift-ctrl-alt-v'),
+    'new app': Key('cmd-space'),
     
     # computer
     'increase brightness': [Key('brightness_up')] * 2,
