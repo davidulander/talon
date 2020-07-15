@@ -1,7 +1,9 @@
 from talon.voice import Key, Context, Str, press
-from .snippet import snippet
+from ..utils import is_filetype
 
-ctx = Context('css', bundle='com.microsoft.VSCodeInsiders')
+CSS_EXTENSIONS = (".css", ".scss")
+
+ctx = Context("css", func=is_filetype(CSS_EXTENSIONS))
 
 ctx.keymap({
     'pixels': ['px;'],

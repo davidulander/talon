@@ -95,6 +95,7 @@ ctx.keymap({
     'tab window': Key('alt-tab'),
     'windows': Key('cmd-shift-ctrl-alt-v'),
     'new app': Key('cmd-space'),
+    'next window': Key('cmd-tab'),
     
     # computer
     'increase brightness': [Key('brightness_up')] * 2,

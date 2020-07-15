@@ -1,5 +1,7 @@
 from talon.voice import Key, Context, Str, press
 from time import sleep
+from ..utils import is_filetype
+
 
 def snippet(shortcut):
     def snip(m):
@@ -9,7 +11,9 @@ def snippet(shortcut):
         press('enter')
     return snip
 
-ctx = Context('javascript', bundle='com.microsoft.VSCode')
+JS_EXTENSIONS = (".js", ".jsx", ".ts", ".tsx")
+
+ctx = Context("javascript", func=is_filetype(JS_EXTENSIONS))
 
 ctx.keymap({
     'let': 'let ',

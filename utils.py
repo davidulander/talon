@@ -5,6 +5,7 @@ import itertools
 from talon import clip
 from talon.voice import Str, Key, press
 from time import sleep
+from .bundle_groups import FILETYPE_SENSITIVE_BUNDLES
 
 mapping = {
     "semicolon": ";",
@@ -372,3 +373,18 @@ def command_with_delay(keyDescription, delay):
             press(key)
             sleep(delay)
     return repeater
+
+def is_in_bundles(bundles):
+    def _is_in_bundles(app, win):
+        return any(b in app.bundle for b in bundles)
+    return _is_in_bundles
+
+def is_filetype(extensions=(), default=False):
+    def matcher(app, win):
+        if is_in_bundles(FILETYPE_SENSITIVE_BUNDLES)(app, win):
+            if any(ext in win.title for ext in extensions):
+                return True
+            else:
+                return False
+        return default
+    return matcher
