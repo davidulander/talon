@@ -1,7 +1,7 @@
 from talon.voice import Context, Key, Str
 from ..utils import alternatives, parse_word
 
-ctx = Context('words')
+ctx = Context('shrinkWords')
 
 
 last_word = None

@@ -107,7 +107,7 @@ def toggle_mouse_visibility(m):
     ctrl.cursor_visible(False)
 
 
-ctx = Context('mouse_advanced')
+ctx = Context('mouseAdvanced')
 
 keymap = {
     # movement

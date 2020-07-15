@@ -1,7 +1,7 @@
 from talon_plugins import eye_mouse
 from talon.voice import Context
 
-ctx = Context('eye_control')
+ctx = Context('eyeControl')
 ctx.keymap({
     'debug overlay':   lambda m: eye_mouse.debug_overlay.toggle(),
     'control mouse':   lambda m: eye_mouse.control_mouse.toggle(),

@@ -15,7 +15,7 @@ main = ui.main_screen().visible_rect
 MAX_ITEMS = int(main.height // (FONT_SIZE + 2 * BORDER_SIZE) - 2)
 
 ctx = Context("help")
-webview_context = Context("web_view")
+webview_context = Context("helpWebView")
 
 
 def on_click(data):
