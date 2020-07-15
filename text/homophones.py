@@ -87,7 +87,7 @@ table .count {
     font-style: italic;
 }
 
-.cancel {
+.close {
     text-align: center;
 }
 
@@ -103,7 +103,7 @@ phones_template = (
 {% for word in homophones %}
 <tr class="count"><td class="pick">🔊 pick </td><td>{{ transform(word) }}</td></tr>
 {% endfor %}
-<tr><td colspan="2" class="pick cancel">🔊 cancel</td></tr>
+<tr><td colspan="2" class="pick close">🔊 close</td></tr>
 </table>
 </div>
 """
@@ -204,7 +204,7 @@ def raise_homophones(m, force_raise=False, is_selection=False):
     webview.render(phones_template, homophones=active_word_list, transform=transformer)
     webview.show()
 
-    keymap = {"(cancel | 0)": lambda x: close_homophones()}
+    keymap = {"(close | 0)": lambda x: close_homophones()}
 
     keymap.update(
         {
@@ -250,7 +250,7 @@ help_template = (
 <tr><td class="pick">🔊 ship [number]</td><td>make a selection and capitalize it</td></tr>
 <tr><td class="pick">🔊 yeller [number]</td><td>make a selection and uppercase it</td></tr>
 <tr><td class="pick">🔊 lower [number]</td><td>make a selection and lowercase it</td></tr>
-<tr><td colspan="2" class="pick cancel">🔊 cancel</td></tr>
+<tr><td colspan="2" class="pick close">🔊 close</td></tr>
 </table>
 </div>
 """
@@ -261,7 +261,7 @@ def homophones_help(m):
     webview.render(help_template)
     webview.show()
 
-    keymap = {"(cancel | exit)": lambda x: close_homophones()}
+    keymap = {"(close | exit)": lambda x: close_homophones()}
     pick_context.keymap(keymap)
     pick_context.load()
 

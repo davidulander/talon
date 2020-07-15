@@ -19,7 +19,7 @@ webview_context = Context("web_view")
 
 
 def on_click(data):
-    if data["id"] == "cancel":
+    if data["id"] == "close":
         return close_webview()
     elif "page" in data["id"]:
         context, _, page = data["id"].split("-")
@@ -54,7 +54,7 @@ css_template = (
         width: 100%;
     }
 
-    .cancel {
+    .close {
         text-align: center;
     }
 
@@ -104,8 +104,8 @@ templates = {
     {% for word, letter in kwargs['alphabet'] %}
         <tr><td>{{ letter }}</td><td>{{ word }}</td></tr>
     {% endfor %}
-    <tr id="cancel" class="item events event-click">
-        <td colspan="2" class="pick cancel">🔊 cancel</td>
+    <tr id="close" class="item events event-click">
+        <td colspan="2" class="pick close">🔊 close</td>
     </tr>
     </table>
     </div>
@@ -129,7 +129,7 @@ templates = {
     {% for trigger, mapped_to in kwargs['mapping'] %}
         <tr><td class="pick">🔊 {{ trigger }}</td><td>{{ mapped_to|e }}</td></tr>
     {% endfor %}
-    <tr id="cancel" class="item events event-click"><td colspan="2" class="pick cancel">🔊 cancel</td></tr>
+    <tr id="close" class="item events event-click"><td colspan="2" class="pick close">🔊 close</td></tr>
     </table>
     </div>
     """,
@@ -154,7 +154,7 @@ templates = {
         <td class="pick">🔊 help {{ index }}</td><td>{{ context.name }}</td>
     </tr>
     {% endfor %}
-    <tr id="cancel" class="item events event-click"><td colspan="2" class="pick cancel">🔊 cancel</td></tr>
+    <tr id="close" class="item events event-click"><td colspan="2" class="pick close">🔊 close</td></tr>
     </table>
     </div>
     """,
@@ -184,7 +184,7 @@ def build_pages(items):
 
 
 def render_webview(template, keymap, **kwargs):
-    keymap.update({"cancel": lambda x: close_webview()})
+    keymap.update({"close": lambda x: close_webview()})
     webview_context.keymap(keymap)
     webview_context.load()
     render_page(template, **kwargs)
