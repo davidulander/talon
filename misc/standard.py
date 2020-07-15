@@ -97,6 +97,7 @@ ctx.keymap({
     'save': Key('cmd-s'),
     'save as': Key('cmd-shift-s'),
     '(close | quit) application': Key('cmd-q'),
+    'cancel' : Key('ctrl-c'),
     'tab window': Key('alt-tab'),
     'windows': Key('cmd-shift-ctrl-alt-v'),
     'new app': Key('cmd-space'),
