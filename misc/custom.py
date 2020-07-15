@@ -55,6 +55,7 @@ ctx.keymap({
     'dot pie': '.py',
 
     # custom words
+    'word git': 'git',
     'word was': 'was',
     'word array': 'array',
     'word dev': 'dev',
