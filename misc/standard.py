@@ -1,6 +1,6 @@
 from talon.engine import engine
 from talon.voice import Word, Context, Key, Rep, RepPhrase, Str, press
-from talon import ctrl, clip
+from talon import ctrl, clip, ui, app
 from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 import string
@@ -21,6 +21,11 @@ def go_direction(m):
         press(direction_type)
 
 scrollingDistance = 60
+
+def copy_bundle(m):
+    bundle = ui.active_app().bundle
+    clip.set(bundle)
+    app.notify('Copied app bundle', body='{}'.format(bundle))
 
 
 ctx = Context('standard')
@@ -96,7 +101,9 @@ ctx.keymap({
     'windows': Key('cmd-shift-ctrl-alt-v'),
     'new app': Key('cmd-space'),
     'next window': Key('cmd-tab'),
-    
+    'new window': Key('cmd-shift-n'),
+    'copy active bundle': copy_bundle,
+
     # computer
     'increase brightness': [Key('brightness_up')] * 2,
     'decrease brightness': [Key('brightness_down')] * 2,
