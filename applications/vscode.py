@@ -88,12 +88,12 @@ def focus_editor(m):
     ctrl.mouse_move(x, y+offsety)
 
 def split_editor_right(m):
-    press('ctrl-shift-up')
+    press('ctrl-alt-right')
     focus_editor_right(m)
 
 
 def split_editor_left(m):
-    press('ctrl-shift-down')
+    press('ctrl-alt-left')
     focus_editor_left(m)
 
 def focus_editor_right(m):
