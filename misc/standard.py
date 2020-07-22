@@ -28,6 +28,11 @@ def copy_bundle(m):
     app.notify('Copied app bundle', body='{}'.format(bundle))
 
 
+def go_topbar(m):
+    (x, y) = ui.active_window().screen.rect.center
+    ctrl.mouse_move(x+650, y-600)
+    ctrl.mouse_click(x=None, y=None, button=0, times=1)
+
 ctx = Context('standard')
 
 ctx.keymap({
@@ -113,4 +118,5 @@ ctx.keymap({
     '(decrease | volume) (volume | decrease)': [Key('volume_down')] * 2,
     'volume down': [Key('volume_down')] * 2,
     'mute sound': Key('mute'),    
+    'go interface': go_topbar,    
 }) 
