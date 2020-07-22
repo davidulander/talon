@@ -46,6 +46,8 @@ ctx.keymap({
     'run transpile': 'npm run transpile\n',
 
     # various
+    'no value': 'undefined',
+    'null': 'null',
     'args': ['()', Key('left')],
     'index': ['[]', Key('left')],
     'block': [' {}', Key('left enter')],
@@ -57,6 +59,7 @@ ctx.keymap({
     # custom words
     'word git': 'git',
     'word was': 'was',
+    'word is': 'is',
     'word array': 'array',
     'word dev': 'dev',
     'word prod': 'prod',
@@ -64,7 +67,6 @@ ctx.keymap({
     'word queue': 'queue',
     'word eye': 'eye',
     'word error': 'error',
-    'word no': 'NULL',
     'word cmd': 'cmd',
     'word dup': 'dup',
     'word shell': 'shell',
