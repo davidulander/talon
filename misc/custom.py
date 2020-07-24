@@ -57,6 +57,9 @@ ctx.keymap({
     'dot pie': '.py',
 
     # custom words
+    'word row': 'row',
+    'word mock': 'mock',
+    'word jest': 'jest',
     'word git': 'git',
     'word was': 'was',
     'word is': 'is',

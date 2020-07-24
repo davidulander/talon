@@ -57,6 +57,7 @@ def regular_right_click(m):
     ctrl.mouse_click(x=None, y=None, button=1, times=1)
 
 keymap = {
+    # 'gibby': , # Move mouse to cursor
     '(click | pick )': delayed_click, # regular_click,
     'right click': delayed_right_click, # regular_right_click,
     'midclick': delayed_middle_click,
