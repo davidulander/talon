@@ -1,49 +1,49 @@
 [
     {
-        "key": "ctrl+[BracketRight]",
-        "command": "workbench.action.terminal.new"
+      "key": "ctrl+[BracketRight]",
+      "command": "workbench.action.terminal.new"
     },
     {
-        "key": "ctrl+7",
-        "command": "workbench.action.terminal.new"
+      "key": "ctrl+7",
+      "command": "workbench.action.terminal.new"
     },
     {
-        "key": "ctrl+t",
-        "command": "workbench.action.terminal.focus"
+      "key": "ctrl+t",
+      "command": "workbench.action.terminal.focus"
     },
     {
-        "key": "ctrl+[Quote]",
-        "command": "workbench.action.terminal.focusNext"
+      "key": "ctrl+[Quote]",
+      "command": "workbench.action.terminal.focusNext"
     },
     {
-        "key": "ctrl+9",
-        "command": "workbench.action.terminal.focusNext"
+      "key": "ctrl+9",
+      "command": "workbench.action.terminal.focusNext"
     },
     {
-        "key": "ctrl+[BracketLeft]",
-        "command": "workbench.action.terminal.toggleTerminal"
+      "key": "ctrl+[BracketLeft]",
+      "command": "workbench.action.terminal.toggleTerminal"
     },
     {
-        "key": "ctrl+shift+[Equal]",
-        "command": "-workbench.action.terminal.toggleTerminal"
+      "key": "ctrl+shift+[Equal]",
+      "command": "-workbench.action.terminal.toggleTerminal"
     },
     {
-        "key": "ctrl+[Semicolon]",
-        "command": "workbench.action.terminal.focusPrevious"
+      "key": "ctrl+[Semicolon]",
+      "command": "workbench.action.terminal.focusPrevious"
     },
     {
-        "key": "ctrl+8",
-        "command": "workbench.action.terminal.focusPrevious"
+      "key": "ctrl+8",
+      "command": "workbench.action.terminal.focusPrevious"
     },
     {
-        "key": "shift+alt+d",
-        "command": "editor.action.copyLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
+      "key": "shift+alt+d",
+      "command": "editor.action.copyLinesDownAction",
+      "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "shift+alt+down",
-        "command": "-editor.action.copyLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
+      "key": "shift+alt+down",
+      "command": "-editor.action.copyLinesDownAction",
+      "when": "editorTextFocus && !editorReadonly"
     },
     {
       "key": "alt+tab",
@@ -157,11 +157,11 @@
       "command": "-workbench.action.previousEditor"
     },
     {
-      "key": "ctrl+shift+down",
+      "key": "ctrl+alt+left",
       "command": "workbench.action.moveEditorToLeftGroup"
     },
     {
-      "key": "ctrl+shift+up",
+      "key": "ctrl+alt+right",
       "command": "workbench.action.moveEditorToRightGroup"
     },
     {
@@ -194,51 +194,68 @@
       "command": "workbench.action.terminal.kill"
     },
     {
-        "key": "cmd+g",
-        "command": "workbench.action.gotoLine"
+      "key": "cmd+g",
+      "command": "workbench.action.gotoLine"
     },
     {
-        "key": "ctrl+g",
-        "command": "-workbench.action.gotoLine"
+      "key": "ctrl+g",
+      "command": "-workbench.action.gotoLine"
     },
     {
-        "key": "ctrl+alt+c",
-        "command": "workbench.files.action.collapseExplorerFolders"
+      "key": "ctrl+alt+c",
+      "command": "workbench.files.action.collapseExplorerFolders"
     },
     {
-        "key": "ctrl+alt+f",
-        "command": "search.action.collapseSearchResults"
+      "key": "ctrl+alt+f",
+      "command": "search.action.collapseSearchResults"
     },
     {
-        "key": "shift+cmd+m",
-        "command": "workbench.view.extension.project-manager"
+      "key": "shift+cmd+m",
+      "command": "workbench.view.extension.project-manager"
     },
     {
-        "key": "shift+cmd+f12",
-        "command": "workbench.view.extension.references-view"
+      "key": "shift+cmd+f12",
+      "command": "workbench.view.extension.references-view"
     },
     {
-        "key": "shift+cmd+9",
-        "command": "workbench.action.closePanel"
+      "key": "shift+cmd+9",
+      "command": "workbench.action.closePanel"
     },
     {
-        "key": "alt+cmd+i",
-        "command": "git.stageAll"
+      "key": "alt+cmd+i",
+      "command": "git.stageAll"
     },
     {
-        "key": "alt+cmd+o",
-        "command": "git.commitStaged"
+      "key": "alt+cmd+o",
+      "command": "git.commitStaged"
     },
     {
-        "key": "ctrl+alt+cmd+u",
-        "command": "git.unstage"
+      "key": "ctrl+alt+cmd+u",
+      "command": "git.unstage"
     },
     {
-        "key": "ctrl+alt+cmd+i",
-        "command": "git.unstageAll"
+      "key": "ctrl+alt+cmd+i",
+      "command": "git.unstageAll"
     },
     {
-        "key": "alt+cmd+u",
-        "command": "git.stage"
+      "key": "alt+cmd+u",
+      "command": "git.stage"
+    },
+    {
+      "key": "ctrl+alt+cmd+f",
+      "command": "search.action.focusSearchList"
+    },
+    {
+      "key": "ctrl+alt+cmd+y",
+      "command": "git.revertChange"
+    },
+    {
+      "key": "ctrl+alt+cmd+y",
+      "command": "git.clean"
+    },
+    {
+      "key": "ctrl+alt+cmd+h",
+      "command": "git.cleanAll"
     }
-]
+  ]
+  

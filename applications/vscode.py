@@ -168,6 +168,8 @@ context.keymap({
     'stage all': Key('alt-cmd-i'),
     'unstage all': Key('ctrl-alt-cmd-i'),
     'commit stage': Key('alt-cmd-o'),
+    'discard file': Key('ctrl-alt-cmd-y'),
+    'discard all': Key('ctrl-alt-cmd-h'),
 
     # editing
     'delete file': Key('cmd-backspace'),
