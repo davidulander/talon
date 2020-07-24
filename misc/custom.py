@@ -60,6 +60,7 @@ ctx.keymap({
     'word row': 'row',
     'word mock': 'mock',
     'word jest': 'jest',
+    'word files': 'files',
     'word git': 'git',
     'word was': 'was',
     'word is': 'is',
