@@ -57,7 +57,10 @@ ctx.keymap({
     'dot pie': '.py',
 
     # custom words
+    'word netlight': 'Netlight',
     'word row': 'row',
+    'word to': 'to',
+    'word for': 'for',
     'word mock': 'mock',
     'word jest': 'jest',
     'word files': 'files',
