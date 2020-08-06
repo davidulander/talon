@@ -31,8 +31,9 @@ ctx.keymap({
     'run coverage': 'npm run test:coverage\n',
     
     # Internal-it
-    'run level': 'npm run start \n',
+    'run level': 'itermocil run-laf-be\n',
     'run level mock': 'npm run start:mockedBackend \n',
+    'cd intern': 'cd /Users/daul/Projects/intern-it/\n',
 
     # twopointyou
     'cd twopointyou': 'cd /Users/daul/Projects/two-point-you/\n',
