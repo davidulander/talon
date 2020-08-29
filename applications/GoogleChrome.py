@@ -3,6 +3,7 @@ from talon import applescript
 from user.utils import parse_words_as_integer
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
 from time import sleep
+from user.helpers.emoji import emoji
 
 # It is recommended to use this script in tandem with Vimium, a Google Chrome plugin for controlling the browser via keyboard
 # https://vimium.github.io/
@@ -94,10 +95,11 @@ def go_to_website(m):
     press('enter')
 
 
-context.keymap({
+keymap = {
     'address bar': focus_address_bar,
 
     'link': [Key('esc'), Key('esc'), Key('esc'), 'f'],
+    'link it': [Key('esc'), Key('esc'), Key('esc'), Key('shift-f')],
 
     'back': Key('cmd-['),
     'forward': forward,
@@ -106,8 +108,6 @@ context.keymap({
     'bookmark': Key('cmd-d'),
     'bookmark manager': Key('cmd-alt-b'),
     'history': Key('cmd-y'),
-    'zoom in': Key('cmd-+'),
-    'zoom out': Key('cmd--'),
     'downloads': Key('cmd-shift-j'),
     '(close | hide) downloads': Key('cmd-shift-j cmd-w'),
 
@@ -166,5 +166,8 @@ context.keymap({
     # 'workspace[s]': Key('alt-a'),
     # 'switch workspace': Key('alt-s'),
     # 'save tab': Key('alt-d'),
-})
-#
+}
+
+keymap.update(emoji)
+
+context.keymap(keymap)

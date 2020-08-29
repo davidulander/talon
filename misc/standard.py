@@ -30,8 +30,8 @@ def copy_bundle(m):
 
 def go_topbar(m):
     (x, y) = ui.active_window().screen.rect.center
-    ctrl.mouse_move(x+400, y-600)
-    # ctrl.mouse_move(x+650, y-600)
+    # ctrl.mouse_move(x+400, y-600) # laptop
+    ctrl.mouse_move(x+650, y-600) # Netlight
     ctrl.mouse_click(x=None, y=None, button=0, times=1)
 
 ctx = Context('standard')
@@ -109,6 +109,8 @@ ctx.keymap({
     'new app': Key('cmd-space'),
     'next window': Key('cmd-tab'),
     'new window': Key('cmd-shift-n'),
+    'break pulse': Key('cmd-ctrl-alt-0'),
+    'break activate': Key('cmd-ctrl-alt-9'),
     'copy active bundle': copy_bundle,
 
     # computer
@@ -120,4 +122,6 @@ ctx.keymap({
     'volume down': [Key('volume_down')] * 2,
     'mute sound': Key('mute'),    
     'go interface': go_topbar,    
+    'zoom in': Key('cmd-+'),
+    'zoom out': Key('cmd--'),
 }) 

@@ -1,6 +1,7 @@
 from talon.voice import Context, Key, press, Str
 from time import sleep
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
+from user.helpers.emoji import emoji
 
 def channel_name(name):
     def channelSwitcher(m):
@@ -15,8 +16,6 @@ def channel_name(name):
 ctx = Context('slack', bundle='com.tinyspeck.slackmacgap')
 
 keymap = {
-    '(highlight command | insert command)': ['``', Key('left')],
-    '(highlight code | insert code)': ['``````', Key('left left left')],
     'read all': Key('shift-esc'),
 
     # Workspace
@@ -39,6 +38,9 @@ keymap = {
     'channel me': channel_name('David Ulander'),
     'channel starlander': channel_name('Isak Starlander'),
     'channel christian': channel_name('Christian Hultin'),
+    'channel rod': channel_name('Rodrigo Roa Rodríguez'),
+    'channel astrid': channel_name('Astrid Gunne'),
+    'channel edwin': channel_name('Edvin Lundberg'),
     
     # Navigation
     'move focus': Key('ctrl-`'),
@@ -62,11 +64,8 @@ keymap = {
     # Messaging
     'edit message': Key('cmd-up'),
     'add line': Key('shift-enter'),
-    # '(slaw | slapper)': [Key('cmd-right'), Key('shift-enter')],
-    # '(react | reaction)': Key('cmd-shift-\\'),
     'user': Key('@'),
     'tag channel': Key('#'),
-    '([insert] command | commandify)': Key('cmd-shift-c'),
     '[insert] code': ['```'],
     '(bullet | bulleted) list': Key('cmd-shift-8'),
     '(number | numbered) list': Key('cmd-shift-7'),
@@ -75,7 +74,6 @@ keymap = {
     '(strike | strikethrough)': Key('cmd-shift-x'),
     'mark all read': Key('shift-esc'),
     'mark channel read': Key('esc'),
-    'clear': [Key('cmd-a'), Key('backspace')],
 
     # Files and Snippets
     'upload': Key('cmd-u'),
@@ -87,33 +85,13 @@ keymap = {
     'invite': Key('a'),
     
     # Emojis
-    'thumbs up': ':+1:',
-    'okay hand': ':ok_hand:',
-    'arm muscle': ':muscle:',
-    'happy smiley': ':smiley:',
-    'smiley': ':slightly_smiling_face:',
-    'laugh out loud': ':joy:',
-    'thinking face': ':thinking_face:',
-    'sweat smile': ':sweat_smile:',
-    'checkmark': ':white_check_mark:',
-    'blush': ':blush:',
-    'blush': ':blush:',
-    'comment emoji': ':comment:',
-    'star emoji': ':star:',
-    'merged emoji': ':merged:',
-    'reading emoji': ':reading:',
-    'celebrate': ':tada:',
-    'champagne': ':champagne:',
-    'upvote': ':upvote:',
-    'praying hands': ':pray:',
-    'read heart ': ':heart:',
-    'mind blown': [':mindblown1::mindblown2:', Key('shift-enter'), ':mindblown3::mindblown4:'],
-    'amazed': [':mindblown1::mindblown2:', Key('shift-enter'), ':mindblown3::mindblown4:'],
-
+    
     # Miscellaneous
     'shortcuts': Key('cmd-/'), # Not working
     'search': Key('cmd-f'),
-
 }
+
+
+keymap.update(emoji)
 
 ctx.keymap(keymap)

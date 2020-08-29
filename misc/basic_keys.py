@@ -16,7 +16,6 @@ alternate_keys = {
     'tarsh': 'shift-tab',
 
     # voicecode alternates
-    'tarp': 'tab',
     'crimp': 'left',
     'chris': 'right',
     'jeep': 'up',

@@ -58,6 +58,9 @@ ctx.keymap({
     'dot pie': '.py',
 
     # custom words
+    'word grid': 'grid',
+    'word wrapper': 'wrapper',
+    'word thus': 'thus',
     'word netlight': 'Netlight',
     'word row': 'row',
     'word to': 'to',
