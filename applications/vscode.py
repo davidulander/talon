@@ -17,6 +17,7 @@ def jump_to_line(m):
     
     focus_editor(m)
     ctrl.mouse_click(x=None, y=None, button=0, times=1)    
+    press('escape')
     press('cmd-g')
     Str(str(line_number))(None)
     press('enter')
