@@ -58,7 +58,7 @@ def rot13(i, word, _):
     return out
 
 formatters = {
-    'dunder': (True,  lambda i, word, _: '__%s__' % word if i == 0 else word),
+    'dunder': (True,  lambda i, word, _: word.upper() if i == 0 else '_'+word.upper()),
     'camel':  (True,  lambda i, word, _: word if i == 0 else word.capitalize()),
     'pascal':  (True,  lambda i, word, _: word.capitalize()),
     'snake':  (True,  lambda i, word, _: word if i == 0 else '_'+word),
