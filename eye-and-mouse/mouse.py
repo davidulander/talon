@@ -58,7 +58,7 @@ def regular_right_click(m):
 
 keymap = {
     # 'gibby': , # Move mouse to cursor
-    '(click | pick )': delayed_click, # regular_click,
+    'click': delayed_click, # regular_click,
     'right click': delayed_right_click, # regular_right_click,
     'midclick': delayed_middle_click,
     'dubclick': delayed_dubclick,

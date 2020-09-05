@@ -58,8 +58,10 @@ ctx.keymap({
 
     # editing
     'cut': Key('cmd-x'),
-    'copy': Key('cmd-c'),
+    'copy text': Key('cmd-c'),
     'paste': Key('cmd-v'),
+    'save': Key('cmd-s'),
+    'save as': Key('cmd-shift-s'),
 
     'delete line | snappy': Key('cmd-backspace'),
     'slurpy' + optional_numerals: repeat_function('delete'),
@@ -67,7 +69,7 @@ ctx.keymap({
     'delete all': Key('cmd-a backspace'),
 
     'rip' + optional_numerals: repeat_function('backspace'),
-    '(backspace | rep | rap)' + optional_numerals: repeat_function('alt-backspace'),
+    'rep' + optional_numerals: repeat_function('alt-backspace'),
 
     # enter tab
     'slap' + optional_numerals: repeat_function('enter'),
@@ -100,8 +102,6 @@ ctx.keymap({
     '(close tab) | (tab close)': Key('cmd-w'),
 
     # various
-    'save': Key('cmd-s'),
-    'save as': Key('cmd-shift-s'),
     '(close | quit) application': Key('cmd-q'),
     'cancel' : Key('ctrl-c'),
     'tab window': Key('alt-tab'),

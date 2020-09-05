@@ -32,8 +32,10 @@ ctx.keymap({
     
     # Internal-it
     'run level': 'itermocil run-laf-be\n',
-    'run level mock': 'npm run start:mockedBackend \n',
+    'run sales': 'itermocil run-sales-be\n',
+    'run start mock': 'npm run start:mockedBackend \n',
     'cd intern': 'cd /Users/daul/Projects/intern-it/\n',
+    'docker stop': 'docker-compose -f docker-compose-env.yml down\n',
 
     # twopointyou
     'cd twopointyou': 'cd /Users/daul/Projects/two-point-you/\n',
@@ -58,6 +60,9 @@ ctx.keymap({
     'dot pie': '.py',
 
     # custom words
+    'word right': 'right',
+    'word skill': 'skill',
+    'word docker': 'docker',
     'word grid': 'grid',
     'word wrapper': 'wrapper',
     'word thus': 'thus',
@@ -84,6 +89,9 @@ ctx.keymap({
     'word talon': 'talon',
     'word angle': 'angle',
 })
+    # Hard to pronounce the word
+    # refactoring
+    # pause
 
     # WORDS
     # gibby, shibby, swick, totch, baxley, peach, carmex, kite, wonkrim, wonkrish, scrhim, shrish, fame, fish, crimp, chris, jeep, dune, doom

@@ -25,5 +25,5 @@ emoji = {
     'amazed': [':mindblown1::mindblown2:', Key('shift-enter'), ':mindblown3::mindblown4:'],
 
     '(highlight command | insert command)': ['``', Key('left')],
-    'clear': [Key('cmd-a'), Key('backspace')],
+    'clear text': [Key('cmd-a'), Key('backspace')],
 }

@@ -124,8 +124,8 @@ keymap = {
 
     # strings to paste:
     'localhost': ['https://localhost:3000'],
-    # 'playground (account | username | login | credentials )': ['matl@playground.netlight.com', Key('tab'), 'Hejsan123', Key('enter')],
-    # 'playground password': ['Hejsan123'],
+    'playground (account | username | login | credentials )': ['chul@playground.netlight.com', Key('tab'), 'Hejsan123', Key('enter')],
+    'playground password': ['Hejsan123'],
 
     # developer tools
     'master': Key('cmd-shift-p'),
@@ -148,7 +148,7 @@ keymap = {
     'show redux [panel]': lambda m: show_panel_adv(3),
     'show react [panel]': lambda m: show_panel_adv(1),
     'play': Key('f12'),
-    'step': Key('f9'),
+    'next step': Key('f9'),
     'steffy' + optional_numerals: repeat_function('cmd-alt-left', 0.1),
     'steppy' + optional_numerals: repeat_function('cmd-alt-right', 0.1),
 
@@ -161,11 +161,6 @@ keymap = {
     # websites
     'new website {GoogleChrome.websites}': open_website,
     'website {GoogleChrome.websites}': go_to_website,
-
-    # workona
-    # 'workspace[s]': Key('alt-a'),
-    # 'switch workspace': Key('alt-s'),
-    # 'save tab': Key('alt-d'),
 }
 
 keymap.update(emoji)

@@ -13,15 +13,14 @@ simple_keys = [
     'home', 'pageup', 'pagedown', 'end',
 ]
 alternate_keys = {
-    'tarsh': 'shift-tab',
-
+    # 'tarsh': 'shift-tab',
     # voicecode alternates
-    'crimp': 'left',
-    'chris': 'right',
-    'jeep': 'up',
-    'doom': 'down',
-    'junk': 'backspace',
-    'shock': 'enter',
+    # 'crimp': 'left',
+    # 'chris': 'right',
+    # 'jeep': 'up',
+    # 'doom': 'down',
+    # 'junk': 'backspace',
+    # 'shock': 'enter',
 }
 symbols = {
     'back tick': '`', 'tick': '`',
