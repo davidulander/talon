@@ -168,7 +168,7 @@ context.keymap({
     'unstage file': Key('ctrl-alt-cmd-u'),
     'stage all': Key('alt-cmd-i'),
     'unstage all': Key('ctrl-alt-cmd-i'),
-    'commit stage': Key('alt-cmd-o'),
+    'commit stage': Key('cmd-enter'),
     'discard file': Key('ctrl-alt-cmd-y'),
     'discard all': Key('ctrl-alt-cmd-h'),
 
