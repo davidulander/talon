@@ -66,6 +66,7 @@ ctx.keymap({
     'dot pie': '.py',
 
     # custom words
+    'word commit': 'commit',
     'word right': 'right',
     'word skill': 'skill',
     'word docker': 'docker',

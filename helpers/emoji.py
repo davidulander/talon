@@ -13,6 +13,7 @@ emoji = {
     'blush': ':blush:',
     'blush': ':blush:',
     'comment emoji': ':comment:',
+    'speech balloon': ':speech_balloon:',
     'star emoji': ':star:',
     'merged emoji': ':merged:',
     'reading emoji': ':reading:',
