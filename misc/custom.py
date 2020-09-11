@@ -35,7 +35,13 @@ ctx.keymap({
     'run sales': 'itermocil run-sales-be\n',
     'run start mock': 'npm run start:mockedBackend \n',
     'cd intern': 'cd /Users/daul/Projects/intern-it/\n',
-    'docker stop': 'docker-compose -f docker-compose-env.yml down\n',
+    'cd sales api': 'cd /Users/daul/Projects/intern-it/sales-api\n',
+    'cd sales client': 'cd /Users/daul/Projects/intern-it/sales-client\n',
+    'cd eleven client': 'cd /Users/daul/Projects/intern-it/laf-client\n',
+    'cd eleven api': 'cd /Users/daul/Projects/intern-it/laf-api\n',
+    'docker down': 'docker-compose -f docker-compose-env.yml down\n',
+    'docker up': 'docker-compose -f docker-compose-env.yml up -d --build\n',
+    'run java backend': 'SPRING_PROFILES_ACTIVE=development,seed,redis ./gradlew bootRun\n',
 
     # twopointyou
     'cd twopointyou': 'cd /Users/daul/Projects/two-point-you/\n',

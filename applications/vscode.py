@@ -176,7 +176,7 @@ context.keymap({
     'delete file': Key('cmd-backspace'),
     'snap' + optional_numerals: repeat_function('cmd-shift-k'),
     '(snipper | clear line)': Key('cmd-right home cmd-shift-right delete'),
-    # 'snipple': Key('end cmd-shift-left delete'),
+    'delete line': Key('cmd-backspace'),
     'snapple' + optional_numerals: repeat_function('down cmd-shift-k up cmd-left'),
     'indent': Key('alt-shift-f'),
     'line up' + optional_numerals: repeat_function('alt-up'),

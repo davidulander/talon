@@ -108,6 +108,7 @@ ctx.keymap({
     'windows': Key('cmd-shift-ctrl-alt-v'),
     'new app': Key('cmd-space'),
     'next window': Key('cmd-tab'),
+    'app windows': Key('ctrl-down'),
     'new window': Key('cmd-shift-n'),
     'break pulse': Key('cmd-ctrl-alt-0'),
     'break activate': Key('cmd-ctrl-alt-9'),
