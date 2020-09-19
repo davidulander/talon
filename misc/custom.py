@@ -68,6 +68,9 @@ ctx.keymap({
     'dot pie': '.py',
 
     # custom words
+    'word refactoring': 'refactoring',
+    'word refactor': 'refactor',
+    'word pause': 'pause',
     'word size': 'size',
     'word commit': 'commit',
     'word right': 'right',
@@ -101,8 +104,6 @@ ctx.keymap({
     'word angle': 'angle',
 })
     # Hard to pronounce the word
-    # refactoring
-    # pause
 
     # WORDS
     # gibby, shibby, swick, totch, baxley, peach, carmex, kite, wonkrim, wonkrish, scrhim, shrish, fame, fish, crimp, chris, jeep, dune, doom
