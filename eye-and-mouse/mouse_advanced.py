@@ -106,6 +106,9 @@ def toggle_mouse_visibility(m):
         return
     ctrl.cursor_visible(False)
 
+def dismiss_reminder(m):
+    move_mouse_absolute(1850, 1059)(m)
+    ctrl.mouse_click(x=None, y=None, button=0, times=1)
 
 ctx = Context('mouseAdvanced')
 
@@ -119,6 +122,7 @@ keymap = {
     # specific locations
     'mouse pop': move_mouse_absolute(1860, 60),
     'mouse outlook': move_mouse_absolute(1376, 881),
+    'dismiss reminder': dismiss_reminder,
     'mouse (install | update)': mouse_install,
     'mouse lefty': move_mouse_absolute(70, 500),
     'mouse righty': move_mouse_absolute(1800, 500),

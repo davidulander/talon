@@ -125,4 +125,6 @@ ctx.keymap({
     'go interface': go_topbar,    
     'zoom in': Key('cmd-+'),
     'zoom out': Key('cmd--'),
+    'take screenshot': Key('cmd-shift-3'),
+    'take screenshot part': Key('cmd-shift-4'),
 }) 

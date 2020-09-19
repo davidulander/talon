@@ -31,6 +31,7 @@ ctx.keymap({
     'run coverage': 'npm run test:coverage\n',
     
     # Internal-it
+    'intern pull all': 'cd /Users/daul/Projects/intern-it/; git-pull-all\n',
     'run level': 'itermocil run-laf-be\n',
     'run sales': 'itermocil run-sales-be\n',
     'run start mock': 'npm run start:mockedBackend \n',
@@ -42,8 +43,9 @@ ctx.keymap({
     'docker down': 'docker-compose -f docker-compose-env.yml down\n',
     'docker up': 'docker-compose -f docker-compose-env.yml up -d --build\n',
     'run java backend': 'SPRING_PROFILES_ACTIVE=development,seed,redis ./gradlew bootRun\n',
-
+    
     # twopointyou
+    'twopointyou pull all': 'cd /Users/daul/Projects/two-point-you/; git-pull-all\n',
     'cd twopointyou': 'cd /Users/daul/Projects/two-point-you/\n',
     'cd app': 'cd app\n',
     'export stack name': 'export STACK_NAME=',
@@ -66,6 +68,7 @@ ctx.keymap({
     'dot pie': '.py',
 
     # custom words
+    'word size': 'size',
     'word commit': 'commit',
     'word right': 'right',
     'word skill': 'skill',
@@ -73,6 +76,7 @@ ctx.keymap({
     'word grid': 'grid',
     'word wrapper': 'wrapper',
     'word thus': 'thus',
+    'word netlight ui': 'netlight-ui',
     'word netlight': 'Netlight',
     'word row': 'row',
     'word to': 'to',
