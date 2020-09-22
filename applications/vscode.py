@@ -2,6 +2,7 @@ from talon import ui, ctrl
 from talon.voice import Context, Key, press, Str
 from user.utils import parse_words_as_integer
 from user.utils import parse_words_as_integer, repeat_function, optional_numerals
+from time import sleep
 
 context = Context('VSCode', bundle='com.microsoft.VSCode')
 
@@ -111,6 +112,14 @@ def go_to_source_control(m):
     press('ctrl-shift-g')
     press('tab')
     press('down')
+
+def command_tool(shortcut):
+    def snip(m):
+        press('cmd-shift-p')
+        sleep(0.1)
+        Str(shortcut)(None)
+        press('enter')
+    return snip
     
 context.keymap({
     # Navigating text
@@ -171,6 +180,7 @@ context.keymap({
     'commit stage': Key('cmd-enter'),
     'discard file': Key('ctrl-alt-cmd-y'),
     'discard all': Key('ctrl-alt-cmd-h'),
+    'git emoji': command_tool('emoji'),
 
     # editing
     'delete file': Key('cmd-backspace'),
