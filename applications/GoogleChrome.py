@@ -70,6 +70,7 @@ websites = {
     'stack overflow': 'https://stackoverflow.com/',
     'aws': 'https://eu-central-1.console.aws.amazon.com/console/home?region=eu-central-1',
     'favreau': 'https://favro.com/organization/6c095c0b6477087f82193369/1a0d90fdb2a44e506f3f9b36',
+    'confluence': 'https://netlight.atlassian.net/wiki/spaces/SD/pages/11436033/Getting+started',
 }
 
 context = Context('GoogleChrome', bundle='com.google.Chrome')
