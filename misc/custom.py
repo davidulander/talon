@@ -68,6 +68,7 @@ ctx.keymap({
     'dot pie': '.py',
 
     # custom words
+    'word bug': 'bug',
     'word refactoring': 'refactoring',
     'word refactor': 'refactor',
     'word pause': 'pause',

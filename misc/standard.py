@@ -34,6 +34,13 @@ def go_topbar(m):
     ctrl.mouse_move(x+650, y-600) # Netlight
     ctrl.mouse_click(x=None, y=None, button=0, times=1)
 
+def show_app_windows(m):
+    press('ctrl-down')
+    sleep(0.3)
+    press('up')
+    press('up')
+    press('right')
+
 ctx = Context('standard')
 
 ctx.keymap({
@@ -108,7 +115,7 @@ ctx.keymap({
     'windows': Key('cmd-shift-ctrl-alt-v'),
     'new app': Key('cmd-space'),
     'next window': Key('cmd-tab'),
-    'app windows': Key('ctrl-down'),
+    'app windows': show_app_windows,
     'new window': Key('cmd-shift-n'),
     'break pulse': Key('cmd-ctrl-alt-0'),
     'break activate': Key('cmd-ctrl-alt-9'),

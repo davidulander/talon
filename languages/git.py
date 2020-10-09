@@ -50,7 +50,7 @@ ctx.keymap(
         PREFIX + "history": "git hist ",
         PREFIX + "grep": "git grep ",
         PREFIX + "(in it | init | initialize)": "git init ",
-        PREFIX + "log": "git log \n",
+        PREFIX + "log": "glog \n",
         PREFIX + "merge [<dgndictation>]": ["git merge ", text],
         PREFIX + "move [<dgndictation>]": ["git mv ", text],
         PREFIX + "pull [<dgndictation>]": ["git pull ", text, "\n"],
@@ -84,7 +84,7 @@ ctx.keymap(
         PREFIX + "submodule": "git submodule ",
         PREFIX + "submodule add": "git submodule add ",
         PREFIX + "submodule in it": "git submodule init",
-        PREFIX + "submodule update": "git submodule update",
+        PREFIX + "submodule update": "git submodule update \n",
         PREFIX + "tag": "git tag ",
         PREFIX + "add commit": ["git add  && git commit"] + ([Key("left")] * 14),
     }

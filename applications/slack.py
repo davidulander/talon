@@ -13,6 +13,11 @@ def channel_name(name):
         press('enter')
     return channelSwitcher
 
+def open_channel(m):
+    press('cmd-k')
+    sleep(0.2)
+    press('down')
+
 ctx = Context('slack', bundle='com.tinyspeck.slackmacgap')
 
 keymap = {
@@ -24,7 +29,7 @@ keymap = {
     'workspace 3': Key('cmd-3'),
 
     # Channel
-    'channel': Key('cmd-k'),
+    'channel': open_channel,
     'channel last': Key('alt-up'),
     'channel up' + optional_numerals: repeat_function('alt-up', 0.2),
     'channel down' + optional_numerals: repeat_function('alt-down', 0.2),
